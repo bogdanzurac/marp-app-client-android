@@ -1,0 +1,46 @@
+name: Build App
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build APK
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        
+      - name: Copy secrets
+        run: |
+          echo "const val CRYPTO_API_KEY = \"${{ secrets.CRYPTO_API_KEY }}\"" >> app-elgoog/src/main/kotlin/dev/bogdanzurac/marp/app/elgoog/secret.kt
+      
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: '11'
+          
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v2
+
+      - name: Enable Gradle caching
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
+            
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+        
+      - name: Generate app APK
+        run: ./gradlew assembleRelease --stacktrace
