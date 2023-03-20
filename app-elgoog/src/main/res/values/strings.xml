@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">ElGoog</string>
     <string name="button_ok">OK</string>
+    <string name="crypto_circulating_supply">Circulating supply</string>
+    <string name="crypto_market_cap">Market cap</string>
+    <string name="crypto_max_supply">Max supply</string>
     <string name="empty">We currently have no information to show you</string>
     <string name="error_general">Could not process your request, please try again later</string>
     <string name="error_location_failure">Issue encountered during location checking</string>
@@ -10,4 +13,5 @@
     <string name="error_title">Issue encountered</string>
     <string name="error_unknown">Our web service has encountered an issue %s, please try again later</string>
     <string name="loading">Loading</string>
+    <string name="title_crypto">Crypto</string>
 </resources>
