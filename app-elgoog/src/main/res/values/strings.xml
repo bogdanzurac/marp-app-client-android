@@ -16,4 +16,5 @@
     <string name="movie_runtime">Runtime %d min</string>
     <string name="title_crypto">Crypto</string>
     <string name="title_movies">Movies</string>
+    <string name="title_news">News</string>
 </resources>
