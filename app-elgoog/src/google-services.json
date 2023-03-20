@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "552698826554",
+    "project_id": "marp-elgoog",
+    "storage_bucket": "marp-elgoog.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:552698826554:android:3ee71f41d80832a9ee0a03",
+        "android_client_info": {
+          "package_name": "dev.bogdanzurac.marp.app.elgoog"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "552698826554-brp5dgkpf8js7b93q7d2j924pn97il5k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAiWsGrr1fSn_CkscBHB_cRzkDPra5gx8M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "552698826554-brp5dgkpf8js7b93q7d2j924pn97il5k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
