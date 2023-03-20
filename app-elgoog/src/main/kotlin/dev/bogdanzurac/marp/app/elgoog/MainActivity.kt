@@ -17,12 +17,15 @@ import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
+import dev.bogdanzurac.marp.app.elgoog.ElgoogBottomNavigationItem.*
 import dev.bogdanzurac.marp.app.elgoog.core.arch.DialogManager
 import dev.bogdanzurac.marp.app.elgoog.core.arch.PermissionManager
 import dev.bogdanzurac.marp.app.elgoog.core.feature.FeatureManager
 import dev.bogdanzurac.marp.app.elgoog.core.navigation.*
 import dev.bogdanzurac.marp.app.elgoog.core.theme.ElgoogTheme
 import dev.bogdanzurac.marp.app.elgoog.core.ui.composable.AppDialog
+import dev.bogdanzurac.marp.app.elgoog.crypto.CryptoRoute
+import dev.bogdanzurac.marp.app.elgoog.crypto.cryptoNavGraph
 import org.koin.android.ext.android.get
 import java.util.*
 
@@ -59,15 +62,73 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
+private fun ContentView(
+    navController: NavHostController,
+    appNavigator: AppNavigator,
+    dialogManager: DialogManager
+) {
+    Scaffold(bottomBar = { BottomNavigationBar(appNavigator, navController) }) { innerPadding ->
+        Box(Modifier.padding(PaddingValues(bottom = innerPadding.calculateBottomPadding()))) {
+            NavHost(
+                navController = navController,
+                startDestination = CryptoRoute.Root.path
+            ) {
+                cryptoNavGraph()
+            }
+        }
+    }
+    AppDialog(dialogManager)
 }
 
-@Preview(showBackground = true)
 @Composable
-fun DefaultPreview() {
-    ElgoogTheme {
-        Greeting("Android")
+private fun BottomNavigationBar(
+    appNavigator: AppNavigator,
+    navController: NavController,
+) = NavigationBar {
+    val items = listOf(
+        CryptoNavigationItem,
+    )
+    var selectedItem by remember { mutableStateOf(0) }
+    val onDestinationChangedListener =
+        NavController.OnDestinationChangedListener { _, destination, _ ->
+            selectedItem = items.indexOfFirst { it.route.path == destination.parent!!.route }
+        }
+    navController.addOnDestinationChangedListener(onDestinationChangedListener)
+    items.forEachIndexed { index, item ->
+        NavigationBarItem(
+            icon = {
+                Icon(
+                    painter = painterResource(item.imageRes),
+                    contentDescription = stringResource(item.titleRes),
+                )
+            },
+            label = { Text(stringResource(item.titleRes)) },
+            selected = selectedItem == index,
+            onClick = {
+                selectedItem = index
+                appNavigator.navigateTo(
+                    NavigationAction(
+                        item.route,
+                        NavOptions(popUpToRoute = CryptoRoute.AssetsList.path)
+                    )
+                )
+            }
+        )
     }
+}
+
+private sealed class ElgoogBottomNavigationItem(
+    val route: AppRoute,
+    val imageRes: Int,
+    val titleRes: Int,
+) {
+
+    object CryptoNavigationItem : ElgoogBottomNavigationItem(
+        CryptoRoute.Root,
+        R.drawable.ic_crypto,
+        R.string.title_crypto
+    )
 }
