@@ -28,6 +28,8 @@ import dev.bogdanzurac.marp.app.elgoog.crypto.CryptoRoute
 import dev.bogdanzurac.marp.app.elgoog.crypto.cryptoNavGraph
 import dev.bogdanzurac.marp.app.elgoog.movies.MoviesRoute
 import dev.bogdanzurac.marp.app.elgoog.movies.moviesNavGraph
+import dev.bogdanzurac.marp.app.elgoog.news.NewsRoute
+import dev.bogdanzurac.marp.app.elgoog.news.newsNavGraph
 import org.koin.android.ext.android.get
 import java.util.*
 
@@ -80,6 +82,7 @@ private fun ContentView(
             ) {
                 cryptoNavGraph()
                 moviesNavGraph()
+                newsNavGraph()
             }
         }
     }
@@ -94,6 +97,7 @@ private fun BottomNavigationBar(
     val items = listOf(
         CryptoNavigationItem,
         MoviesNavigationItem,
+        NewsNavigationItem,
     )
     var selectedItem by remember { mutableStateOf(0) }
     val onDestinationChangedListener =
@@ -140,5 +144,11 @@ private sealed class ElgoogBottomNavigationItem(
         MoviesRoute.Root,
         R.drawable.ic_movies,
         R.string.title_movies
+    )
+
+    object NewsNavigationItem : ElgoogBottomNavigationItem(
+        NewsRoute.Root,
+        R.drawable.ic_news,
+        R.string.title_news
     )
 }
