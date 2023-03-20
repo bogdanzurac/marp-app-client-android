@@ -13,5 +13,7 @@
     <string name="error_title">Issue encountered</string>
     <string name="error_unknown">Our web service has encountered an issue %s, please try again later</string>
     <string name="loading">Loading</string>
+    <string name="movie_runtime">Runtime %d min</string>
     <string name="title_crypto">Crypto</string>
+    <string name="title_movies">Movies</string>
 </resources>
