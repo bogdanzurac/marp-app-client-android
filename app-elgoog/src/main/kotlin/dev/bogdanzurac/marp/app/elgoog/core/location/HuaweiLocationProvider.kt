@@ -2,7 +2,7 @@ package dev.bogdanzurac.marp.app.elgoog.core.location
 
 import android.annotation.SuppressLint
 import android.content.Context
-import com.google.android.gms.location.LocationServices
+import com.huawei.hms.location.LocationServices
 import dev.bogdanzurac.marp.app.elgoog.core.arch.PermissionManager
 import dev.bogdanzurac.marp.app.elgoog.core.flatMap
 import dev.bogdanzurac.marp.app.elgoog.core.location.LocationException.LocationFailureException
@@ -15,7 +15,7 @@ import kotlin.Result.Companion.success
 import kotlin.coroutines.resume
 
 @Single
-class GoogleLocationProvider(
+class HuaweiLocationProvider(
     context: Context,
     private val permissionManager: PermissionManager
 ) : LocationProvider {
@@ -31,16 +31,14 @@ class GoogleLocationProvider(
         suspendCancellableCoroutine { continuation ->
             fusedLocationClient.lastLocation
                 .addOnSuccessListener { location: android.location.Location? ->
-                    logger.d("New location received $location")
+                    logger.d("New Huawei location received $location")
                     location?.let {
                         continuation.resume(success(Location(it.latitude, it.longitude)))
                     } ?: continuation.resume(failure(NoLocationException))
                 }
                 .addOnFailureListener {
-                    logger.e("Error while waiting for location", it)
+                    logger.e("Error while waiting for Huawei location", it)
                     continuation.resume(failure(LocationFailureException(it)))
                 }
         }
 }
-
-
