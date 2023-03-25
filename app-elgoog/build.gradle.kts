@@ -1,7 +1,8 @@
 plugins {
     id("com.android.application") version "7.4.2"
     id("com.google.devtools.ksp") version "1.8.10-1.0.9"
-    id("com.google.gms.google-services")
+    id("com.google.firebase.crashlytics") version "2.9.4"
+    id("com.google.gms.google-services") version "4.3.15"
     id("io.realm.kotlin") version "1.6.0"
     id("org.jetbrains.kotlin.android") version "1.8.10"
     kotlin("plugin.serialization") version "1.8.10"
@@ -74,8 +75,9 @@ dependencies {
     implementation("androidx.navigation:navigation-compose:$navVersion")
     implementation("co.touchlab:kermit:1.2.2")
     implementation("com.google.android.gms:play-services-location:21.0.1")
-    implementation("com.google.firebase:firebase-config-ktx:21.2.1")
     implementation("com.google.firebase:firebase-analytics-ktx:21.2.0")
+    implementation("com.google.firebase:firebase-config-ktx:21.2.1")
+    implementation("com.google.firebase:firebase-crashlytics-ktx:18.3.6")
     implementation("com.huawei.hms:location:6.4.0.300")
     implementation("com.russhwolf:multiplatform-settings:1.0.0")
     implementation("io.coil-kt:coil-compose:2.2.2")
