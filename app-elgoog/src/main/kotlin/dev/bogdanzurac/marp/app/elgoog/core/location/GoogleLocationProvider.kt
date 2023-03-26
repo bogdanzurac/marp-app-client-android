@@ -8,11 +8,9 @@ import dev.bogdanzurac.marp.app.elgoog.core.flatMap
 import dev.bogdanzurac.marp.app.elgoog.core.location.LocationException.LocationFailureException
 import dev.bogdanzurac.marp.app.elgoog.core.location.LocationException.NoLocationException
 import dev.bogdanzurac.marp.app.elgoog.core.logger
-import kotlinx.coroutines.suspendCancellableCoroutine
+import dev.bogdanzurac.marp.app.elgoog.core.recoverRethrow
+import kotlinx.coroutines.tasks.await
 import org.koin.core.annotation.Single
-import kotlin.Result.Companion.failure
-import kotlin.Result.Companion.success
-import kotlin.coroutines.resume
 
 @Single
 class GoogleLocationProvider(
@@ -28,19 +26,17 @@ class GoogleLocationProvider(
 
     @SuppressLint("MissingPermission")
     private suspend fun getLastLocation(): Result<Location> =
-        suspendCancellableCoroutine { continuation ->
-            fusedLocationClient.lastLocation
-                .addOnSuccessListener { location: android.location.Location? ->
-                    logger.d("New location received $location")
-                    location?.let {
-                        continuation.resume(success(Location(it.latitude, it.longitude)))
-                    } ?: continuation.resume(failure(NoLocationException))
-                }
-                .addOnFailureListener {
-                    logger.e("Error while waiting for location", it)
-                    continuation.resume(failure(LocationFailureException(it)))
-                }
+        runCatching {
+            fusedLocationClient.lastLocation.await()?.let {
+                logger.d("New location received $it")
+                Location(it.latitude, it.longitude)
+            } ?: throw NoLocationException
         }
+            .recoverRethrow {
+                logger.e("Error while waiting for location", it)
+                LocationFailureException(it)
+            }
+
 }
 
 

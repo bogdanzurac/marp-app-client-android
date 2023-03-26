@@ -15,7 +15,7 @@ class Tracker {
     private val firebaseAnalytics: FirebaseAnalytics = Firebase.analytics
 
     fun trackScreen(screenName: String, itemId: String? = null) {
-        logger.d("Tracking screen $screenName")
+        logger.d("Tracking screen: $screenName")
         firebaseAnalytics.logEvent(SCREEN_VIEW) {
             param(SCREEN_NAME, screenName)
             param(SCREEN_CLASS, screenName)
