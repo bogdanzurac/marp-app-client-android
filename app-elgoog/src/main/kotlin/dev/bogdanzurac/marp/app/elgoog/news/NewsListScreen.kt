@@ -43,18 +43,18 @@ internal fun NewsListScreen(viewModel: NewsListViewModel = koinViewModel()) =
 
 @Composable
 private fun NewsListRefreshView(
-    successState: Success,
-    uiEvents: NewsListUiEvents,
+    state: Success,
+    events: NewsListUiEvents,
 ) {
     val pullRefreshState = rememberPullRefreshState(
-        refreshing = successState.isLoading,
-        onRefresh = { uiEvents.refreshList() }
+        refreshing = state.isLoading,
+        onRefresh = { events.onListRefreshRequested() }
     )
     Box(Modifier.pullRefresh(pullRefreshState)) {
-        if (successState.newsArticles.isEmpty()) EmptyView()
-        else NewsListView(successState.newsArticles, uiEvents)
+        if (state.newsArticles.isEmpty()) EmptyView()
+        else NewsListView(state.newsArticles, events)
         PullRefreshIndicator(
-            successState.isLoading,
+            state.isLoading,
             pullRefreshState,
             Modifier.align(Alignment.TopCenter)
         )
@@ -64,11 +64,11 @@ private fun NewsListRefreshView(
 @Composable
 private fun NewsListView(
     newsArticles: List<NewsArticleModel>,
-    uiEvents: NewsListUiEvents,
+    events: NewsListUiEvents,
 ) {
     LazyColumn {
         items(newsArticles, { it.id }) { article ->
-            NewsListRowView(article) { uiEvents.navigateToDetails(it) }
+            NewsListRowView(article) { events.onArticleClicked(it) }
         }
     }
 }
@@ -113,9 +113,9 @@ private fun NewsListPreview() {
     ElgoogTheme {
         NewsListView(
             newsArticles = MutableList(20) { composeNewsArticleModelPreview },
-            uiEvents = object : NewsListUiEvents {
-                override fun navigateToDetails(id: String) {}
-                override fun refreshList() {}
+            events = object : NewsListUiEvents {
+                override fun onArticleClicked(id: String) {}
+                override fun onListRefreshRequested() {}
             }
         )
     }

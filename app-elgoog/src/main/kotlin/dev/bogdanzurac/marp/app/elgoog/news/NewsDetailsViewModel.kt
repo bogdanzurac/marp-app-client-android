@@ -3,6 +3,7 @@ package dev.bogdanzurac.marp.app.elgoog.news
 import dev.bogdanzurac.marp.app.elgoog.core.arch.DialogManager
 import dev.bogdanzurac.marp.app.elgoog.core.flowOf
 import dev.bogdanzurac.marp.app.elgoog.core.foldResult
+import dev.bogdanzurac.marp.app.elgoog.core.logger
 import dev.bogdanzurac.marp.app.elgoog.core.onFailure
 import dev.bogdanzurac.marp.app.elgoog.core.ui.BaseViewModel
 import dev.bogdanzurac.marp.app.elgoog.core.ui.Tracker
@@ -25,7 +26,10 @@ internal class NewsDetailsViewModel(
     override val uiState: StateFlow<NewsDetailsUiState> =
         flowOf { newsRepository.getNewsArticle(articleId) }
             .onStart { tracker.trackScreen(NEWS_DETAILS_SCREEN, articleId) }
-            .onFailure { dialogManager.showDialog(getGenericErrorDialogFor(it)) }
+            .onFailure {
+                logger.e("Could not get news details", it)
+                dialogManager.showDialog(getGenericErrorDialogFor(it))
+            }
             .foldResult({ Success(it) }, { Error(it) })
             .asState(Loading)
 

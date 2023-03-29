@@ -2,6 +2,7 @@ package dev.bogdanzurac.marp.app.elgoog.news
 
 import androidx.lifecycle.viewModelScope
 import dev.bogdanzurac.marp.app.elgoog.core.arch.DialogManager
+import dev.bogdanzurac.marp.app.elgoog.core.logger
 import dev.bogdanzurac.marp.app.elgoog.core.onFailure
 import dev.bogdanzurac.marp.app.elgoog.core.ui.BaseViewModel
 import dev.bogdanzurac.marp.app.elgoog.core.ui.Tracker
@@ -27,7 +28,10 @@ internal class NewsListViewModel(
         newsRepository.observeNewsArticles()
             .onStart { tracker.trackScreen(NEWS_LIST_SCREEN) }
             .onEach { loadingState.tryEmit(false) }
-            .onFailure { dialogManager.showDialog(getGenericErrorDialogFor(it)) }
+            .onFailure {
+                logger.e("Could not get news list", it)
+                dialogManager.showDialog(getGenericErrorDialogFor(it))
+            }
             .combine(loadingState) { newsArticlesResult, isLoading ->
                 newsArticlesResult.fold({ Success(it, isLoading) }, { Error(it) })
             }
@@ -43,11 +47,11 @@ internal class NewsListViewModel(
         object Loading : NewsListUiState()
     }
 
-    override fun navigateToDetails(id: String) {
+    override fun onArticleClicked(id: String) {
         newsNavigator.navigateToNewsDetails(id)
     }
 
-    override fun refreshList() {
+    override fun onListRefreshRequested() {
         viewModelScope.launch {
             loadingState.tryEmit(true)
             newsRepository.getNewsArticles(true)
@@ -56,6 +60,6 @@ internal class NewsListViewModel(
 }
 
 internal interface NewsListUiEvents {
-    fun navigateToDetails(id: String)
-    fun refreshList()
+    fun onArticleClicked(id: String)
+    fun onListRefreshRequested()
 }

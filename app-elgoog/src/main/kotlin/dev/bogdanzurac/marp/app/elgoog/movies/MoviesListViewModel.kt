@@ -3,6 +3,7 @@ package dev.bogdanzurac.marp.app.elgoog.movies
 import dev.bogdanzurac.marp.app.elgoog.core.arch.DialogManager
 import dev.bogdanzurac.marp.app.elgoog.core.flowOf
 import dev.bogdanzurac.marp.app.elgoog.core.foldResult
+import dev.bogdanzurac.marp.app.elgoog.core.logger
 import dev.bogdanzurac.marp.app.elgoog.core.onFailure
 import dev.bogdanzurac.marp.app.elgoog.core.ui.BaseViewModel
 import dev.bogdanzurac.marp.app.elgoog.core.ui.Tracker
@@ -25,7 +26,10 @@ internal class MoviesListViewModel(
     override val uiState: StateFlow<MoviesListUiState> =
         flowOf { moviesRepository.getTrendingMovies() }
             .onStart { tracker.trackScreen(MOVIES_LIST_SCREEN) }
-            .onFailure { dialogManager.showDialog(getGenericErrorDialogFor(it)) }
+            .onFailure {
+                logger.e("Could not get movie list", it)
+                dialogManager.showDialog(getGenericErrorDialogFor(it))
+            }
             .foldResult({ Success(it) }, { Error(it) })
             .asState(Loading)
 
@@ -35,11 +39,11 @@ internal class MoviesListViewModel(
         object Loading : MoviesListUiState()
     }
 
-    override fun navigateToDetails(id: Long) {
+    override fun onMovieClicked(id: Long) {
         navigator.navigateToMovieDetails(id)
     }
 }
 
 internal interface MoviesListUiEvents {
-    fun navigateToDetails(id: Long)
+    fun onMovieClicked(id: Long)
 }

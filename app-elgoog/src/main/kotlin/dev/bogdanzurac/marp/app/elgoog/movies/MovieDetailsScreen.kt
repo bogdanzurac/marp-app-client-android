@@ -56,11 +56,13 @@ private fun MovieDetailsView(movie: MovieModel) {
                 text = movie.title,
                 style = MaterialTheme.typography.headlineSmall
             )
-            Text(
-                text = movie.releaseDate.toLocalDateTime()
-                    .format(LocalContext.current, DateTimeAttribute.DAY_MONTH_YEAR),
-                style = MaterialTheme.typography.labelMedium
-            )
+            movie.releaseDate?.let {
+                Text(
+                    text = it.toLocalDateTime()
+                        .format(LocalContext.current, DateTimeAttribute.DAY_MONTH_YEAR),
+                    style = MaterialTheme.typography.labelMedium
+                )
+            }
             MovieGenresView(movie)
             SelectableText(
                 text = movie.description,
