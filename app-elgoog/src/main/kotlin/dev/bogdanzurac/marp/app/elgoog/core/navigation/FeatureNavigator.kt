@@ -4,12 +4,13 @@ import dev.bogdanzurac.marp.app.elgoog.core.logger
 import kotlinx.coroutines.channels.BufferOverflow
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.onEach
 
 open class FeatureNavigator {
 
     private val routesFlow: MutableSharedFlow<NavigationAction> =
         MutableSharedFlow(
-            replay = 0,
+            replay = 1,
             onBufferOverflow = BufferOverflow.DROP_OLDEST,
             extraBufferCapacity = 1
         )
@@ -24,4 +25,5 @@ open class FeatureNavigator {
     }
 
     fun observeRoutes(): Flow<NavigationAction> = routesFlow
+        .onEach { routesFlow.resetReplayCache() }
 }

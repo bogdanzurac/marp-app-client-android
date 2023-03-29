@@ -19,7 +19,7 @@ import org.koin.androidx.compose.get
 
 @OptIn(ExperimentalComposeUiApi::class)
 @Composable
-fun AppDialog(dialogManager: DialogManager) {
+fun AppDialog(dialogManager: DialogManager = get()) {
     dialogManager.observeDialogs()
         .collectAsStateWithLifecycle(initialValue = null).value?.let { dialogContent ->
             Dialog(

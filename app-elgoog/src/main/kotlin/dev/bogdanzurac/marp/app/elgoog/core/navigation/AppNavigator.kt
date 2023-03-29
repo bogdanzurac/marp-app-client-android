@@ -1,6 +1,7 @@
 package dev.bogdanzurac.marp.app.elgoog.core.navigation
 
 import androidx.navigation.NavController
+import androidx.navigation.NavGraph.Companion.findStartDestination
 import dev.bogdanzurac.marp.app.elgoog.core.logger
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.flow.*
@@ -11,19 +12,31 @@ abstract class AppNavigator {
 
     private val currentRoute: MutableStateFlow<String> = MutableStateFlow("")
 
+    val routes: Flow<String> = currentRoute
+
     init {
         observeRoutes()
     }
 
-    fun onCreate(navController: NavController) {
-        if (this.navController != null) return
-        this.navController = navController
+    fun onAttach(navController: NavController) {
+        // If we were attached to another nav controller, make sure we detach from it
+        if (this.navController != null && navController != this.navController)
+            onDetach(navController)
+
+        logger.d("Attaching to $navController")
         navController.addOnDestinationChangedListener(onDestinationChangedListener)
+        this.navController = navController
     }
 
-    fun onDestroy() {
-        navController?.removeOnDestinationChangedListener(onDestinationChangedListener)
-        navController = null
+    fun onDetach(navController: NavController) {
+        // Make sure we're only detaching from the intended nav controller
+        if (this.navController == navController) {
+            logger.d("Detaching from $navController")
+            navController.removeOnDestinationChangedListener(onDestinationChangedListener)
+            this.navController = null
+        } else {
+            logger.w("Failed to detach from $navController as it's already attached to ${this.navController}")
+        }
     }
 
     protected abstract fun getFeatureNavigatorForRoute(route: String): FeatureNavigator
@@ -32,7 +45,14 @@ abstract class AppNavigator {
         if (action.route.path == currentRoute.value) return
         logger.d("AppNavigator navigate to: ${action.route.path}")
         if (action is BackAction) navController?.popBackStack()
-        else navController?.navigate(action.route.path, action.options?.toOptions())
+        else navController?.navigate(
+            route = action.route.path,
+            navOptions = action.options?.let { options ->
+                if (options.popUpToRoute == BackRoute.path) {
+                    val startDestinationId = navController!!.graph.findStartDestination().id
+                    options.copy(popUpToRoute = startDestinationId.toString()).toOptions()
+                } else options.toOptions()
+            })
     }
 
     private fun observeRoutes() {

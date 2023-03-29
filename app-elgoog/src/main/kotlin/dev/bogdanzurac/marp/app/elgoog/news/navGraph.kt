@@ -1,20 +1,17 @@
 package dev.bogdanzurac.marp.app.elgoog.news
 
 import androidx.navigation.NavGraphBuilder
-import androidx.navigation.compose.composable
-import androidx.navigation.compose.navigation
-import dev.bogdanzurac.marp.app.elgoog.core.navigation.stringArg
-import dev.bogdanzurac.marp.app.elgoog.news.NewsRoute.NewsDetails.Companion.NEWS_ID_ARG
+import dev.bogdanzurac.marp.app.elgoog.core.navigation.composable
+import dev.bogdanzurac.marp.app.elgoog.core.navigation.getStringArg
+import dev.bogdanzurac.marp.app.elgoog.core.navigation.navigation
+import dev.bogdanzurac.marp.app.elgoog.news.NewsDetails.NEWS_ID
 
 fun NavGraphBuilder.newsNavGraph() {
     navigation(
-        startDestination = NewsRoute.NewsList.path,
-        route = NewsRoute.Root.path
+        startDestination = NewsList,
+        route = News
     ) {
-        composable(NewsRoute.NewsList.path) { NewsListScreen() }
-        composable(
-            NewsRoute.NewsDetails().path,
-            listOf(stringArg(NEWS_ID_ARG))
-        ) { NewsDetailsScreen(it.arguments?.getString(NEWS_ID_ARG)!!) }
+        composable(NewsList) { NewsListScreen() }
+        composable(NewsDetails) { NewsDetailsScreen(it.getStringArg(NEWS_ID)!!) }
     }
 }

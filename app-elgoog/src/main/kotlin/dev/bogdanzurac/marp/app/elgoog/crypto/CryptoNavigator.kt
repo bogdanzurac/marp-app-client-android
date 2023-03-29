@@ -6,5 +6,5 @@ import org.koin.core.annotation.Single
 @Single
 class CryptoNavigator : FeatureNavigator() {
 
-    fun navigateToAssetDetails(id: String) = navigateTo(CryptoRoute.AssetDetails(id))
+    fun navigateToCryptoDetails(id: String) = navigateTo(CryptoDetails(id))
 }
