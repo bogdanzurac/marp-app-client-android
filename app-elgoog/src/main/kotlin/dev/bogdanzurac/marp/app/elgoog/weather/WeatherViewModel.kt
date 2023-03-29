@@ -4,6 +4,7 @@ import dev.bogdanzurac.marp.app.elgoog.core.arch.DialogManager
 import dev.bogdanzurac.marp.app.elgoog.core.flowOf
 import dev.bogdanzurac.marp.app.elgoog.core.foldResult
 import dev.bogdanzurac.marp.app.elgoog.core.location.getLocationErrorDialogFor
+import dev.bogdanzurac.marp.app.elgoog.core.logger
 import dev.bogdanzurac.marp.app.elgoog.core.onFailure
 import dev.bogdanzurac.marp.app.elgoog.core.ui.BaseViewModel
 import dev.bogdanzurac.marp.app.elgoog.core.ui.Tracker
@@ -24,7 +25,10 @@ internal class WeatherViewModel(
     override val uiState: StateFlow<WeatherUiState> =
         flowOf { getWeatherForecastUseCase() }
             .onStart { tracker.trackScreen(WEATHER_SCREEN) }
-            .onFailure { dialogManager.showDialog(getLocationErrorDialogFor(it)) }
+            .onFailure {
+                logger.e("Could not get weather", it)
+                dialogManager.showDialog(getLocationErrorDialogFor(it))
+            }
             .foldResult({ Success(it) }, { Error(it) })
             .asState(Loading)
 

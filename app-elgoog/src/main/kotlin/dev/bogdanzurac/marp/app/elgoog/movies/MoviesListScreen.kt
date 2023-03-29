@@ -42,11 +42,11 @@ internal fun MoviesListScreen(viewModel: MoviesListViewModel = koinViewModel()) 
 @Composable
 private fun MoviesListView(
     movies: List<MovieModel>,
-    uiEvents: MoviesListUiEvents,
+    events: MoviesListUiEvents,
 ) {
     LazyColumn {
         items(movies, { it.id }) { movie ->
-            MovieView(movie) { uiEvents.navigateToDetails(it) }
+            MovieView(movie) { events.onMovieClicked(it) }
         }
     }
 }
@@ -72,11 +72,13 @@ private fun MovieView(
                     text = movie.title,
                     style = MaterialTheme.typography.headlineSmall
                 )
-                Text(
-                    text = movie.releaseDate.toLocalDateTime()
-                        .format(LocalContext.current, DAY_MONTH_YEAR),
-                    style = MaterialTheme.typography.labelMedium
-                )
+                movie.releaseDate?.let {
+                    Text(
+                        text = it.toLocalDateTime()
+                            .format(LocalContext.current, DAY_MONTH_YEAR),
+                        style = MaterialTheme.typography.labelMedium
+                    )
+                }
                 MovieRatingView(movie)
             }
         }
@@ -89,8 +91,8 @@ private fun MoviesListPreview() {
     ElgoogTheme {
         MoviesListView(
             movies = MutableList(20) { composeMovieModelPreview },
-            uiEvents = object : MoviesListUiEvents {
-                override fun navigateToDetails(id: Long) {}
+            events = object : MoviesListUiEvents {
+                override fun onMovieClicked(id: Long) {}
             })
     }
 }

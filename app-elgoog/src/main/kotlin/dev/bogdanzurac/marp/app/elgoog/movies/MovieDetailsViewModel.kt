@@ -3,6 +3,7 @@ package dev.bogdanzurac.marp.app.elgoog.movies
 import dev.bogdanzurac.marp.app.elgoog.core.arch.DialogManager
 import dev.bogdanzurac.marp.app.elgoog.core.flowOf
 import dev.bogdanzurac.marp.app.elgoog.core.foldResult
+import dev.bogdanzurac.marp.app.elgoog.core.logger
 import dev.bogdanzurac.marp.app.elgoog.core.onFailure
 import dev.bogdanzurac.marp.app.elgoog.core.ui.BaseViewModel
 import dev.bogdanzurac.marp.app.elgoog.core.ui.Tracker
@@ -25,7 +26,10 @@ internal class MovieDetailsViewModel(
     override val uiState: StateFlow<MovieDetailsUiState> =
         flowOf { repository.getMovie(movieId) }
             .onStart { tracker.trackScreen(MOVIES_DETAILS_SCREEN, movieId.toString()) }
-            .onFailure { dialogManager.showDialog(getGenericErrorDialogFor(it)) }
+            .onFailure {
+                logger.e("Could not get movie details", it)
+                dialogManager.showDialog(getGenericErrorDialogFor(it))
+            }
             .foldResult({ Success(it) }, { Error(it) })
             .asState(Loading)
 

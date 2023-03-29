@@ -20,7 +20,7 @@ data class MovieModel(
     @SerialName("genres")
     val genres: List<GenreModel> = emptyList(),
     @SerialName("release_date")
-    val releaseDate: LocalDate,
+    val releaseDate: LocalDate? = null,
     @SerialName("overview")
     val description: String,
     @SerialName("poster_path")
