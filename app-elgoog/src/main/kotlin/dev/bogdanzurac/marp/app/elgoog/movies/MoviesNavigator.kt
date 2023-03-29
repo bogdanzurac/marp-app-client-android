@@ -6,5 +6,5 @@ import org.koin.core.annotation.Single
 @Single
 class MoviesNavigator : FeatureNavigator() {
 
-    fun navigateToMovieDetails(id: Long) = navigateTo(MoviesRoute.MovieDetails(id))
+    fun navigateToMovieDetails(id: Long) = navigateTo(MovieDetails(id))
 }

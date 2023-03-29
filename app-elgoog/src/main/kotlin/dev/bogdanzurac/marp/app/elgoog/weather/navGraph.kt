@@ -1,14 +1,14 @@
 package dev.bogdanzurac.marp.app.elgoog.weather
 
 import androidx.navigation.NavGraphBuilder
-import androidx.navigation.compose.composable
-import androidx.navigation.compose.navigation
+import dev.bogdanzurac.marp.app.elgoog.core.navigation.composable
+import dev.bogdanzurac.marp.app.elgoog.core.navigation.navigation
 
 fun NavGraphBuilder.weatherNavGraph() {
     navigation(
-        startDestination = WeatherRoute.Overview.path,
-        route = WeatherRoute.Root.path
+        startDestination = WeatherOverview,
+        route = Weather
     ) {
-        composable(WeatherRoute.Overview.path) { WeatherScreen() }
+        composable(WeatherOverview) { WeatherScreen() }
     }
 }

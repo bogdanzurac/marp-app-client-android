@@ -1,5 +1,19 @@
 package dev.bogdanzurac.marp.app.elgoog.core.navigation
 
-interface AppRoute {
-    val path: String
+typealias RoutePath = String
+
+fun RoutePath.withArg(arg: String, value: String): RoutePath =
+    this.replace("{${arg}}", value)
+
+sealed interface AppRoute {
+    val path: RoutePath
+
+    open class SimpleRoute(override val path: RoutePath) : AppRoute {
+        operator fun invoke(): RoutePath = path
+    }
+
+    abstract class ArgsRoute : AppRoute {
+        abstract val args: List<NavArg>
+        abstract override val path: RoutePath
+    }
 }

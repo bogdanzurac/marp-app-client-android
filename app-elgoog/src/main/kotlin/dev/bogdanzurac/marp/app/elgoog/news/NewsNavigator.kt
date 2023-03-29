@@ -6,5 +6,5 @@ import org.koin.core.annotation.Single
 @Single
 class NewsNavigator : FeatureNavigator() {
 
-    fun navigateToNewsDetails(id: String) = navigateTo(NewsRoute.NewsDetails(id))
+    fun navigateToNewsDetails(id: String) = navigateTo(NewsDetails(id))
 }

@@ -1,20 +1,17 @@
 package dev.bogdanzurac.marp.app.elgoog.movies
 
 import androidx.navigation.NavGraphBuilder
-import androidx.navigation.compose.composable
-import androidx.navigation.compose.navigation
-import dev.bogdanzurac.marp.app.elgoog.core.navigation.longArg
-import dev.bogdanzurac.marp.app.elgoog.movies.MoviesRoute.MovieDetails.Companion.MOVIE_ID_ARG
+import dev.bogdanzurac.marp.app.elgoog.core.navigation.composable
+import dev.bogdanzurac.marp.app.elgoog.core.navigation.getLongArg
+import dev.bogdanzurac.marp.app.elgoog.core.navigation.navigation
+import dev.bogdanzurac.marp.app.elgoog.movies.MovieDetails.MOVIE_ID
 
 fun NavGraphBuilder.moviesNavGraph() {
     navigation(
-        startDestination = MoviesRoute.TrendingMovies.path,
-        route = MoviesRoute.Root.path
+        startDestination = MoviesList,
+        route = Movies
     ) {
-        composable(MoviesRoute.TrendingMovies.path) { MoviesListScreen() }
-        composable(
-            MoviesRoute.MovieDetails().path,
-            listOf(longArg(MOVIE_ID_ARG))
-        ) { MovieDetailsScreen(it.arguments?.getLong(MOVIE_ID_ARG)!!) }
+        composable(MoviesList) { MoviesListScreen() }
+        composable(MovieDetails) { MovieDetailsScreen(it.getLongArg(MOVIE_ID)!!) }
     }
 }
