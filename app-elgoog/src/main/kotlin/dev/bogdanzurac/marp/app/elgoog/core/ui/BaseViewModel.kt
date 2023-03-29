@@ -3,10 +3,8 @@ package dev.bogdanzurac.marp.app.elgoog.core.ui
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dev.bogdanzurac.marp.app.elgoog.core.logger
-import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.flow.SharingStarted.Companion.WhileSubscribed
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.stateIn
 import kotlin.time.Duration.Companion.seconds
 
 abstract class BaseViewModel<State : UiState> : ViewModel() {
@@ -24,4 +22,7 @@ abstract class BaseViewModel<State : UiState> : ViewModel() {
 
     protected fun <T> Flow<T>.asState(defaultState: T): StateFlow<T> =
         stateIn(viewModelScope, WhileSubscribed(1.seconds.inWholeMilliseconds), defaultState)
+
+    protected fun <T> Flow<T>.shared(): SharedFlow<T> =
+        shareIn(viewModelScope, WhileSubscribed(1.seconds.inWholeMilliseconds), 1)
 }

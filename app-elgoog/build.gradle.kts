@@ -79,6 +79,7 @@ dependencies {
     implementation("com.google.firebase:firebase-auth-ktx:21.1.0")
     implementation("com.google.firebase:firebase-config-ktx:21.2.1")
     implementation("com.google.firebase:firebase-crashlytics-ktx:18.3.6")
+    implementation("com.google.firebase:firebase-firestore-ktx:24.4.5")
     implementation("com.huawei.hms:location:6.4.0.300")
     implementation("com.russhwolf:multiplatform-settings:1.0.0")
     implementation("io.coil-kt:coil-compose:2.2.2")
