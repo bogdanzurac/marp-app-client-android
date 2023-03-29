@@ -37,7 +37,7 @@ private fun CryptoListView(
 ) {
     LazyColumn {
         items(cryptoAssets, { it.id }) { asset ->
-            CryptoAssetView(asset) { events.navigateToDetails(asset.id) }
+            CryptoAssetView(asset) { events.onCryptoClicked(asset.id) }
         }
     }
 }
@@ -45,12 +45,12 @@ private fun CryptoListView(
 @Composable
 private fun CryptoAssetView(
     cryptoAsset: CryptoAssetModel,
-    onAssetClicked: (id: String) -> Unit
+    onCryptoClicked: (id: String) -> Unit
 ) {
     Card(modifier = Modifier
         .padding(16.dp)
         .fillMaxWidth()
-        .clickable { onAssetClicked(cryptoAsset.id) }) {
+        .clickable { onCryptoClicked(cryptoAsset.id) }) {
         Column(
             modifier = Modifier
                 .fillMaxWidth()
@@ -93,7 +93,7 @@ private fun CryptoListPreview() {
         CryptoListView(
             cryptoAssets = MutableList(20) { composeCryptoAssetModelPreview },
             events = object : CryptoListUiEvents {
-                override fun navigateToDetails(id: String) {}
+                override fun onCryptoClicked(id: String) {}
             })
     }
 }
