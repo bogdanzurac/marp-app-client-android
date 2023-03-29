@@ -9,6 +9,8 @@ import dev.bogdanzurac.marp.app.elgoog.movies.Movies
 import dev.bogdanzurac.marp.app.elgoog.movies.MoviesNavigator
 import dev.bogdanzurac.marp.app.elgoog.news.News
 import dev.bogdanzurac.marp.app.elgoog.news.NewsNavigator
+import dev.bogdanzurac.marp.app.elgoog.notes.Notes
+import dev.bogdanzurac.marp.app.elgoog.notes.NotesNavigator
 import dev.bogdanzurac.marp.app.elgoog.weather.Weather
 import dev.bogdanzurac.marp.app.elgoog.weather.WeatherNavigator
 import org.koin.core.annotation.Single
@@ -19,6 +21,7 @@ class ElgoogAppNavigator(
     private val loginNavigator: LoginNavigator,
     private val moviesNavigator: MoviesNavigator,
     private val newsNavigator: NewsNavigator,
+    private val notesNavigator: NotesNavigator,
     private val weatherNavigator: WeatherNavigator,
 ) : AppNavigator() {
 
@@ -29,6 +32,7 @@ class ElgoogAppNavigator(
             Crypto.path -> cryptoNavigator
             Movies.path -> moviesNavigator
             News.path -> newsNavigator
+            Notes.path -> notesNavigator
             Weather.path -> weatherNavigator
             else -> throw IllegalStateException("Current route '$route' is not associated with a FeatureNavigator")
         }
