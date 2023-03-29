@@ -8,6 +8,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.channels.BufferOverflow
 import kotlinx.coroutines.channels.Channel.Factory.RENDEZVOUS
 import kotlinx.coroutines.flow.*
+import kotlinx.coroutines.withContext
 import org.koin.core.annotation.Single
 import kotlin.time.Duration.Companion.hours
 import kotlin.time.Duration.Companion.seconds
@@ -31,6 +32,17 @@ class CryptoRepository(
         )
         .timeToLive(1.hours, syncTimestampsPreferences)
         .build()
+
+    suspend fun getCryptoAssets(refresh: Boolean = false): Result<List<CryptoAssetModel>> =
+        withContext(Dispatchers.IO) {
+            cryptoHolder.get(refresh)
+        }
+
+    suspend fun getCryptoAsset(id: String): Result<CryptoAssetModel> =
+        withContext(Dispatchers.IO) {
+            getCryptoAssets()
+                .mapCatching { crypotAsset -> crypotAsset.first { it.id == id } }
+        }
 
     fun observeCryptoAssets(): Flow<Result<List<CryptoAssetModel>>> =
         merge(

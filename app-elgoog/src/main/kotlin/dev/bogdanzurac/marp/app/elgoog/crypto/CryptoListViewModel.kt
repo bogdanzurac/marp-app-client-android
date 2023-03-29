@@ -2,6 +2,7 @@ package dev.bogdanzurac.marp.app.elgoog.crypto
 
 import dev.bogdanzurac.marp.app.elgoog.core.arch.DialogManager
 import dev.bogdanzurac.marp.app.elgoog.core.foldResult
+import dev.bogdanzurac.marp.app.elgoog.core.logger
 import dev.bogdanzurac.marp.app.elgoog.core.onFailure
 import dev.bogdanzurac.marp.app.elgoog.core.ui.BaseViewModel
 import dev.bogdanzurac.marp.app.elgoog.core.ui.Tracker
@@ -24,7 +25,10 @@ internal class CryptoListViewModel(
     override val uiState: StateFlow<CryptoListUiState> =
         cryptoRepository.observeCryptoAssets()
             .onStart { tracker.trackScreen(CRYPTO_LIST_SCREEN) }
-            .onFailure { dialogManager.showDialog(getGenericErrorDialogFor(it)) }
+            .onFailure {
+                logger.e("Could not get crypto list", it)
+                dialogManager.showDialog(getGenericErrorDialogFor(it))
+            }
             .foldResult({ Success(it) }, { Error(it) })
             .asState(Loading)
 
@@ -34,11 +38,11 @@ internal class CryptoListViewModel(
         object Loading : CryptoListUiState()
     }
 
-    override fun navigateToDetails(id: String) {
-        cryptoNavigator.navigateToAssetDetails(id)
+    override fun onCryptoClicked(id: String) {
+        cryptoNavigator.navigateToCryptoDetails(id)
     }
 }
 
 internal interface CryptoListUiEvents {
-    fun navigateToDetails(id: String)
+    fun onCryptoClicked(id: String)
 }
