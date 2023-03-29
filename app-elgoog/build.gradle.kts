@@ -76,6 +76,7 @@ dependencies {
     implementation("co.touchlab:kermit:1.2.2")
     implementation("com.google.android.gms:play-services-location:21.0.1")
     implementation("com.google.firebase:firebase-analytics-ktx:21.2.0")
+    implementation("com.google.firebase:firebase-auth-ktx:21.1.0")
     implementation("com.google.firebase:firebase-config-ktx:21.2.1")
     implementation("com.google.firebase:firebase-crashlytics-ktx:18.3.6")
     implementation("com.huawei.hms:location:6.4.0.300")
