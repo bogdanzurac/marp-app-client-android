@@ -1,7 +1,19 @@
 <h1>MARP</h1>
 
 ## 💡 Introduction
-MARP is a scalable architecture for mobile apps. It stands for Multi-Module-App-Repository-Platform. A MARP architecture handles:
+MARP is a **scalable architecture** for mobile apps. It stands for Multi-Module-App-Repository-Platform. 
+
+When we look at a scalable architecture, we need to factor in:
+- how the code **performs** - Reactive, functional vs imperative
+    - helps to improve code readability and effectiveness as well as the entire app lifecycle and functionality
+- how the code is **layered** - MVVM vs Monster-View-Presenter
+    - helps to make changes to individual layers without affecting the rest of the app
+- how the code is **structured**  - modules, repositories
+    - helps to improve reusability and interchangeability of components
+
+While the project shows the progression of an app through all stages of scalable architecture, MARP mostly tries to tackle the last step, which revolves around **structuring** the project code in a multi-app & multi-platform environment.
+
+A MARP architecture handles:
 - splitting code into multiple modules in order to segregate features and libraries into their own dedicated space, following SRP principle of clean architecture
 - sharing modules between multiple whitelabel apps with the same functionality inside the same code repository
 - extracting modules into their own standalone repositories, in order to be used for apps with a different purpose altogether
