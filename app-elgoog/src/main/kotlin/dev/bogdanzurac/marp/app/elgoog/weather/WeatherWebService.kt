@@ -1,12 +1,12 @@
 package dev.bogdanzurac.marp.app.elgoog.weather
 
 import WEATHER_API_KEY
-import dev.bogdanzurac.marp.core.feature.FeatureManager
-import dev.bogdanzurac.marp.app.elgoog.core.getLocale
 import dev.bogdanzurac.marp.app.elgoog.core.location.Location
 import dev.bogdanzurac.marp.app.elgoog.core.ws.MockNetworkDelayFeature
 import dev.bogdanzurac.marp.app.elgoog.core.ws.MockNetworkErrorsFeature
 import dev.bogdanzurac.marp.app.elgoog.core.ws.WebService
+import dev.bogdanzurac.marp.core.feature.FeatureManager
+import dev.bogdanzurac.marp.core.getLocale
 import io.ktor.client.request.*
 import org.koin.core.annotation.Single
 

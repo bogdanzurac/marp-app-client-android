@@ -1,7 +1,7 @@
 package dev.bogdanzurac.marp.app.elgoog.notes
 
-import dev.bogdanzurac.marp.app.elgoog.core.combineResult
-import dev.bogdanzurac.marp.app.elgoog.core.mapResultCatching
+import dev.bogdanzurac.marp.core.combineResult
+import dev.bogdanzurac.marp.core.mapResultCatching
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.distinctUntilChanged
 import org.koin.core.annotation.Factory

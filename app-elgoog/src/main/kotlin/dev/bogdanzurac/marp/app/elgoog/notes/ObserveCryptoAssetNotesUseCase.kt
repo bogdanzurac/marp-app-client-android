@@ -1,6 +1,6 @@
 package dev.bogdanzurac.marp.app.elgoog.notes
 
-import dev.bogdanzurac.marp.app.elgoog.core.mapResult
+import dev.bogdanzurac.marp.core.mapResult
 import kotlinx.coroutines.flow.Flow
 import org.koin.core.annotation.Factory
 
