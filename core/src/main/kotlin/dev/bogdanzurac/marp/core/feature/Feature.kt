@@ -1,4 +1,4 @@
-package dev.bogdanzurac.marp.app.elgoog.core.feature
+package dev.bogdanzurac.marp.core.feature
 
 interface Feature
 

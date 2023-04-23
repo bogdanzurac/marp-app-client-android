@@ -1,6 +1,6 @@
 package dev.bogdanzurac.marp.app.elgoog.core.navigation
 
-import dev.bogdanzurac.marp.app.elgoog.core.logger
+import dev.bogdanzurac.marp.core.logger
 import kotlinx.coroutines.channels.BufferOverflow
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableSharedFlow

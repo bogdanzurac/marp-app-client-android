@@ -1,10 +1,10 @@
 package dev.bogdanzurac.marp.app.elgoog.core.ws
 
-import dev.bogdanzurac.marp.app.elgoog.core.exception.NetworkException
-import dev.bogdanzurac.marp.app.elgoog.core.exception.NotAvailableException
-import dev.bogdanzurac.marp.app.elgoog.core.exception.UnknownApiResponseException
-import dev.bogdanzurac.marp.app.elgoog.core.logger
-import dev.bogdanzurac.marp.app.elgoog.core.recoverRethrow
+import dev.bogdanzurac.marp.core.exception.NetworkException
+import dev.bogdanzurac.marp.core.exception.NotAvailableException
+import dev.bogdanzurac.marp.core.exception.UnknownApiResponseException
+import dev.bogdanzurac.marp.core.logger
+import dev.bogdanzurac.marp.core.recoverRethrow
 import io.ktor.client.*
 import io.ktor.client.call.*
 import io.ktor.client.engine.okhttp.*

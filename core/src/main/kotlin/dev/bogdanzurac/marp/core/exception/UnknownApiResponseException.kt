@@ -1,4 +1,4 @@
-package dev.bogdanzurac.marp.app.elgoog.core.exception
+package dev.bogdanzurac.marp.core.exception
 
 data class UnknownApiResponseException(val httpStatusCode: Int? = null) : AppException() {
 

@@ -2,12 +2,12 @@ package dev.bogdanzurac.marp.app.elgoog.core.location
 
 import dev.bogdanzurac.marp.app.elgoog.R
 import dev.bogdanzurac.marp.app.elgoog.core.arch.DialogManager.DialogContent
-import dev.bogdanzurac.marp.app.elgoog.core.exception.AppException
 import dev.bogdanzurac.marp.app.elgoog.core.location.LocationException.LocationFailureException
 import dev.bogdanzurac.marp.app.elgoog.core.location.LocationException.NoLocationException
-import dev.bogdanzurac.marp.app.elgoog.core.logger
 import dev.bogdanzurac.marp.app.elgoog.core.ui.TextResource
 import dev.bogdanzurac.marp.app.elgoog.core.ui.getGenericErrorDialogFor
+import dev.bogdanzurac.marp.core.exception.AppException
+import dev.bogdanzurac.marp.core.logger
 
 sealed class LocationException : AppException() {
     object NoLocationException : LocationException()

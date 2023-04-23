@@ -1,6 +1,6 @@
 package dev.bogdanzurac.marp.app.elgoog.weather
 
-import dev.bogdanzurac.marp.app.elgoog.core.flatMap
+import dev.bogdanzurac.marp.core.flatMap
 import dev.bogdanzurac.marp.app.elgoog.core.location.LocationProvider
 import org.koin.core.annotation.Factory
 

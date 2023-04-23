@@ -1,6 +1,6 @@
 package dev.bogdanzurac.marp.app.elgoog.core.ws
 
-import dev.bogdanzurac.marp.app.elgoog.core.feature.KeyFeature
+import dev.bogdanzurac.marp.core.feature.KeyFeature
 
 object MockNetworkDelayFeature : KeyFeature("mock_network_delay")
 

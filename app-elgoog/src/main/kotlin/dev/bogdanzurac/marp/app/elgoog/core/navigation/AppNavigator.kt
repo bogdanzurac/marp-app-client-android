@@ -2,7 +2,7 @@ package dev.bogdanzurac.marp.app.elgoog.core.navigation
 
 import androidx.navigation.NavController
 import androidx.navigation.NavGraph.Companion.findStartDestination
-import dev.bogdanzurac.marp.app.elgoog.core.logger
+import dev.bogdanzurac.marp.core.logger
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.flow.*
 

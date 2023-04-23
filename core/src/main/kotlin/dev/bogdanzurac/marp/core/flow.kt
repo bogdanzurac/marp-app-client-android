@@ -1,4 +1,4 @@
-package dev.bogdanzurac.marp.app.elgoog.core
+package dev.bogdanzurac.marp.core
 
 import kotlinx.coroutines.flow.*
 

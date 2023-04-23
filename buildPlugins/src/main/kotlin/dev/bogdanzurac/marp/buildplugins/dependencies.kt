@@ -115,4 +115,4 @@ internal fun DependencyHandler.testImplementation(dependencyNotation: Any): Depe
  * @return The dependency.
  */
 fun DependencyHandler.project(path: String): ProjectDependency =
-    project(mapOf("path" to path)) as ProjectDependency
+    project(mapOf("path" to ":$path")) as ProjectDependency

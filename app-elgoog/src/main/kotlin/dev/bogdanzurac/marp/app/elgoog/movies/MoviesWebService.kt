@@ -1,7 +1,7 @@
 package dev.bogdanzurac.marp.app.elgoog.movies
 
 import MOVIES_API_KEY
-import dev.bogdanzurac.marp.app.elgoog.core.feature.FeatureManager
+import dev.bogdanzurac.marp.core.feature.FeatureManager
 import dev.bogdanzurac.marp.app.elgoog.core.getLocale
 import dev.bogdanzurac.marp.app.elgoog.core.ws.MockNetworkDelayFeature
 import dev.bogdanzurac.marp.app.elgoog.core.ws.MockNetworkErrorsFeature

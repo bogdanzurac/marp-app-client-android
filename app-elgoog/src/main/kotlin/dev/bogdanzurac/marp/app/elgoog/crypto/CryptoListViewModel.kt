@@ -2,7 +2,7 @@ package dev.bogdanzurac.marp.app.elgoog.crypto
 
 import dev.bogdanzurac.marp.app.elgoog.core.arch.DialogManager
 import dev.bogdanzurac.marp.app.elgoog.core.foldResult
-import dev.bogdanzurac.marp.app.elgoog.core.logger
+import dev.bogdanzurac.marp.core.logger
 import dev.bogdanzurac.marp.app.elgoog.core.onFailure
 import dev.bogdanzurac.marp.app.elgoog.core.ui.BaseViewModel
 import dev.bogdanzurac.marp.app.elgoog.core.ui.Tracker

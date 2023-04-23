@@ -2,7 +2,7 @@ package dev.bogdanzurac.marp.app.elgoog.core.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import dev.bogdanzurac.marp.app.elgoog.core.logger
+import dev.bogdanzurac.marp.core.logger
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.flow.SharingStarted.Companion.WhileSubscribed
 import kotlin.time.Duration.Companion.seconds
