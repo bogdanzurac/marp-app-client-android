@@ -1,6 +1,6 @@
 package dev.bogdanzurac.marp.app.elgoog.core.ws
 
-import dev.bogdanzurac.marp.app.elgoog.core.logger
+import dev.bogdanzurac.marp.core.logger
 import kotlinx.coroutines.delay
 import kotlin.random.Random
 import kotlin.time.Duration.Companion.milliseconds

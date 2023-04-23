@@ -1,3 +1,3 @@
-package dev.bogdanzurac.marp.app.elgoog.core.exception
+package dev.bogdanzurac.marp.core.exception
 
 class DataLoadingException(wrappedException: Throwable) : AppException()

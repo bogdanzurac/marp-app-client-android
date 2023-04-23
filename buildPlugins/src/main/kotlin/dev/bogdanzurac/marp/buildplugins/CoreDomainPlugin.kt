@@ -48,6 +48,8 @@ class CoreDomainPlugin : Plugin<Project> {
             ksp(versionCatalog.lib("koin-compiler"))
             implementation(versionCatalog.bundle("kotlin-coroutines"))
             implementation(versionCatalog.bundle("kotlin-datetime"))
+
+            implementation(project("core"))
         }
     }
 }

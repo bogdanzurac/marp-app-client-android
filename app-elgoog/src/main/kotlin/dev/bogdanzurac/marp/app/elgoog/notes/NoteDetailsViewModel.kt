@@ -1,7 +1,6 @@
 package dev.bogdanzurac.marp.app.elgoog.notes
 
 import androidx.lifecycle.viewModelScope
-import dev.bogdanzurac.marp.app.elgoog.core.*
 import dev.bogdanzurac.marp.app.elgoog.core.arch.DialogManager
 import dev.bogdanzurac.marp.app.elgoog.core.auth.AuthManager
 import dev.bogdanzurac.marp.app.elgoog.core.ui.BaseViewModel
@@ -10,6 +9,7 @@ import dev.bogdanzurac.marp.app.elgoog.core.ui.UiState
 import dev.bogdanzurac.marp.app.elgoog.core.ui.getGenericErrorDialogFor
 import dev.bogdanzurac.marp.app.elgoog.notes.NoteDetailsViewModel.NoteDetailsUiState
 import dev.bogdanzurac.marp.app.elgoog.notes.NoteDetailsViewModel.NoteDetailsUiState.*
+import dev.bogdanzurac.marp.core.*
 import kotlinx.coroutines.channels.BufferOverflow
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch

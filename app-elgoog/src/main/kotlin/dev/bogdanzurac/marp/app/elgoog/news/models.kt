@@ -1,7 +1,7 @@
 package dev.bogdanzurac.marp.app.elgoog.news
 
-import dev.bogdanzurac.marp.app.elgoog.core.randomUUID
 import dev.bogdanzurac.marp.app.elgoog.core.ws.CustomInstantSerializer
+import dev.bogdanzurac.marp.core.*
 import io.realm.kotlin.types.RealmObject
 import io.realm.kotlin.types.annotations.Ignore
 import io.realm.kotlin.types.annotations.PrimaryKey
@@ -39,6 +39,7 @@ class NewsArticleEntity : RealmObject {
     @PrimaryKey
     var id: String = ""
     var imageUrl: String? = null
+
     @Ignore
     var creator: List<String>? = null
     var title: String = ""

@@ -4,8 +4,8 @@ import com.google.firebase.firestore.FirebaseFirestoreException
 import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import dev.bogdanzurac.marp.app.elgoog.core.exception.DataLoadingException
-import dev.bogdanzurac.marp.app.elgoog.core.logger
+import dev.bogdanzurac.marp.core.exception.DataLoadingException
+import dev.bogdanzurac.marp.core.logger
 import dev.bogdanzurac.marp.app.elgoog.notes.IdentifiableModel
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.delay

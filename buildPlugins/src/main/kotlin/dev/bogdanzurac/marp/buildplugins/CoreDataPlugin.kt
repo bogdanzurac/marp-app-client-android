@@ -53,6 +53,8 @@ class CoreDataPlugin : Plugin<Project> {
             implementation(versionCatalog.lib("multiplatform-settings"))
             implementation(versionCatalog.lib("realm"))
             implementation(versionCatalog.lib("store"))
+
+            implementation(project("core"))
         }
     }
 }

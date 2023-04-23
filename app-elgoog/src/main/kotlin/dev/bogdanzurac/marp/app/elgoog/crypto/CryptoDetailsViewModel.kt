@@ -1,6 +1,5 @@
 package dev.bogdanzurac.marp.app.elgoog.crypto
 
-import dev.bogdanzurac.marp.app.elgoog.core.*
 import dev.bogdanzurac.marp.app.elgoog.core.arch.DialogManager
 import dev.bogdanzurac.marp.app.elgoog.core.auth.AuthManager
 import dev.bogdanzurac.marp.app.elgoog.core.ui.BaseViewModel
@@ -11,6 +10,7 @@ import dev.bogdanzurac.marp.app.elgoog.crypto.CryptoDetailsViewModel.CryptoDetai
 import dev.bogdanzurac.marp.app.elgoog.crypto.CryptoDetailsViewModel.CryptoDetailsUiState.*
 import dev.bogdanzurac.marp.app.elgoog.notes.Note
 import dev.bogdanzurac.marp.app.elgoog.notes.ObserveCryptoAssetNotesUseCase
+import dev.bogdanzurac.marp.core.*
 import kotlinx.coroutines.flow.*
 import org.koin.core.annotation.Factory
 import kotlin.Result.Companion.success

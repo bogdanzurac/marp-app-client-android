@@ -4,7 +4,7 @@ import dev.bogdanzurac.marp.app.elgoog.R
 import dev.bogdanzurac.marp.app.elgoog.core.arch.DialogManager
 import dev.bogdanzurac.marp.app.elgoog.core.auth.AuthException.AccountCreationException
 import dev.bogdanzurac.marp.app.elgoog.core.auth.AuthException.InvalidCredentialsException
-import dev.bogdanzurac.marp.app.elgoog.core.exception.AppException
+import dev.bogdanzurac.marp.core.exception.AppException
 import dev.bogdanzurac.marp.app.elgoog.core.ui.TextResource
 import dev.bogdanzurac.marp.app.elgoog.core.ui.getGenericErrorDialogFor
 

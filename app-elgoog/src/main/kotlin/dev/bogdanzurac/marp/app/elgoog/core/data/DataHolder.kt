@@ -2,7 +2,7 @@
 
 package dev.bogdanzurac.marp.app.elgoog.core.data
 
-import dev.bogdanzurac.marp.app.elgoog.core.exception.AppException
+import dev.bogdanzurac.marp.core.exception.AppException
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.filterNot
 import kotlinx.coroutines.flow.first

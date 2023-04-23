@@ -2,16 +2,16 @@ package dev.bogdanzurac.marp.app.elgoog.notes
 
 import dev.bogdanzurac.marp.app.elgoog.core.arch.DialogManager
 import dev.bogdanzurac.marp.app.elgoog.core.auth.AuthManager
-import dev.bogdanzurac.marp.app.elgoog.core.combineResult
-import dev.bogdanzurac.marp.app.elgoog.core.foldResult
-import dev.bogdanzurac.marp.app.elgoog.core.logger
-import dev.bogdanzurac.marp.app.elgoog.core.onFailure
 import dev.bogdanzurac.marp.app.elgoog.core.ui.BaseViewModel
 import dev.bogdanzurac.marp.app.elgoog.core.ui.Tracker
 import dev.bogdanzurac.marp.app.elgoog.core.ui.UiState
 import dev.bogdanzurac.marp.app.elgoog.core.ui.getGenericErrorDialogFor
 import dev.bogdanzurac.marp.app.elgoog.notes.NotesListViewModel.NotesListUiState
 import dev.bogdanzurac.marp.app.elgoog.notes.NotesListViewModel.NotesListUiState.*
+import dev.bogdanzurac.marp.core.combineResult
+import dev.bogdanzurac.marp.core.foldResult
+import dev.bogdanzurac.marp.core.logger
+import dev.bogdanzurac.marp.core.onFailure
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.flowOf

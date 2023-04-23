@@ -1,6 +1,6 @@
 package dev.bogdanzurac.marp.app.elgoog.core.navigation
 
-import dev.bogdanzurac.marp.app.elgoog.core.logger
+import dev.bogdanzurac.marp.core.logger
 import dev.bogdanzurac.marp.app.elgoog.crypto.Crypto
 import dev.bogdanzurac.marp.app.elgoog.crypto.CryptoNavigator
 import dev.bogdanzurac.marp.app.elgoog.login.Auth

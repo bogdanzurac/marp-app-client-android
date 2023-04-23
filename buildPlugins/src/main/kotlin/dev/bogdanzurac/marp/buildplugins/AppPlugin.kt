@@ -81,6 +81,8 @@ class AppPlugin : Plugin<Project> {
             implementation(versionCatalog.bundle("koin"))
             ksp(versionCatalog.lib("koin-compiler"))
             implementation(versionCatalog.lib("kotlin-coroutines"))
+
+            implementation(project("core"))
         }
     }
 

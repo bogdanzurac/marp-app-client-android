@@ -1,4 +1,4 @@
-package dev.bogdanzurac.marp.app.elgoog.core.exception
+package dev.bogdanzurac.marp.core.exception
 
 data class NetworkException(private val httpStatusCode: Int? = null) : AppException() {
 

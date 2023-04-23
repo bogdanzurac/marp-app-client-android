@@ -4,7 +4,7 @@ import androidx.lifecycle.viewModelScope
 import dev.bogdanzurac.marp.app.elgoog.core.arch.DialogManager
 import dev.bogdanzurac.marp.app.elgoog.core.auth.AuthManager
 import dev.bogdanzurac.marp.app.elgoog.core.auth.getAuthErrorDialogFor
-import dev.bogdanzurac.marp.app.elgoog.core.logger
+import dev.bogdanzurac.marp.core.logger
 import dev.bogdanzurac.marp.app.elgoog.core.ui.BaseViewModel
 import dev.bogdanzurac.marp.app.elgoog.core.ui.Tracker
 import dev.bogdanzurac.marp.app.elgoog.core.ui.UiState

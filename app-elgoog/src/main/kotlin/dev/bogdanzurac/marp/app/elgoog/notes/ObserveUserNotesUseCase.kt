@@ -1,12 +1,11 @@
 package dev.bogdanzurac.marp.app.elgoog.notes
 
 import dev.bogdanzurac.marp.app.elgoog.core.auth.AuthManager
-import dev.bogdanzurac.marp.app.elgoog.core.mapResult
 import dev.bogdanzurac.marp.app.elgoog.crypto.CryptoRepository
+import dev.bogdanzurac.marp.core.mapResult
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.filterNotNull
 import kotlinx.coroutines.flow.flatMapConcat
-import org.koin.core.annotation.Factory
 import org.koin.core.annotation.Singleton
 
 @Singleton

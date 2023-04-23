@@ -2,8 +2,8 @@ package dev.bogdanzurac.marp.app.elgoog.crypto
 
 import dev.bogdanzurac.marp.app.elgoog.core.data.DataHolder
 import dev.bogdanzurac.marp.app.elgoog.core.data.SyncTimestampsPreferences
-import dev.bogdanzurac.marp.app.elgoog.core.flowOf
-import dev.bogdanzurac.marp.app.elgoog.core.repeatAsFlow
+import dev.bogdanzurac.marp.core.flowOf
+import dev.bogdanzurac.marp.core.repeatAsFlow
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.channels.BufferOverflow
 import kotlinx.coroutines.channels.Channel.Factory.RENDEZVOUS

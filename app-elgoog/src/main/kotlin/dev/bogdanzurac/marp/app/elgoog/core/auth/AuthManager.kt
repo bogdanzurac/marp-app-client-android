@@ -6,10 +6,10 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import dev.bogdanzurac.marp.app.elgoog.core.auth.AuthException.AccountCreationException
 import dev.bogdanzurac.marp.app.elgoog.core.auth.AuthException.InvalidCredentialsException
-import dev.bogdanzurac.marp.app.elgoog.core.feature.FeatureManager
-import dev.bogdanzurac.marp.app.elgoog.core.logger
 import dev.bogdanzurac.marp.app.elgoog.core.ws.MockNetworkDelayFeature
 import dev.bogdanzurac.marp.app.elgoog.core.ws.mockNetworkDelay
+import dev.bogdanzurac.marp.core.feature.FeatureManager
+import dev.bogdanzurac.marp.core.logger
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.map
