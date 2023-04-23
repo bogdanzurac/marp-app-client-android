@@ -1,59 +1,67 @@
 [versions]
-lifecycle = "2.6.0"
+androidBuildTools = "33.0.2"
+androidCompileSdk = "33"
+androidGradlePlugin = "7.4.2"
+androidMinSdk = "26"
 compose = "1.3.3"
+composeKotlinCompiler = "1.4.6"
+lifecycle = "2.6.0"
 koinKsp = "1.1.1"
+kotlin = "1.8.20"
 ktor = "2.2.3"
+realm = "1.7.1"
 
 [libraries]
+
+# Libs
 androidx-activity = { module = "androidx.activity:activity-compose", version = "1.6.1" }
-androidx-core = { module = "androidx.core:core-ktx", version = "1.9.0" }
-androidx-lifecycle = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycle" }
-androidx-lifecycle-compose = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "lifecycle" }
-androidx-compose-material3 = { module = "androidx.compose.material3:material3", version = "1.0.1" }
 androidx-compose-material = { module = "androidx.compose.material:material", version = "1.3.1" }
+androidx-compose-material3 = { module = "androidx.compose.material3:material3", version = "1.0.1" }
 androidx-compose-ui = { module = "androidx.compose.ui:ui", version.ref = "compose" }
 androidx-compose-ui-preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "compose" }
 androidx-compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose" }
+androidx-core = { module = "androidx.core:core-ktx", version = "1.9.0" }
+androidx-lifecycle = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycle" }
+androidx-lifecycle-compose = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "lifecycle" }
 androidx-navigation = { module = "androidx.navigation:navigation-compose", version = "2.5.3" }
-kermit = { module = "co.touchlab:kermit", version = "1.2.2" }
-play-location = { module = "com.google.android.gms:play-services-location", version = "21.0.1" }
+coil = { module = "io.coil-kt:coil-compose", version = "2.2.2" }
 firebase-analytics = { module = "com.google.firebase:firebase-analytics-ktx", version = "21.2.0" }
 firebase-auth = { module = "com.google.firebase:firebase-auth-ktx", version = "21.1.0" }
 firebase-config = { module = "com.google.firebase:firebase-config-ktx", version = "21.2.1" }
 firebase-crashlytics = { module = "com.google.firebase:firebase-crashlytics-ktx", version = "18.3.6" }
 firebase-firestore = { module = "com.google.firebase:firebase-firestore-ktx", version = "24.4.5" }
+google-play-location = { module = "com.google.android.gms:play-services-location", version = "21.0.1" }
 huawei-location = { module = "com.huawei.hms:location", version = "6.4.0.300" }
-multiplatform-settings = { module = "com.russhwolf:multiplatform-settings", version = "1.0.0" }
-coil = { module = "io.coil-kt:coil-compose", version = "2.2.2" }
+kermit = { module = "co.touchlab:kermit", version = "1.2.2" }
 koin-android = { module = "io.insert-koin:koin-android", version = "3.3.3" }
-koin-compose = { module = "io.insert-koin:koin-androidx-compose", version = "3.4.2" }
 koin-annotations = { module = "io.insert-koin:koin-annotations", version.ref = "koinKsp" }
 koin-compiler = { module = "io.insert-koin:koin-ksp-compiler", version.ref = "koinKsp" }
+koin-compose = { module = "io.insert-koin:koin-androidx-compose", version = "3.4.2" }
 ktor-content = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor" }
 ktor-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
+ktor-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
 ktor-logging = { module = "io.ktor:ktor-client-logging", version.ref = "ktor" }
 ktor-okhttp = { module = "io.ktor:ktor-client-okhttp", version.ref = "ktor" }
 ktor-serialization = { module = "io.ktor:ktor-client-serialization", version.ref = "ktor" }
-ktor-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
-realm = { module = "io.realm.kotlin:library-base", version = "1.6.0" }
 kotlin-coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version = "1.6.4" }
-kotlin-play-services = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-play-services", version = "1.6.4" }
 kotlin-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version = "0.4.0" }
+kotlin-play-services = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-play-services", version = "1.6.4" }
 kotlin-serialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version = "1.5.0" }
+multiplatform-settings = { module = "com.russhwolf:multiplatform-settings", version = "1.0.0" }
+realm = { module = "io.realm.kotlin:library-base", version.ref = "realm" }
 store = { module = "org.mobilenativefoundation.store:store5", version = "5.0.0-alpha04" }
 
+# Plugins
+android-plugin = { module = "com.android.tools.build:gradle", version.ref = "androidGradlePlugin" }
+crashlytics-plugin = { module = "com.google.firebase:firebase-crashlytics-gradle", version = "2.9.4" }
+google-play-plugin = { module = "com.google.gms:google-services", version = "4.3.15" }
+kotlin-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+ksp-plugin = { module = "com.google.devtools.ksp:com.google.devtools.ksp.gradle.plugin", version = "1.8.20-1.0.10" }
+realm-plugin = { module = "io.realm.kotlin:gradle-plugin", version.ref = "realm" }
+serialization-plugin = { module = "org.jetbrains.kotlin:kotlin-serialization", version.ref = "kotlin" }
+
 [bundles]
-lifecycle = ["androidx-lifecycle", "androidx-lifecycle-compose"]
 compose = ["androidx-compose-material3", "androidx-compose-material", "androidx-compose-ui", "androidx-compose-ui-preview"]
+lifecycle = ["androidx-lifecycle", "androidx-lifecycle-compose"]
 koin = ["koin-android", "koin-compose", "koin-annotations"]
 ktor = ["ktor-content", "ktor-core", "ktor-logging", "ktor-okhttp", "ktor-serialization", "ktor-json"]
-
-[plugins]
-android-application = "com.android.application:7.4.2"
-android-library = "com.android.library:7.4.2"
-ksp = "com.google.devtools.ksp:1.8.10-1.0.9"
-crashlytics = "com.google.firebase.crashlytics:2.9.4"
-playServices = "com.google.gms.google-services:4.3.15"
-realm = "io.realm.kotlin:1.6.0"
-kotlin-android = "org.jetbrains.kotlin.android:1.8.10"
-kotlin-serialization = "org.jetbrains.kotlin.plugin.serialization:1.8.10"
