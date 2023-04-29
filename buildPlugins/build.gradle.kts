@@ -24,19 +24,24 @@ gradlePlugin {
             implementationClass = "dev.bogdanzurac.marp.buildplugins.CorePlugin"
         }
 
-        register("coreDataPlugin") {
+        register("koinPlugin") {
+            id = "dev.bogdanzurac.marp.plugins.koin"
+            implementationClass = "dev.bogdanzurac.marp.buildplugins.KoinPlugin"
+        }
+
+        register("featureDataPlugin") {
             id = "dev.bogdanzurac.marp.plugins.core.data"
-            implementationClass = "dev.bogdanzurac.marp.buildplugins.CoreDataPlugin"
+            implementationClass = "dev.bogdanzurac.marp.buildplugins.FeatureDataPlugin"
         }
 
-        register("coreDomainPlugin") {
+        register("featureDomainPlugin") {
             id = "dev.bogdanzurac.marp.plugins.core.domain"
-            implementationClass = "dev.bogdanzurac.marp.buildplugins.CoreDomainPlugin"
+            implementationClass = "dev.bogdanzurac.marp.buildplugins.FeatureDomainPlugin"
         }
 
-        register("corePresentationPlugin") {
+        register("featurePresentationPlugin") {
             id = "dev.bogdanzurac.marp.plugins.core.presentation"
-            implementationClass = "dev.bogdanzurac.marp.buildplugins.CorePresentationPlugin"
+            implementationClass = "dev.bogdanzurac.marp.buildplugins.FeaturePresentationPlugin"
         }
     }
 }
