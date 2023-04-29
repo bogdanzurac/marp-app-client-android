@@ -1,4 +1,4 @@
-package dev.bogdanzurac.marp.tracking.firebase
+package dev.bogdanzurac.marp.lib.tracking.firebase
 
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.analytics.FirebaseAnalytics.Event.SCREEN_VIEW

@@ -7,12 +7,13 @@ plugins {
 }
 
 android {
-    namespace = "dev.bogdanzurac.marp.lib.tracking.firebase"
+    namespace = "dev.bogdanzurac.marp.lib.services.huawei"
 }
 
 dependencies {
-    implementation(libs.firebase.analytics)
+    implementation(libs.huawei.location)
 
     implementation(project(projects.core))
-    implementation(project(projects.coreUi))
+    implementation(project(projects.corePrompts))
+    implementation(project(projects.coreServices))
 }

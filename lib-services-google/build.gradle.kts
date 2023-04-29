@@ -7,12 +7,14 @@ plugins {
 }
 
 android {
-    namespace = "dev.bogdanzurac.marp.lib.tracking.firebase"
+    namespace = "dev.bogdanzurac.marp.lib.services.google"
 }
 
 dependencies {
-    implementation(libs.firebase.analytics)
+    implementation(libs.google.play.location)
+    implementation(libs.kotlin.play.services)
 
     implementation(project(projects.core))
-    implementation(project(projects.coreUi))
+    implementation(project(projects.corePrompts))
+    implementation(project(projects.coreServices))
 }

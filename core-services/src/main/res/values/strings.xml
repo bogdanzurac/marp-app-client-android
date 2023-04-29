@@ -1,0 +1,4 @@
+<resources>
+    <string name="error_location_failure">Issue encountered during location checking</string>
+    <string name="error_location_unavailable">No location available</string>
+</resources>

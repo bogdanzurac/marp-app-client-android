@@ -1,4 +1,4 @@
-package dev.bogdanzurac.marp.app.elgoog.core.location
+package dev.bogdanzurac.marp.core.services
 
 interface LocationProvider {
 
