@@ -23,12 +23,12 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import dev.bogdanzurac.marp.app.elgoog.core.theme.ElgoogTheme
-import dev.bogdanzurac.marp.app.elgoog.core.ui.*
-import dev.bogdanzurac.marp.app.elgoog.core.ui.DateTimeAttribute.DATE_TIME_SHORT
-import dev.bogdanzurac.marp.app.elgoog.core.ui.composable.BaseScreen
-import dev.bogdanzurac.marp.app.elgoog.core.ui.composable.EmptyView
-import dev.bogdanzurac.marp.app.elgoog.core.ui.composable.LoadingView
 import dev.bogdanzurac.marp.app.elgoog.news.NewsListViewModel.NewsListUiState.*
+import dev.bogdanzurac.marp.core.ui.*
+import dev.bogdanzurac.marp.core.ui.DateTimeAttribute.DATE_TIME_SHORT
+import dev.bogdanzurac.marp.core.ui.composable.BaseScreen
+import dev.bogdanzurac.marp.core.ui.composable.EmptyView
+import dev.bogdanzurac.marp.core.ui.composable.LoadingView
 import org.koin.androidx.compose.koinViewModel
 
 @Composable

@@ -1,10 +1,10 @@
 package dev.bogdanzurac.marp.app.elgoog.weather
 
-import dev.bogdanzurac.marp.app.elgoog.core.arch.DialogManager
+import dev.bogdanzurac.marp.core.prompts.DialogManager
 import dev.bogdanzurac.marp.app.elgoog.core.location.getLocationErrorDialogFor
-import dev.bogdanzurac.marp.app.elgoog.core.ui.BaseViewModel
-import dev.bogdanzurac.marp.app.elgoog.core.ui.Tracker
-import dev.bogdanzurac.marp.app.elgoog.core.ui.UiState
+import dev.bogdanzurac.marp.core.ui.BaseViewModel
+import dev.bogdanzurac.marp.core.ui.Tracker
+import dev.bogdanzurac.marp.core.ui.UiState
 import dev.bogdanzurac.marp.app.elgoog.weather.WeatherViewModel.WeatherUiState
 import dev.bogdanzurac.marp.app.elgoog.weather.WeatherViewModel.WeatherUiState.*
 import dev.bogdanzurac.marp.core.flowOf

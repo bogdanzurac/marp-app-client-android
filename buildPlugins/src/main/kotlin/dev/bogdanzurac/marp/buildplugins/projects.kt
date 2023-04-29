@@ -6,5 +6,8 @@ object projects {
     const val coreAuth = "core-auth"
     const val coreData = "core-data"
     const val coreDb = "core-db"
+    const val corePrompts = "core-prompts"
+    const val coreUi = "core-ui"
     const val coreWs = "core-ws"
+    const val libTrackingFirebase = "lib-tracking-firebase"
 }

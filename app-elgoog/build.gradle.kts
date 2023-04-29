@@ -19,7 +19,6 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.core)
     implementation(libs.google.play.location)
-    implementation(libs.firebase.analytics)
     implementation(libs.firebase.config)
     implementation(libs.firebase.crashlytics)
     implementation(libs.firebase.firestore)
@@ -33,5 +32,7 @@ dependencies {
     implementation(project(projects.coreAuth))
     implementation(project(projects.coreData))
     implementation(project(projects.coreDb))
+    implementation(project(projects.coreUi))
     implementation(project(projects.coreWs))
+    implementation(project(projects.libTrackingFirebase))
 }

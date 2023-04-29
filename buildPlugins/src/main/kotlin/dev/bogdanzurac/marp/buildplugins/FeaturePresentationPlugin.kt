@@ -12,6 +12,7 @@ class FeaturePresentationPlugin : Plugin<Project> {
         with(pluginManager) {
             apply("com.android.library")
             apply("org.jetbrains.kotlin.android")
+            apply("dev.bogdanzurac.marp.plugins.compose")
             apply("dev.bogdanzurac.marp.plugins.koin")
         }
 
@@ -27,15 +28,9 @@ class FeaturePresentationPlugin : Plugin<Project> {
 
             buildFeatures {
                 buildConfig = false
-                compose = true
                 aidl = false
                 renderScript = false
                 shaders = false
-            }
-
-            composeOptions {
-                kotlinCompilerExtensionVersion =
-                    versionCatalog.findVersion("composeKotlinCompiler").value
             }
 
             buildTypes {
@@ -50,14 +45,11 @@ class FeaturePresentationPlugin : Plugin<Project> {
 
         dependencies {
             implementation(versionCatalog.lib("androidx-activity"))
-            debugImplementation(versionCatalog.lib("androidx-compose-ui-tooling"))
             implementation(versionCatalog.lib("androidx-core"))
             implementation(versionCatalog.bundle("androidx-lifecycle"))
             implementation(versionCatalog.lib("androidx-navigation"))
             implementation(versionCatalog.lib("coil"))
-            implementation(versionCatalog.bundle("compose"))
             implementation(versionCatalog.lib("kermit"))
-            implementation(versionCatalog.lib("koin-compose"))
             implementation(versionCatalog.bundle("kotlin-coroutines"))
             implementation(versionCatalog.bundle("kotlin-datetime"))
 

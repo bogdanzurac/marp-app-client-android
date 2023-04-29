@@ -1,6 +1,6 @@
 package dev.bogdanzurac.marp.app.elgoog.crypto
 
-import dev.bogdanzurac.marp.app.elgoog.core.ui.formatNumber
+import dev.bogdanzurac.marp.core.ui.formatNumber
 import io.realm.kotlin.types.RealmObject
 import io.realm.kotlin.types.annotations.PrimaryKey
 import kotlinx.serialization.SerialName

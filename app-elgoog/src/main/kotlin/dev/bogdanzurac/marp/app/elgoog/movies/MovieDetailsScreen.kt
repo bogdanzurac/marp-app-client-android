@@ -19,14 +19,14 @@ import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import dev.bogdanzurac.marp.app.elgoog.R
 import dev.bogdanzurac.marp.app.elgoog.core.theme.ElgoogTheme
-import dev.bogdanzurac.marp.app.elgoog.core.ui.DateTimeAttribute
-import dev.bogdanzurac.marp.app.elgoog.core.ui.composable.BaseScreen
-import dev.bogdanzurac.marp.app.elgoog.core.ui.composable.EmptyView
-import dev.bogdanzurac.marp.app.elgoog.core.ui.composable.LoadingView
-import dev.bogdanzurac.marp.app.elgoog.core.ui.composable.SelectableText
-import dev.bogdanzurac.marp.app.elgoog.core.ui.format
-import dev.bogdanzurac.marp.app.elgoog.core.ui.toLocalDateTime
 import dev.bogdanzurac.marp.app.elgoog.movies.MovieDetailsViewModel.MovieDetailsUiState.*
+import dev.bogdanzurac.marp.core.ui.DateTimeAttribute
+import dev.bogdanzurac.marp.core.ui.composable.BaseScreen
+import dev.bogdanzurac.marp.core.ui.composable.EmptyView
+import dev.bogdanzurac.marp.core.ui.composable.LoadingView
+import dev.bogdanzurac.marp.core.ui.composable.SelectableText
+import dev.bogdanzurac.marp.core.ui.format
+import dev.bogdanzurac.marp.core.ui.toLocalDateTime
 import org.koin.androidx.compose.koinViewModel
 import org.koin.core.parameter.parametersOf
 

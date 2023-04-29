@@ -3,7 +3,7 @@ package dev.bogdanzurac.marp.app.elgoog.core.location
 import android.annotation.SuppressLint
 import android.content.Context
 import com.google.android.gms.location.LocationServices
-import dev.bogdanzurac.marp.app.elgoog.core.arch.PermissionManager
+import dev.bogdanzurac.marp.core.prompts.PermissionManager
 import dev.bogdanzurac.marp.app.elgoog.core.location.LocationException.LocationFailureException
 import dev.bogdanzurac.marp.app.elgoog.core.location.LocationException.NoLocationException
 import dev.bogdanzurac.marp.core.flatMap
