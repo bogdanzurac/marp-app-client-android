@@ -1,6 +1,6 @@
 package dev.bogdanzurac.marp.app.elgoog.notes
 
-import dev.bogdanzurac.marp.app.elgoog.core.auth.AuthManager
+import dev.bogdanzurac.marp.core.auth.AuthManager
 import dev.bogdanzurac.marp.app.elgoog.crypto.CryptoRepository
 import dev.bogdanzurac.marp.core.mapResult
 import kotlinx.coroutines.flow.Flow

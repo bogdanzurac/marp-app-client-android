@@ -1,7 +1,7 @@
 package dev.bogdanzurac.marp.app.elgoog.dashboard
 
-import dev.bogdanzurac.marp.app.elgoog.core.auth.AuthManager
-import dev.bogdanzurac.marp.app.elgoog.core.auth.User
+import dev.bogdanzurac.marp.core.auth.AuthManager
+import dev.bogdanzurac.marp.core.auth.User
 import dev.bogdanzurac.marp.core.feature.FeatureManager
 import dev.bogdanzurac.marp.app.elgoog.core.navigation.*
 import dev.bogdanzurac.marp.app.elgoog.core.ui.BaseViewModel
