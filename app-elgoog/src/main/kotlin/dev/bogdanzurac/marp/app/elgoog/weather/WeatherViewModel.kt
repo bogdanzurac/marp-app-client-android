@@ -1,16 +1,16 @@
 package dev.bogdanzurac.marp.app.elgoog.weather
 
-import dev.bogdanzurac.marp.core.prompts.DialogManager
-import dev.bogdanzurac.marp.app.elgoog.core.location.getLocationErrorDialogFor
-import dev.bogdanzurac.marp.core.ui.BaseViewModel
-import dev.bogdanzurac.marp.core.ui.Tracker
-import dev.bogdanzurac.marp.core.ui.UiState
 import dev.bogdanzurac.marp.app.elgoog.weather.WeatherViewModel.WeatherUiState
 import dev.bogdanzurac.marp.app.elgoog.weather.WeatherViewModel.WeatherUiState.*
 import dev.bogdanzurac.marp.core.flowOf
 import dev.bogdanzurac.marp.core.foldResult
 import dev.bogdanzurac.marp.core.logger
 import dev.bogdanzurac.marp.core.onFailure
+import dev.bogdanzurac.marp.core.prompts.DialogManager
+import dev.bogdanzurac.marp.core.services.getLocationErrorDialogFor
+import dev.bogdanzurac.marp.core.ui.BaseViewModel
+import dev.bogdanzurac.marp.core.ui.Tracker
+import dev.bogdanzurac.marp.core.ui.UiState
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.onStart
 import org.koin.core.annotation.Factory

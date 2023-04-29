@@ -1,4 +1,4 @@
-package dev.bogdanzurac.marp.tracking.firebase
+package dev.bogdanzurac.marp.lib.tracking.firebase
 
 import org.koin.core.annotation.ComponentScan
 import org.koin.core.annotation.Module

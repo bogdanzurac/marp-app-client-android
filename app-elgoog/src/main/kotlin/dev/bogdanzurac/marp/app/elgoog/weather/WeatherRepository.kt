@@ -1,7 +1,7 @@
 package dev.bogdanzurac.marp.app.elgoog.weather
 
 import dev.bogdanzurac.marp.core.data.DataHolder
-import dev.bogdanzurac.marp.app.elgoog.core.location.Location
+import dev.bogdanzurac.marp.core.services.Location
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.koin.core.annotation.Single

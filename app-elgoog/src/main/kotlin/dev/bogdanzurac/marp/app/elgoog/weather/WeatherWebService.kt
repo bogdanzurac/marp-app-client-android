@@ -1,7 +1,7 @@
 package dev.bogdanzurac.marp.app.elgoog.weather
 
 import WEATHER_API_KEY
-import dev.bogdanzurac.marp.app.elgoog.core.location.Location
+import dev.bogdanzurac.marp.core.services.Location
 import dev.bogdanzurac.marp.core.ws.MockNetworkDelayFeature
 import dev.bogdanzurac.marp.core.ws.MockNetworkErrorsFeature
 import dev.bogdanzurac.marp.core.ws.WebService

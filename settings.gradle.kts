@@ -6,8 +6,11 @@ include(":core-auth")
 include(":core-data")
 include(":core-db")
 include(":core-prompts")
+include(":core-services")
 include(":core-ui")
 include(":core-ws")
+include(":lib-services-google")
+include(":lib-services-huawei")
 include(":lib-tracking-firebase")
 
 pluginManagement {
