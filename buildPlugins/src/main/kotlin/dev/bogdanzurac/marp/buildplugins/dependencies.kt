@@ -31,6 +31,17 @@ internal fun Project.android(configure: Action<LibraryExtension>): Unit =
     extensions.configure("android", configure)
 
 /**
+ * Adds a dependency to the 'api' configuration.
+ *
+ * @param dependencyNotation notation for the dependency to be added.
+ * @return The dependency.
+ *
+ * @see [DependencyHandler.add]
+ */
+internal fun DependencyHandler.api(dependencyNotation: Any): Dependency? =
+    add("api", dependencyNotation)
+
+/**
  * Adds a dependency to the 'implementation' configuration.
  *
  * @param dependencyNotation notation for the dependency to be added.

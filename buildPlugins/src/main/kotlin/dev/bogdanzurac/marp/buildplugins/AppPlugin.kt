@@ -1,12 +1,10 @@
 package dev.bogdanzurac.marp.buildplugins
 
 import com.android.build.api.dsl.ApplicationExtension
-import com.android.build.api.variant.ApplicationAndroidComponentsExtension
 import org.gradle.api.Action
 import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
 import org.gradle.api.Project
-import org.gradle.api.plugins.ExtensionAware
 import org.gradle.kotlin.dsl.dependencies
 
 class AppPlugin : Plugin<Project> {
@@ -16,19 +14,16 @@ class AppPlugin : Plugin<Project> {
         with(pluginManager) {
             apply("com.android.application")
             apply("org.jetbrains.kotlin.android")
+            apply("com.google.gms.google-services")
+            apply("com.google.firebase.crashlytics")
+            apply("io.realm.kotlin")
+            apply("org.jetbrains.kotlin.plugin.serialization")
+            apply("dev.bogdanzurac.marp.plugins.koin")
         }
 
         configureKotlin(JavaVersion.VERSION_11)
 
         android {
-            with(pluginManager) {
-                apply("com.google.devtools.ksp")
-                apply("com.google.gms.google-services")
-                apply("com.google.firebase.crashlytics")
-                apply("io.realm.kotlin")
-                apply("org.jetbrains.kotlin.plugin.serialization")
-            }
-
             compileSdk = versionCatalog.findVersion("androidCompileSdk").intValue
             buildToolsVersion = versionCatalog.findVersion("androidBuildTools").value
 
@@ -63,13 +58,6 @@ class AppPlugin : Plugin<Project> {
                     )
                 }
             }
-
-            androidComponents.onVariants { variant ->
-                val name = variant.name
-                sourceSets {
-                    getByName(name).kotlin.srcDir("${buildDir.absolutePath}/generated/ksp/${name}/kotlin")
-                }
-            }
         }
 
         dependencies {
@@ -78,8 +66,6 @@ class AppPlugin : Plugin<Project> {
             implementation(versionCatalog.bundle("compose"))
             implementation(versionCatalog.bundle("lifecycle"))
             implementation(versionCatalog.lib("kermit"))
-            implementation(versionCatalog.bundle("koin"))
-            ksp(versionCatalog.lib("koin-compiler"))
             implementation(versionCatalog.lib("kotlin-coroutines"))
 
             implementation(project("core"))
@@ -88,8 +74,4 @@ class AppPlugin : Plugin<Project> {
 
     private fun Project.android(configure: Action<ApplicationExtension>): Unit =
         extensions.configure("android", configure)
-
-    private val Project.androidComponents: ApplicationAndroidComponentsExtension
-        get() = (this as ExtensionAware).extensions.getByName("androidComponents")
-                as ApplicationAndroidComponentsExtension
 }

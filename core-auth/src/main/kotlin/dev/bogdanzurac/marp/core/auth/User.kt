@@ -1,4 +1,4 @@
-package dev.bogdanzurac.marp.app.elgoog.core.auth
+package dev.bogdanzurac.marp.core.auth
 
 data class User(
     val id: String,

@@ -45,6 +45,7 @@ class CorePlugin : Plugin<Project> {
         dependencies {
             implementation(versionCatalog.lib("kermit"))
             implementation(versionCatalog.lib("kotlin-coroutines"))
+            implementation(versionCatalog.lib("kotlin-datetime"))
         }
     }
 }

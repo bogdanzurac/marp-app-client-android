@@ -20,7 +20,6 @@ dependencies {
     implementation(libs.androidx.core)
     implementation(libs.google.play.location)
     implementation(libs.firebase.analytics)
-    implementation(libs.firebase.auth)
     implementation(libs.firebase.config)
     implementation(libs.firebase.crashlytics)
     implementation(libs.firebase.firestore)
@@ -33,5 +32,7 @@ dependencies {
     implementation(libs.kotlin.serialization)
     implementation(libs.ktor.core)
     implementation(libs.store)
+
+    implementation(project(projects.coreAuth))
     implementation(project(projects.coreWs))
 }

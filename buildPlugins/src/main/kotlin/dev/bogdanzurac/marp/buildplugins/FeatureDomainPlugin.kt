@@ -5,13 +5,14 @@ import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.dependencies
 
-class CoreDomainPlugin : Plugin<Project> {
+class FeatureDomainPlugin : Plugin<Project> {
 
     override fun apply(project: Project) = with(project) {
 
         with(pluginManager) {
             apply("com.android.library")
             apply("org.jetbrains.kotlin.android")
+            apply("dev.bogdanzurac.marp.plugins.koin")
         }
 
         configureKotlin(JavaVersion.VERSION_11)
@@ -44,8 +45,6 @@ class CoreDomainPlugin : Plugin<Project> {
 
         dependencies {
             implementation(versionCatalog.lib("kermit"))
-            implementation(versionCatalog.bundle("koin"))
-            ksp(versionCatalog.lib("koin-compiler"))
             implementation(versionCatalog.bundle("kotlin-coroutines"))
             implementation(versionCatalog.bundle("kotlin-datetime"))
 
