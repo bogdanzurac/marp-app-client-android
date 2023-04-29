@@ -26,7 +26,6 @@ dependencies {
     implementation(libs.huawei.location)
     implementation(libs.multiplatform.settings)
     implementation(libs.coil)
-    implementation(libs.realm)
     implementation(libs.kotlin.play.services)
     implementation(libs.kotlin.datetime)
     implementation(libs.kotlin.serialization)
@@ -34,5 +33,6 @@ dependencies {
     implementation(libs.store)
 
     implementation(project(projects.coreAuth))
+    implementation(project(projects.coreDb))
     implementation(project(projects.coreWs))
 }

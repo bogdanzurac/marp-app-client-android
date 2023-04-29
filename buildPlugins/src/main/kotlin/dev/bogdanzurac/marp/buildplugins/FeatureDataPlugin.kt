@@ -53,6 +53,7 @@ class FeatureDataPlugin : Plugin<Project> {
             implementation(versionCatalog.lib("store"))
 
             implementation(project("core"))
+            implementation(project("core-db"))
             implementation(project("core-ws"))
         }
     }

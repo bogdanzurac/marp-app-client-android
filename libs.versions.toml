@@ -63,5 +63,5 @@ serialization-plugin = { module = "org.jetbrains.kotlin:kotlin-serialization", v
 [bundles]
 compose = ["androidx-compose-material3", "androidx-compose-material", "androidx-compose-ui", "androidx-compose-ui-preview"]
 lifecycle = ["androidx-lifecycle", "androidx-lifecycle-compose"]
-koin = ["koin-android", "koin-compose", "koin-annotations"]
+koin = ["koin-android", "koin-annotations"]
 ktor = ["ktor-content", "ktor-core", "ktor-logging", "ktor-okhttp", "ktor-serialization", "ktor-json"]

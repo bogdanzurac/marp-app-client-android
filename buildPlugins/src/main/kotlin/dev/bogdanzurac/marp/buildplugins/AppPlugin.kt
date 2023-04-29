@@ -66,6 +66,7 @@ class AppPlugin : Plugin<Project> {
             implementation(versionCatalog.bundle("compose"))
             implementation(versionCatalog.bundle("lifecycle"))
             implementation(versionCatalog.lib("kermit"))
+            implementation(versionCatalog.lib("koin-compose"))
             implementation(versionCatalog.lib("kotlin-coroutines"))
 
             implementation(project("core"))
