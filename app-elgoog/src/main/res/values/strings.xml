@@ -3,7 +3,6 @@
     <string name="atmospheric_pressure">Pressure</string>
     <string name="button_add">Add</string>
     <string name="button_delete">Delete</string>
-    <string name="button_ok">OK</string>
     <string name="button_login">Login</string>
     <string name="button_logout">Logout</string>
     <string name="button_signup">Signup</string>

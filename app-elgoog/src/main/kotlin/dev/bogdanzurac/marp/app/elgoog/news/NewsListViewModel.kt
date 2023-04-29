@@ -1,11 +1,11 @@
 package dev.bogdanzurac.marp.app.elgoog.news
 
 import androidx.lifecycle.viewModelScope
-import dev.bogdanzurac.marp.app.elgoog.core.arch.DialogManager
 import dev.bogdanzurac.marp.app.elgoog.core.ui.BaseViewModel
 import dev.bogdanzurac.marp.app.elgoog.core.ui.Tracker
 import dev.bogdanzurac.marp.app.elgoog.core.ui.UiState
 import dev.bogdanzurac.marp.app.elgoog.core.ui.getGenericErrorDialogFor
+import dev.bogdanzurac.marp.core.prompts.DialogManager
 import dev.bogdanzurac.marp.app.elgoog.news.NewsListViewModel.NewsListUiState
 import dev.bogdanzurac.marp.app.elgoog.news.NewsListViewModel.NewsListUiState.*
 import dev.bogdanzurac.marp.core.logger

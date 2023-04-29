@@ -1,5 +1,12 @@
 import java.net.URI
 
+include(":app-elgoog")
+include(":core")
+include(":core-auth")
+include(":core-data")
+include(":core-db")
+include(":core-prompts")
+include(":core-ws")
 pluginManagement {
     includeBuild("buildPlugins")
 
@@ -25,10 +32,3 @@ dependencyResolutionManagement {
         maven { url = URI("https://developer.huawei.com/repo/") }
     }
 }
-
-include(":app-elgoog")
-include(":core")
-include(":core-auth")
-include(":core-data")
-include(":core-db")
-include(":core-ws")
