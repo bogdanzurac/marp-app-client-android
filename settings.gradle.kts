@@ -29,4 +29,5 @@ dependencyResolutionManagement {
 include(":app-elgoog")
 include(":core")
 include(":core-auth")
+include(":core-db")
 include(":core-ws")

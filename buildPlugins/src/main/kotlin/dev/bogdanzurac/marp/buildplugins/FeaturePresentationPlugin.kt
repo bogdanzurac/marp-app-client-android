@@ -57,6 +57,7 @@ class FeaturePresentationPlugin : Plugin<Project> {
             implementation(versionCatalog.lib("coil"))
             implementation(versionCatalog.bundle("compose"))
             implementation(versionCatalog.lib("kermit"))
+            implementation(versionCatalog.lib("koin-compose"))
             implementation(versionCatalog.bundle("kotlin-coroutines"))
             implementation(versionCatalog.bundle("kotlin-datetime"))
 
