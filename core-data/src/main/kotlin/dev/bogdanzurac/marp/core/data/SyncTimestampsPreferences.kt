@@ -1,4 +1,4 @@
-package dev.bogdanzurac.marp.app.elgoog.core.data
+package dev.bogdanzurac.marp.core.data
 
 import android.content.Context
 import org.koin.core.annotation.Single

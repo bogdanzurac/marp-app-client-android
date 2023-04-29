@@ -24,15 +24,14 @@ dependencies {
     implementation(libs.firebase.crashlytics)
     implementation(libs.firebase.firestore)
     implementation(libs.huawei.location)
-    implementation(libs.multiplatform.settings)
     implementation(libs.coil)
     implementation(libs.kotlin.play.services)
     implementation(libs.kotlin.datetime)
     implementation(libs.kotlin.serialization)
     implementation(libs.ktor.core)
-    implementation(libs.store)
 
     implementation(project(projects.coreAuth))
+    implementation(project(projects.coreData))
     implementation(project(projects.coreDb))
     implementation(project(projects.coreWs))
 }

@@ -48,11 +48,9 @@ class FeatureDataPlugin : Plugin<Project> {
             implementation(versionCatalog.lib("kotlin-coroutines"))
             implementation(versionCatalog.lib("kotlin-datetime"))
             implementation(versionCatalog.lib("kotlin-serialization"))
-            implementation(versionCatalog.lib("multiplatform-settings"))
-            implementation(versionCatalog.lib("realm"))
-            implementation(versionCatalog.lib("store"))
 
             implementation(project("core"))
+            implementation(project("core-data"))
             implementation(project("core-db"))
             implementation(project("core-ws"))
         }

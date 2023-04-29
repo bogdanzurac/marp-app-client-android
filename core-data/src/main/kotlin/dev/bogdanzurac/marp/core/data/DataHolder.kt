@@ -1,6 +1,6 @@
 @file:OptIn(ExperimentalStoreApi::class)
 
-package dev.bogdanzurac.marp.app.elgoog.core.data
+package dev.bogdanzurac.marp.core.data
 
 import dev.bogdanzurac.marp.core.exception.AppException
 import kotlinx.coroutines.flow.Flow

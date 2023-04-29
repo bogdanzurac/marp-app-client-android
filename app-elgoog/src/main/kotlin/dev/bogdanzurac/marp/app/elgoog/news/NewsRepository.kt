@@ -1,7 +1,7 @@
 package dev.bogdanzurac.marp.app.elgoog.news
 
-import dev.bogdanzurac.marp.app.elgoog.core.data.DataHolder
-import dev.bogdanzurac.marp.app.elgoog.core.data.SyncTimestampsPreferences
+import dev.bogdanzurac.marp.core.data.DataHolder
+import dev.bogdanzurac.marp.core.data.SyncTimestampsPreferences
 import dev.bogdanzurac.marp.core.mapResult
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
