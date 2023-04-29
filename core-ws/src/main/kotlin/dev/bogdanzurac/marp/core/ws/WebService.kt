@@ -1,4 +1,4 @@
-package dev.bogdanzurac.marp.app.elgoog.core.ws
+package dev.bogdanzurac.marp.core.ws
 
 import dev.bogdanzurac.marp.core.exception.NetworkException
 import dev.bogdanzurac.marp.core.exception.NotAvailableException

@@ -28,3 +28,4 @@ dependencyResolutionManagement {
 
 include(":app-elgoog")
 include(":core")
+include(":core-ws")

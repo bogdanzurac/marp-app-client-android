@@ -1,4 +1,4 @@
-package dev.bogdanzurac.marp.app.elgoog.core.ws
+package dev.bogdanzurac.marp.core.ws
 
 import kotlinx.datetime.*
 import kotlinx.serialization.KSerializer
