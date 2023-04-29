@@ -3,7 +3,7 @@ package dev.bogdanzurac.marp.app.elgoog.dashboard
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import dev.bogdanzurac.marp.app.elgoog.core.navigation.AppNavigator
+import dev.bogdanzurac.marp.core.navigation.AppNavigator
 import dev.bogdanzurac.marp.app.elgoog.core.theme.ElgoogTheme
 import dev.bogdanzurac.marp.core.ui.prompts.PermissionManagerImpl
 import org.koin.android.ext.android.get

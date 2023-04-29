@@ -1,10 +1,10 @@
 package dev.bogdanzurac.marp.app.elgoog.movies
 
-import dev.bogdanzurac.marp.app.elgoog.core.navigation.AppRoute
-import dev.bogdanzurac.marp.app.elgoog.core.navigation.AppRoute.SimpleRoute
-import dev.bogdanzurac.marp.app.elgoog.core.navigation.NavArg
-import dev.bogdanzurac.marp.app.elgoog.core.navigation.longArg
-import dev.bogdanzurac.marp.app.elgoog.core.navigation.withArg
+import dev.bogdanzurac.marp.core.navigation.AppRoute
+import dev.bogdanzurac.marp.core.navigation.AppRoute.SimpleRoute
+import dev.bogdanzurac.marp.core.navigation.NavArg
+import dev.bogdanzurac.marp.core.navigation.longArg
+import dev.bogdanzurac.marp.core.navigation.withArg
 
 object Movies : SimpleRoute("movies")
 

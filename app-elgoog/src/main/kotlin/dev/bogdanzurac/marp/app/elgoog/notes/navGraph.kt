@@ -1,9 +1,9 @@
 package dev.bogdanzurac.marp.app.elgoog.notes
 
 import androidx.navigation.NavGraphBuilder
-import dev.bogdanzurac.marp.app.elgoog.core.navigation.composable
-import dev.bogdanzurac.marp.app.elgoog.core.navigation.getStringArg
-import dev.bogdanzurac.marp.app.elgoog.core.navigation.navigation
+import dev.bogdanzurac.marp.core.navigation.composable
+import dev.bogdanzurac.marp.core.navigation.getStringArg
+import dev.bogdanzurac.marp.core.navigation.navigation
 import dev.bogdanzurac.marp.app.elgoog.notes.AddNote.CRYPTO_ID
 import dev.bogdanzurac.marp.app.elgoog.notes.NoteDetails.NOTE_ID
 

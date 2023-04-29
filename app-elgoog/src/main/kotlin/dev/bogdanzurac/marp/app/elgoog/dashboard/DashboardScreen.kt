@@ -15,9 +15,9 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import dev.bogdanzurac.marp.app.elgoog.R
-import dev.bogdanzurac.marp.app.elgoog.core.navigation.AppNavigator
-import dev.bogdanzurac.marp.app.elgoog.core.navigation.AppRoute
-import dev.bogdanzurac.marp.app.elgoog.core.navigation.FeatureNavigator
+import dev.bogdanzurac.marp.core.navigation.AppNavigator
+import dev.bogdanzurac.marp.core.navigation.AppRoute
+import dev.bogdanzurac.marp.core.navigation.FeatureNavigator
 import dev.bogdanzurac.marp.app.elgoog.core.theme.ElgoogTheme
 import dev.bogdanzurac.marp.core.ui.composable.AppDialog
 import dev.bogdanzurac.marp.core.ui.composable.BaseScreen

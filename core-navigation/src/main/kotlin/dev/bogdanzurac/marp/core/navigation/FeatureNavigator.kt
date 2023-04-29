@@ -1,4 +1,4 @@
-package dev.bogdanzurac.marp.app.elgoog.core.navigation
+package dev.bogdanzurac.marp.core.navigation
 
 import dev.bogdanzurac.marp.core.logger
 import kotlinx.coroutines.channels.BufferOverflow

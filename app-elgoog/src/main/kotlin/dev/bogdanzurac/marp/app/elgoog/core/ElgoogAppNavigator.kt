@@ -1,4 +1,4 @@
-package dev.bogdanzurac.marp.app.elgoog.core.navigation
+package dev.bogdanzurac.marp.app.elgoog.core
 
 import dev.bogdanzurac.marp.core.logger
 import dev.bogdanzurac.marp.app.elgoog.crypto.Crypto
@@ -13,6 +13,8 @@ import dev.bogdanzurac.marp.app.elgoog.notes.Notes
 import dev.bogdanzurac.marp.app.elgoog.notes.NotesNavigator
 import dev.bogdanzurac.marp.app.elgoog.weather.Weather
 import dev.bogdanzurac.marp.app.elgoog.weather.WeatherNavigator
+import dev.bogdanzurac.marp.core.navigation.AppNavigator
+import dev.bogdanzurac.marp.core.navigation.FeatureNavigator
 import org.koin.core.annotation.Single
 
 @Single
