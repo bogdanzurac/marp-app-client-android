@@ -12,7 +12,7 @@ import java.util.*
 class DashboardActivity : ComponentActivity() {
 
     private val appNavigator: AppNavigator = get()
-    private val permissionManager: PermissionManager = get()
+    private val permissionManager: PermissionManagerImpl = get()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

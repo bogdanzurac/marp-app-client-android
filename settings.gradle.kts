@@ -6,6 +6,7 @@ include(":core-auth")
 include(":core-data")
 include(":core-db")
 include(":core-prompts")
+include(":core-ui")
 include(":core-ws")
 pluginManagement {
     includeBuild("buildPlugins")

@@ -33,5 +33,6 @@ dependencies {
     implementation(project(projects.coreAuth))
     implementation(project(projects.coreData))
     implementation(project(projects.coreDb))
+    implementation(project(projects.coreUi))
     implementation(project(projects.coreWs))
 }

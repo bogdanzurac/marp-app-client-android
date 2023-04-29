@@ -1,7 +1,8 @@
-package dev.bogdanzurac.marp.app.elgoog.core.arch
+package dev.bogdanzurac.marp.core.ui.prompts
 
-import dev.bogdanzurac.marp.app.elgoog.R
-import dev.bogdanzurac.marp.app.elgoog.core.ui.TextResource
+import dev.bogdanzurac.marp.core.prompts.DialogManager
+import dev.bogdanzurac.marp.core.prompts.DialogManager.DialogAction
+import dev.bogdanzurac.marp.core.prompts.DialogManager.DialogContent
 import kotlinx.coroutines.channels.BufferOverflow
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableSharedFlow
@@ -9,7 +10,7 @@ import kotlinx.coroutines.flow.first
 import org.koin.core.annotation.Singleton
 
 @Singleton
-class DialogManager {
+class DialogManagerImpl : DialogManager {
 
     private val dialogsFlow: MutableSharedFlow<DialogContent?> =
         MutableSharedFlow(
@@ -18,28 +19,22 @@ class DialogManager {
             extraBufferCapacity = 1
         )
 
-    private val eventsFlow: MutableSharedFlow<Unit> =
+    private val eventsFlow: MutableSharedFlow<DialogAction> =
         MutableSharedFlow(
             replay = 0,
             onBufferOverflow = BufferOverflow.DROP_OLDEST,
             extraBufferCapacity = 1
         )
 
-    fun sendEvent() {
+    fun sendEvent(action: DialogAction) {
         dialogsFlow.tryEmit(null)
-        eventsFlow.tryEmit(Unit)
+        eventsFlow.tryEmit(action)
     }
 
     fun observeDialogs(): Flow<DialogContent?> = dialogsFlow
 
-    suspend fun showDialog(dialogContent: DialogContent) {
+    override suspend fun showDialog(dialogContent: DialogContent): DialogAction {
         dialogsFlow.tryEmit(dialogContent)
-        eventsFlow.first()
+        return eventsFlow.first()
     }
-
-    data class DialogContent(
-        var title: TextResource,
-        var body: TextResource,
-        var button: TextResource = TextResource(R.string.button_ok),
-    )
 }

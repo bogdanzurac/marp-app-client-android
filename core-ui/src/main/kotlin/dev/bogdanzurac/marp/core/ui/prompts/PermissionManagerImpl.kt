@@ -1,4 +1,4 @@
-package dev.bogdanzurac.marp.app.elgoog.core.arch
+package dev.bogdanzurac.marp.core.ui.prompts
 
 import android.Manifest.permission.ACCESS_FINE_LOCATION
 import android.content.pm.PackageManager.PERMISSION_GRANTED
@@ -6,7 +6,8 @@ import androidx.activity.ComponentActivity
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts.RequestPermission
 import androidx.core.content.ContextCompat.checkSelfPermission
-import dev.bogdanzurac.marp.core.exception.AppException
+import dev.bogdanzurac.marp.core.prompts.PermissionException
+import dev.bogdanzurac.marp.core.prompts.PermissionManager
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.first
 import org.koin.core.annotation.Singleton
@@ -14,7 +15,7 @@ import kotlin.Result.Companion.failure
 import kotlin.Result.Companion.success
 
 @Singleton
-class PermissionManager {
+class PermissionManagerImpl : PermissionManager {
 
     var currentActivity: ComponentActivity? = null
         set(value) {
@@ -26,7 +27,7 @@ class PermissionManager {
 
     private val resultFlow: MutableSharedFlow<Result<Unit>> = MutableSharedFlow(replay = 1)
 
-    suspend fun requestLocationPermission(): Result<Unit> =
+    override suspend fun requestLocationPermission(): Result<Unit> =
         checkPermission(ACCESS_FINE_LOCATION)
             .map { granted -> if (!granted) requestPermission(ACCESS_FINE_LOCATION) }
 
@@ -49,5 +50,3 @@ class PermissionManager {
             success(checkSelfPermission(it, permission) == PERMISSION_GRANTED)
         } ?: failure(PermissionException)
 }
-
-object PermissionException : AppException()

@@ -1,4 +1,4 @@
-package dev.bogdanzurac.marp.app.elgoog.core.ui
+package dev.bogdanzurac.marp.core.ui
 
 import android.content.Context
 import android.text.format.DateFormat

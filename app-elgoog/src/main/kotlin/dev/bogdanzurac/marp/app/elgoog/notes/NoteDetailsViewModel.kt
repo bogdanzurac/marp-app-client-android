@@ -3,10 +3,10 @@ package dev.bogdanzurac.marp.app.elgoog.notes
 import androidx.lifecycle.viewModelScope
 import dev.bogdanzurac.marp.core.prompts.DialogManager
 import dev.bogdanzurac.marp.core.auth.AuthManager
-import dev.bogdanzurac.marp.app.elgoog.core.ui.BaseViewModel
-import dev.bogdanzurac.marp.app.elgoog.core.ui.Tracker
-import dev.bogdanzurac.marp.app.elgoog.core.ui.UiState
-import dev.bogdanzurac.marp.app.elgoog.core.ui.getGenericErrorDialogFor
+import dev.bogdanzurac.marp.core.ui.BaseViewModel
+import dev.bogdanzurac.marp.core.ui.Tracker
+import dev.bogdanzurac.marp.core.ui.UiState
+import dev.bogdanzurac.marp.core.ui.getGenericErrorDialogFor
 import dev.bogdanzurac.marp.app.elgoog.notes.NoteDetailsViewModel.NoteDetailsUiState
 import dev.bogdanzurac.marp.app.elgoog.notes.NoteDetailsViewModel.NoteDetailsUiState.*
 import dev.bogdanzurac.marp.core.*

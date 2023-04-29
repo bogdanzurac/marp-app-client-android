@@ -1,4 +1,4 @@
-package dev.bogdanzurac.marp.app.elgoog.core.ui.composable
+package dev.bogdanzurac.marp.core.ui.composable
 
 import androidx.compose.foundation.text.InlineTextContent
 import androidx.compose.foundation.text.selection.SelectionContainer

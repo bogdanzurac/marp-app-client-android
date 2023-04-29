@@ -19,6 +19,11 @@ gradlePlugin {
             implementationClass = "dev.bogdanzurac.marp.buildplugins.AppPlugin"
         }
 
+        register("composePlugin") {
+            id = "dev.bogdanzurac.marp.plugins.compose"
+            implementationClass = "dev.bogdanzurac.marp.buildplugins.ComposePlugin"
+        }
+
         register("corePlugin") {
             id = "dev.bogdanzurac.marp.plugins.core"
             implementationClass = "dev.bogdanzurac.marp.buildplugins.CorePlugin"

@@ -1,4 +1,4 @@
-package dev.bogdanzurac.marp.app.elgoog.core.ui
+package dev.bogdanzurac.marp.core.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

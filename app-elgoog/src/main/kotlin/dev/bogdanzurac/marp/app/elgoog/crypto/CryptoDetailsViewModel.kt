@@ -2,10 +2,10 @@ package dev.bogdanzurac.marp.app.elgoog.crypto
 
 import dev.bogdanzurac.marp.core.prompts.DialogManager
 import dev.bogdanzurac.marp.core.auth.AuthManager
-import dev.bogdanzurac.marp.app.elgoog.core.ui.BaseViewModel
-import dev.bogdanzurac.marp.app.elgoog.core.ui.Tracker
-import dev.bogdanzurac.marp.app.elgoog.core.ui.UiState
-import dev.bogdanzurac.marp.app.elgoog.core.ui.getGenericErrorDialogFor
+import dev.bogdanzurac.marp.core.ui.BaseViewModel
+import dev.bogdanzurac.marp.core.ui.Tracker
+import dev.bogdanzurac.marp.core.ui.UiState
+import dev.bogdanzurac.marp.core.ui.getGenericErrorDialogFor
 import dev.bogdanzurac.marp.app.elgoog.crypto.CryptoDetailsViewModel.CryptoDetailsUiState
 import dev.bogdanzurac.marp.app.elgoog.crypto.CryptoDetailsViewModel.CryptoDetailsUiState.*
 import dev.bogdanzurac.marp.app.elgoog.notes.Note

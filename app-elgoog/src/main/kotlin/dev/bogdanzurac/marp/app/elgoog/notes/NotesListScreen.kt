@@ -20,11 +20,12 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import dev.bogdanzurac.marp.app.elgoog.R
 import dev.bogdanzurac.marp.app.elgoog.core.theme.ElgoogTheme
-import dev.bogdanzurac.marp.app.elgoog.core.ui.composable.BaseScreen
-import dev.bogdanzurac.marp.app.elgoog.core.ui.composable.EmptyView
-import dev.bogdanzurac.marp.app.elgoog.core.ui.composable.LoadingView
 import dev.bogdanzurac.marp.app.elgoog.notes.NotesListViewModel.NotesListUiState.*
+import dev.bogdanzurac.marp.core.ui.composable.BaseScreen
+import dev.bogdanzurac.marp.core.ui.composable.EmptyView
+import dev.bogdanzurac.marp.core.ui.composable.LoadingView
 import org.koin.androidx.compose.koinViewModel
+import dev.bogdanzurac.marp.core.ui.R as coreUiR
 
 @Composable
 internal fun NotesListScreen(viewModel: NotesListViewModel = koinViewModel()) =
@@ -100,12 +101,12 @@ private fun NotLoggedInView(events: NotesListUiEvents) {
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Image(
-                painter = painterResource(R.drawable.ic_empty),
+                painter = painterResource(coreUiR.drawable.ic_empty),
                 colorFilter = ColorFilter.tint(MaterialTheme.colorScheme.onBackground),
-                contentDescription = stringResource(R.string.empty),
+                contentDescription = stringResource(coreUiR.string.empty),
             )
             Text(
-                text = stringResource(R.string.empty),
+                text = stringResource(coreUiR.string.empty),
                 style = MaterialTheme.typography.labelLarge,
                 modifier = Modifier.padding(16.dp)
             )

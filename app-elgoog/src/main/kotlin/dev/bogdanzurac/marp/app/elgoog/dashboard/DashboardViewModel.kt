@@ -4,8 +4,8 @@ import dev.bogdanzurac.marp.core.auth.AuthManager
 import dev.bogdanzurac.marp.core.auth.User
 import dev.bogdanzurac.marp.core.feature.FeatureManager
 import dev.bogdanzurac.marp.app.elgoog.core.navigation.*
-import dev.bogdanzurac.marp.app.elgoog.core.ui.BaseViewModel
-import dev.bogdanzurac.marp.app.elgoog.core.ui.UiState
+import dev.bogdanzurac.marp.core.ui.BaseViewModel
+import dev.bogdanzurac.marp.core.ui.UiState
 import dev.bogdanzurac.marp.app.elgoog.dashboard.DashboardViewModel.DashboardUiState
 import dev.bogdanzurac.marp.app.elgoog.dashboard.DashboardViewModel.DashboardUiState.LoadingFeatures
 import dev.bogdanzurac.marp.app.elgoog.dashboard.DashboardViewModel.DashboardUiState.Success

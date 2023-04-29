@@ -18,8 +18,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import dev.bogdanzurac.marp.app.elgoog.R
 import dev.bogdanzurac.marp.app.elgoog.core.theme.ElgoogTheme
-import dev.bogdanzurac.marp.app.elgoog.core.ui.composable.BaseScreen
-import dev.bogdanzurac.marp.app.elgoog.core.ui.composable.LoadingView
+import dev.bogdanzurac.marp.core.ui.composable.BaseScreen
+import dev.bogdanzurac.marp.core.ui.composable.LoadingView
 import dev.bogdanzurac.marp.app.elgoog.login.SignupViewModel.SignupUiState.*
 import org.koin.androidx.compose.koinViewModel
 import java.util.*
