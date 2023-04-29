@@ -1,3 +1,6 @@
+import dev.bogdanzurac.marp.buildplugins.project
+import dev.bogdanzurac.marp.buildplugins.projects
+
 plugins {
     id("dev.bogdanzurac.marp.plugins.app")
 }
@@ -24,10 +27,11 @@ dependencies {
     implementation(libs.huawei.location)
     implementation(libs.multiplatform.settings)
     implementation(libs.coil)
-    implementation(libs.bundles.ktor)
     implementation(libs.realm)
     implementation(libs.kotlin.play.services)
     implementation(libs.kotlin.datetime)
     implementation(libs.kotlin.serialization)
+    implementation(libs.ktor.core)
     implementation(libs.store)
+    implementation(project(projects.coreWs))
 }

@@ -1,6 +1,6 @@
 package dev.bogdanzurac.marp.app.elgoog.news
 
-import dev.bogdanzurac.marp.app.elgoog.core.ws.CustomInstantSerializer
+import dev.bogdanzurac.marp.core.ws.CustomInstantSerializer
 import dev.bogdanzurac.marp.core.*
 import io.realm.kotlin.types.RealmObject
 import io.realm.kotlin.types.annotations.Ignore

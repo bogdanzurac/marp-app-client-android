@@ -1,9 +1,9 @@
 package dev.bogdanzurac.marp.app.elgoog.movies
 
 import MOVIES_API_KEY
-import dev.bogdanzurac.marp.app.elgoog.core.ws.MockNetworkDelayFeature
-import dev.bogdanzurac.marp.app.elgoog.core.ws.MockNetworkErrorsFeature
-import dev.bogdanzurac.marp.app.elgoog.core.ws.WebService
+import dev.bogdanzurac.marp.core.ws.MockNetworkDelayFeature
+import dev.bogdanzurac.marp.core.ws.MockNetworkErrorsFeature
+import dev.bogdanzurac.marp.core.ws.WebService
 import dev.bogdanzurac.marp.core.feature.FeatureManager
 import dev.bogdanzurac.marp.core.getLocale
 import io.ktor.client.request.*

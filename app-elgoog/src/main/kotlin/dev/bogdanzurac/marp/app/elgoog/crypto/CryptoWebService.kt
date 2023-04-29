@@ -2,9 +2,9 @@ package dev.bogdanzurac.marp.app.elgoog.crypto
 
 import CRYPTO_API_KEY
 import dev.bogdanzurac.marp.core.feature.FeatureManager
-import dev.bogdanzurac.marp.app.elgoog.core.ws.MockNetworkDelayFeature
-import dev.bogdanzurac.marp.app.elgoog.core.ws.MockNetworkErrorsFeature
-import dev.bogdanzurac.marp.app.elgoog.core.ws.WebService
+import dev.bogdanzurac.marp.core.ws.MockNetworkDelayFeature
+import dev.bogdanzurac.marp.core.ws.MockNetworkErrorsFeature
+import dev.bogdanzurac.marp.core.ws.WebService
 import io.ktor.client.request.*
 import org.koin.core.annotation.Single
 
