@@ -8,6 +8,8 @@ include(":core-db")
 include(":core-prompts")
 include(":core-ui")
 include(":core-ws")
+include(":lib-tracking-firebase")
+
 pluginManagement {
     includeBuild("buildPlugins")
 

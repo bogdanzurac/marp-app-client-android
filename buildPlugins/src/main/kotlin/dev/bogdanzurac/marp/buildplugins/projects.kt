@@ -9,4 +9,5 @@ object projects {
     const val corePrompts = "core-prompts"
     const val coreUi = "core-ui"
     const val coreWs = "core-ws"
+    const val libTrackingFirebase = "lib-tracking-firebase"
 }
