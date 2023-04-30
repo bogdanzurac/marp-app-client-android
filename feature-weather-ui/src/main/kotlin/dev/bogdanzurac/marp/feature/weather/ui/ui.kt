@@ -1,8 +1,13 @@
-package dev.bogdanzurac.marp.app.elgoog.weather
+package dev.bogdanzurac.marp.feature.weather.ui
+
+import dev.bogdanzurac.marp.feature.weather.domain.CurrentForecast
+import dev.bogdanzurac.marp.feature.weather.domain.Forecast
+import dev.bogdanzurac.marp.feature.weather.domain.WeatherForecast
+import dev.bogdanzurac.marp.feature.weather.domain.Wind
 
 val composeWeatherForecastModelPreview =
-    ForecastModel(
-        CurrentForecastModel(
+    Forecast(
+        CurrentForecast(
             temp = 23.2,
             tempMin = 21.0,
             tempMax = 26.5,
@@ -11,12 +16,13 @@ val composeWeatherForecastModelPreview =
             humidity = 68,
         ),
         MutableList(3) {
-            WeatherForecastModel(
+            WeatherForecast(
                 id = 5,
                 main = "Clouds",
                 description = "broken clouds",
                 icon = "04d"
             )
         },
-        WindModel(24.5),
+        Wind(24.5),
+        "abc"
     )

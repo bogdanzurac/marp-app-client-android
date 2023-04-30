@@ -30,7 +30,7 @@ import dev.bogdanzurac.marp.app.elgoog.login.loginNavGraph
 import dev.bogdanzurac.marp.app.elgoog.movies.moviesNavGraph
 import dev.bogdanzurac.marp.app.elgoog.news.newsNavGraph
 import dev.bogdanzurac.marp.app.elgoog.notes.notesNavGraph
-import dev.bogdanzurac.marp.app.elgoog.weather.weatherNavGraph
+import dev.bogdanzurac.marp.feature.weather.ui.weatherNavGraph
 import org.koin.androidx.compose.koinViewModel
 
 @Composable

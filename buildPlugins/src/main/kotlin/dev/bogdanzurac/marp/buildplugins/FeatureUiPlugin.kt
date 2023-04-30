@@ -5,7 +5,7 @@ import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.dependencies
 
-class FeaturePresentationPlugin : Plugin<Project> {
+class FeatureUiPlugin : Plugin<Project> {
 
     override fun apply(project: Project) = with(project) {
 
@@ -46,12 +46,12 @@ class FeaturePresentationPlugin : Plugin<Project> {
         dependencies {
             implementation(versionCatalog.lib("androidx-activity"))
             implementation(versionCatalog.lib("androidx-core"))
-            implementation(versionCatalog.bundle("androidx-lifecycle"))
+            implementation(versionCatalog.lib("androidx-lifecycle"))
             implementation(versionCatalog.lib("androidx-navigation"))
             implementation(versionCatalog.lib("coil"))
             implementation(versionCatalog.lib("kermit"))
-            implementation(versionCatalog.bundle("kotlin-coroutines"))
-            implementation(versionCatalog.bundle("kotlin-datetime"))
+            implementation(versionCatalog.lib("kotlin-coroutines"))
+            implementation(versionCatalog.lib("kotlin-datetime"))
 
             implementation(project("core"))
             implementation(project("core-navigation"))

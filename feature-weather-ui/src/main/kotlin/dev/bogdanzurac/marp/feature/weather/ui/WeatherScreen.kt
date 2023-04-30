@@ -1,4 +1,4 @@
-package dev.bogdanzurac.marp.app.elgoog.weather
+package dev.bogdanzurac.marp.feature.weather.ui
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
@@ -12,12 +12,11 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
-import dev.bogdanzurac.marp.app.elgoog.R
-import dev.bogdanzurac.marp.app.elgoog.core.theme.ElgoogTheme
 import dev.bogdanzurac.marp.core.ui.composable.BaseScreen
 import dev.bogdanzurac.marp.core.ui.composable.EmptyView
 import dev.bogdanzurac.marp.core.ui.composable.LoadingView
-import dev.bogdanzurac.marp.app.elgoog.weather.WeatherViewModel.WeatherUiState.*
+import dev.bogdanzurac.marp.feature.weather.domain.Forecast
+import dev.bogdanzurac.marp.feature.weather.ui.WeatherViewModel.WeatherUiState.*
 import org.koin.androidx.compose.koinViewModel
 import java.util.*
 
@@ -32,15 +31,17 @@ internal fun WeatherScreen(viewModel: WeatherViewModel = koinViewModel()) =
     }
 
 @Composable
-private fun WeatherView(forecast: ForecastModel) {
+private fun WeatherView(forecast: Forecast) {
     Column(
         modifier = Modifier
             .verticalScroll(rememberScrollState())
             .padding(16.dp)
     ) {
-        Row(modifier = Modifier
-            .height(IntrinsicSize.Min)
-            .padding(top = 16.dp)) {
+        Row(
+            modifier = Modifier
+                .height(IntrinsicSize.Min)
+                .padding(top = 16.dp)
+        ) {
             AsyncImage(
                 model = forecast.iconUrl,
                 modifier = Modifier.fillMaxWidth(0.5f),
@@ -130,7 +131,7 @@ private fun WeatherView(forecast: ForecastModel) {
 @Composable
 @Preview
 private fun WeatherPreview() {
-    ElgoogTheme {
+    MaterialTheme {
         WeatherView(composeWeatherForecastModelPreview)
     }
 }
