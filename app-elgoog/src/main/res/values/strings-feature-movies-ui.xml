@@ -1,0 +1,3 @@
+<resources>
+    <string name="movie_runtime">Runtime %d min</string>
+</resources>

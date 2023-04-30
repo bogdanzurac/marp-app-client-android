@@ -1,4 +1,4 @@
-package dev.bogdanzurac.marp.app.elgoog.movies
+package dev.bogdanzurac.marp.feature.movies.ui
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
@@ -17,9 +17,6 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
-import dev.bogdanzurac.marp.app.elgoog.R
-import dev.bogdanzurac.marp.app.elgoog.core.theme.ElgoogTheme
-import dev.bogdanzurac.marp.app.elgoog.movies.MovieDetailsViewModel.MovieDetailsUiState.*
 import dev.bogdanzurac.marp.core.ui.DateTimeAttribute
 import dev.bogdanzurac.marp.core.ui.composable.BaseScreen
 import dev.bogdanzurac.marp.core.ui.composable.EmptyView
@@ -27,6 +24,8 @@ import dev.bogdanzurac.marp.core.ui.composable.LoadingView
 import dev.bogdanzurac.marp.core.ui.composable.SelectableText
 import dev.bogdanzurac.marp.core.ui.format
 import dev.bogdanzurac.marp.core.ui.toLocalDateTime
+import dev.bogdanzurac.marp.feature.movies.domain.Movie
+import dev.bogdanzurac.marp.feature.movies.ui.MovieDetailsViewModel.MovieDetailsUiState.*
 import org.koin.androidx.compose.koinViewModel
 import org.koin.core.parameter.parametersOf
 
@@ -43,7 +42,7 @@ internal fun MovieDetailsScreen(
 }
 
 @Composable
-private fun MovieDetailsView(movie: MovieModel) {
+private fun MovieDetailsView(movie: Movie) {
     Column(Modifier.verticalScroll(rememberScrollState())) {
         AsyncImage(
             model = movie.posterUrl,
@@ -83,7 +82,7 @@ private fun MovieDetailsView(movie: MovieModel) {
 
 @Composable
 private fun MovieGenresView(
-    movie: MovieModel,
+    movie: Movie,
 ) {
     if (movie.genres.isEmpty()) return
     Row(modifier = Modifier.padding(top = 8.dp)) {
@@ -103,7 +102,7 @@ private fun MovieGenresView(
 @Composable
 @Preview
 private fun MovieDetailsPreview() {
-    ElgoogTheme {
+    MaterialTheme {
         MovieDetailsView(composeMovieModelPreview)
     }
 }

@@ -1,14 +1,14 @@
-package dev.bogdanzurac.marp.app.elgoog.movies
+package dev.bogdanzurac.marp.feature.movies.ui
 
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
-import dev.bogdanzurac.marp.app.elgoog.core.theme.ElgoogTheme
+import dev.bogdanzurac.marp.feature.movies.domain.Movie
 
 @Composable
 internal fun MovieRatingView(
-    movie: MovieModel,
+    movie: Movie,
 ) {
     val ratingText = "${movie.rating} / 10 (${movie.ratingCount})"
     Text(
@@ -20,7 +20,7 @@ internal fun MovieRatingView(
 @Composable
 @Preview
 private fun MovieRatingPreview() {
-    ElgoogTheme {
+    MaterialTheme {
         MovieRatingView(composeMovieModelPreview)
     }
 }

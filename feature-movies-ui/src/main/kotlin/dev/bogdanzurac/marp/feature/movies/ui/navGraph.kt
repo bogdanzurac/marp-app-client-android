@@ -1,10 +1,10 @@
-package dev.bogdanzurac.marp.app.elgoog.movies
+package dev.bogdanzurac.marp.feature.movies.ui
 
 import androidx.navigation.NavGraphBuilder
 import dev.bogdanzurac.marp.core.navigation.composable
 import dev.bogdanzurac.marp.core.navigation.getLongArg
 import dev.bogdanzurac.marp.core.navigation.navigation
-import dev.bogdanzurac.marp.app.elgoog.movies.MovieDetails.MOVIE_ID
+import dev.bogdanzurac.marp.feature.movies.ui.MovieDetails.MOVIE_ID
 
 fun NavGraphBuilder.moviesNavGraph() {
     navigation(

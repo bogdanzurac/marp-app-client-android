@@ -1,4 +1,4 @@
-package dev.bogdanzurac.marp.app.elgoog.movies
+package dev.bogdanzurac.marp.feature.movies.ui
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
@@ -17,14 +17,14 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
-import dev.bogdanzurac.marp.app.elgoog.core.theme.ElgoogTheme
-import dev.bogdanzurac.marp.app.elgoog.movies.MoviesListViewModel.MoviesListUiState.*
 import dev.bogdanzurac.marp.core.ui.DateTimeAttribute.DAY_MONTH_YEAR
 import dev.bogdanzurac.marp.core.ui.composable.BaseScreen
 import dev.bogdanzurac.marp.core.ui.composable.EmptyView
 import dev.bogdanzurac.marp.core.ui.composable.LoadingView
 import dev.bogdanzurac.marp.core.ui.format
 import dev.bogdanzurac.marp.core.ui.toLocalDateTime
+import dev.bogdanzurac.marp.feature.movies.domain.Movie
+import dev.bogdanzurac.marp.feature.movies.ui.MoviesListViewModel.MoviesListUiState.*
 import org.koin.androidx.compose.koinViewModel
 
 @Composable
@@ -41,7 +41,7 @@ internal fun MoviesListScreen(viewModel: MoviesListViewModel = koinViewModel()) 
 
 @Composable
 private fun MoviesListView(
-    movies: List<MovieModel>,
+    movies: List<Movie>,
     events: MoviesListUiEvents,
 ) {
     LazyColumn {
@@ -53,7 +53,7 @@ private fun MoviesListView(
 
 @Composable
 private fun MovieView(
-    movie: MovieModel,
+    movie: Movie,
     onMovieClicked: (id: Long) -> Unit
 ) {
     Card(
@@ -88,7 +88,7 @@ private fun MovieView(
 @Composable
 @Preview
 private fun MoviesListPreview() {
-    ElgoogTheme {
+    MaterialTheme {
         MoviesListView(
             movies = MutableList(20) { composeMovieModelPreview },
             events = object : MoviesListUiEvents {

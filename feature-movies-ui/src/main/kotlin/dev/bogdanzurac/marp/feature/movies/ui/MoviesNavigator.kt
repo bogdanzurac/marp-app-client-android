@@ -1,4 +1,4 @@
-package dev.bogdanzurac.marp.app.elgoog.movies
+package dev.bogdanzurac.marp.feature.movies.ui
 
 import dev.bogdanzurac.marp.core.navigation.FeatureNavigator
 import org.koin.core.annotation.Single
