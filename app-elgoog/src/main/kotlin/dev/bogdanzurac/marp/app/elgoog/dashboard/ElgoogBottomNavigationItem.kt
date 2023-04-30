@@ -2,7 +2,7 @@ package dev.bogdanzurac.marp.app.elgoog.dashboard
 
 import dev.bogdanzurac.marp.app.elgoog.R
 import dev.bogdanzurac.marp.core.navigation.AppRoute
-import dev.bogdanzurac.marp.app.elgoog.crypto.Crypto
+import dev.bogdanzurac.marp.feature.crypto.ui.Crypto
 import dev.bogdanzurac.marp.app.elgoog.dashboard.ElgoogBottomNavigationItem.*
 import dev.bogdanzurac.marp.app.elgoog.movies.Movies
 import dev.bogdanzurac.marp.app.elgoog.news.News

@@ -3,6 +3,8 @@ package dev.bogdanzurac.marp.app.elgoog
 import dev.bogdanzurac.marp.core.auth.CoreAuthModule
 import dev.bogdanzurac.marp.core.data.CoreDataModule
 import dev.bogdanzurac.marp.core.ui.CoreUiModule
+import dev.bogdanzurac.marp.feature.crypto.data.FeatureCryptoDataModule
+import dev.bogdanzurac.marp.feature.crypto.ui.FeatureCryptoUiModule
 import dev.bogdanzurac.marp.feature.weather.data.FeatureWeatherDataModule
 import dev.bogdanzurac.marp.feature.weather.domain.FeatureWeatherDomainModule
 import dev.bogdanzurac.marp.feature.weather.ui.FeatureWeatherUiModule
@@ -24,6 +26,8 @@ internal val koinModules = listOf(
     CoreAuthModule().module,
     CoreDataModule().module,
     CoreUiModule().module,
+    FeatureCryptoDataModule().module,
+    FeatureCryptoUiModule().module,
     FeatureWeatherDataModule().module,
     FeatureWeatherDomainModule().module,
     FeatureWeatherUiModule().module,

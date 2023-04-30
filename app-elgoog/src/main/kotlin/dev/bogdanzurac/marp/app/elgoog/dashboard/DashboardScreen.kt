@@ -22,8 +22,8 @@ import dev.bogdanzurac.marp.app.elgoog.core.theme.ElgoogTheme
 import dev.bogdanzurac.marp.core.ui.composable.AppDialog
 import dev.bogdanzurac.marp.core.ui.composable.BaseScreen
 import dev.bogdanzurac.marp.core.ui.composable.LoadingView
-import dev.bogdanzurac.marp.app.elgoog.crypto.Crypto
-import dev.bogdanzurac.marp.app.elgoog.crypto.cryptoNavGraph
+import dev.bogdanzurac.marp.feature.crypto.ui.Crypto
+import dev.bogdanzurac.marp.feature.crypto.ui.cryptoNavGraph
 import dev.bogdanzurac.marp.app.elgoog.dashboard.DashboardViewModel.DashboardUiState.*
 import dev.bogdanzurac.marp.app.elgoog.dashboard.ElgoogBottomNavigationItem.*
 import dev.bogdanzurac.marp.app.elgoog.login.loginNavGraph

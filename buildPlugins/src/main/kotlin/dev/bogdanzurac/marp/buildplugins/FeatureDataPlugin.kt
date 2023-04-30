@@ -11,6 +11,7 @@ class FeatureDataPlugin : Plugin<Project> {
 
         with(pluginManager) {
             apply("com.android.library")
+            apply("io.realm.kotlin")
             apply("org.jetbrains.kotlin.android")
             apply("org.jetbrains.kotlin.plugin.serialization")
             apply("dev.bogdanzurac.marp.plugins.koin")
