@@ -1,4 +1,4 @@
-package dev.bogdanzurac.marp.app.elgoog.login
+package dev.bogdanzurac.marp.feature.auth.ui
 
 import dev.bogdanzurac.marp.core.navigation.AppRoute.SimpleRoute
 

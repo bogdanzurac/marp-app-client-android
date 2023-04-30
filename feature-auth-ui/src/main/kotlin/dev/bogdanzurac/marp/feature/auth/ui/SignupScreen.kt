@@ -1,4 +1,4 @@
-package dev.bogdanzurac.marp.app.elgoog.login
+package dev.bogdanzurac.marp.feature.auth.ui
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
@@ -16,11 +16,9 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import dev.bogdanzurac.marp.app.elgoog.R
-import dev.bogdanzurac.marp.app.elgoog.core.theme.ElgoogTheme
 import dev.bogdanzurac.marp.core.ui.composable.BaseScreen
 import dev.bogdanzurac.marp.core.ui.composable.LoadingView
-import dev.bogdanzurac.marp.app.elgoog.login.SignupViewModel.SignupUiState.*
+import dev.bogdanzurac.marp.feature.auth.ui.SignupViewModel.SignupUiState.*
 import org.koin.androidx.compose.koinViewModel
 import java.util.*
 
@@ -99,7 +97,7 @@ private fun SignupView(events: SignupUiEvents) {
 @Composable
 @Preview
 private fun SignupPreview() {
-    ElgoogTheme {
+    MaterialTheme {
         SignupView(object : SignupUiEvents {
             override fun onSignupClicked(email: String, password: String) {}
         })

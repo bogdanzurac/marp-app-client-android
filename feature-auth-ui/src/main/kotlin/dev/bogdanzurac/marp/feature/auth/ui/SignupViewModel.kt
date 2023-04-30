@@ -1,13 +1,13 @@
-package dev.bogdanzurac.marp.app.elgoog.login
+package dev.bogdanzurac.marp.feature.auth.ui
 
 import androidx.lifecycle.viewModelScope
 import dev.bogdanzurac.marp.core.prompts.DialogManager
 import dev.bogdanzurac.marp.core.ui.BaseViewModel
 import dev.bogdanzurac.marp.core.ui.Tracker
 import dev.bogdanzurac.marp.core.ui.UiState
-import dev.bogdanzurac.marp.app.elgoog.login.SignupViewModel.SignupUiState
-import dev.bogdanzurac.marp.app.elgoog.login.SignupViewModel.SignupUiState.Loading
-import dev.bogdanzurac.marp.app.elgoog.login.SignupViewModel.SignupUiState.SignUp
+import dev.bogdanzurac.marp.feature.auth.ui.SignupViewModel.SignupUiState
+import dev.bogdanzurac.marp.feature.auth.ui.SignupViewModel.SignupUiState.Loading
+import dev.bogdanzurac.marp.feature.auth.ui.SignupViewModel.SignupUiState.SignUp
 import dev.bogdanzurac.marp.core.auth.AuthManager
 import dev.bogdanzurac.marp.core.logger
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -21,7 +21,7 @@ import org.koin.core.annotation.Factory
 internal class SignupViewModel(
     private val authManager: AuthManager,
     private val dialogManager: DialogManager,
-    private val loginNavigator: LoginNavigator,
+    private val authNavigator: AuthNavigator,
     private val tracker: Tracker,
 ) : BaseViewModel<SignupUiState>(), SignupUiEvents {
 
@@ -47,7 +47,7 @@ internal class SignupViewModel(
                     logger.e("Could not sign up", it)
                     dialogManager.showDialog(getAuthErrorDialogFor(it))
                 }
-                .onSuccess { loginNavigator.navigateToMain() }
+                .onSuccess { authNavigator.navigateToMain() }
         }
     }
 }

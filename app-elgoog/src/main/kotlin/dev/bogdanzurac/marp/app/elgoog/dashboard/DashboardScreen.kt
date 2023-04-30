@@ -26,7 +26,7 @@ import dev.bogdanzurac.marp.feature.crypto.ui.Crypto
 import dev.bogdanzurac.marp.feature.crypto.ui.cryptoNavGraph
 import dev.bogdanzurac.marp.app.elgoog.dashboard.DashboardViewModel.DashboardUiState.*
 import dev.bogdanzurac.marp.app.elgoog.dashboard.ElgoogBottomNavigationItem.*
-import dev.bogdanzurac.marp.app.elgoog.login.loginNavGraph
+import dev.bogdanzurac.marp.feature.auth.ui.authNavGraph
 import dev.bogdanzurac.marp.app.elgoog.movies.moviesNavGraph
 import dev.bogdanzurac.marp.app.elgoog.news.newsNavGraph
 import dev.bogdanzurac.marp.feature.notes.ui.notesNavGraph
@@ -75,8 +75,8 @@ private fun DashboardView(
                 )
             )
         ) {
+            authNavGraph()
             cryptoNavGraph()
-            loginNavGraph()
             moviesNavGraph()
             newsNavGraph()
             notesNavGraph()

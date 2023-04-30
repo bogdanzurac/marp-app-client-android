@@ -1,12 +1,6 @@
 <resources>
     <string name="app_name">ElGoog</string>
-    <string name="button_login">Login</string>
     <string name="button_logout">Logout</string>
-    <string name="button_signup">Signup</string>
-    <string name="error_account_creation">Could not create an account with the requested credentials, please try another email/password</string>
-    <string name="error_auth_credentials">Invalid credentials, please use your correct email &amp; password</string>
-    <string name="label_email">Email</string>
-    <string name="label_password">Password</string>
     <string name="movie_runtime">Runtime %d min</string>
     <string name="title_crypto">Crypto</string>
     <string name="title_movies">Movies</string>

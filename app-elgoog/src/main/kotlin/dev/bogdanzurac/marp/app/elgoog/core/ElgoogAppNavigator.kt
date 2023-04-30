@@ -3,8 +3,8 @@ package dev.bogdanzurac.marp.app.elgoog.core
 import dev.bogdanzurac.marp.core.logger
 import dev.bogdanzurac.marp.feature.crypto.ui.Crypto
 import dev.bogdanzurac.marp.feature.crypto.ui.CryptoNavigator
-import dev.bogdanzurac.marp.app.elgoog.login.Auth
-import dev.bogdanzurac.marp.app.elgoog.login.LoginNavigator
+import dev.bogdanzurac.marp.feature.auth.ui.Auth
+import dev.bogdanzurac.marp.feature.auth.ui.AuthNavigator
 import dev.bogdanzurac.marp.app.elgoog.movies.Movies
 import dev.bogdanzurac.marp.app.elgoog.movies.MoviesNavigator
 import dev.bogdanzurac.marp.app.elgoog.news.News
@@ -19,8 +19,8 @@ import org.koin.core.annotation.Single
 
 @Single
 class ElgoogAppNavigator(
+    private val authNavigator: AuthNavigator,
     private val cryptoNavigator: CryptoNavigator,
-    private val loginNavigator: LoginNavigator,
     private val moviesNavigator: MoviesNavigator,
     private val newsNavigator: NewsNavigator,
     private val notesNavigator: NotesNavigator,
@@ -30,7 +30,7 @@ class ElgoogAppNavigator(
     override fun getFeatureNavigatorForRoute(route: String): FeatureNavigator {
         logger.d("Getting FeatureNavigator for route: $route")
         return when (route) {
-            Auth.path -> loginNavigator
+            Auth.path -> authNavigator
             Crypto.path -> cryptoNavigator
             Movies.path -> moviesNavigator
             News.path -> newsNavigator
