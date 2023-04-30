@@ -1,6 +1,6 @@
 @file:OptIn(ExperimentalMaterialApi::class)
 
-package dev.bogdanzurac.marp.app.elgoog.news
+package dev.bogdanzurac.marp.feature.news.ui
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
@@ -22,13 +22,13 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
-import dev.bogdanzurac.marp.app.elgoog.core.theme.ElgoogTheme
-import dev.bogdanzurac.marp.app.elgoog.news.NewsListViewModel.NewsListUiState.*
 import dev.bogdanzurac.marp.core.ui.*
 import dev.bogdanzurac.marp.core.ui.DateTimeAttribute.DATE_TIME_SHORT
 import dev.bogdanzurac.marp.core.ui.composable.BaseScreen
 import dev.bogdanzurac.marp.core.ui.composable.EmptyView
 import dev.bogdanzurac.marp.core.ui.composable.LoadingView
+import dev.bogdanzurac.marp.feature.news.domain.NewsArticle
+import dev.bogdanzurac.marp.feature.news.ui.NewsListViewModel.NewsListUiState.*
 import org.koin.androidx.compose.koinViewModel
 
 @Composable
@@ -63,7 +63,7 @@ private fun NewsListRefreshView(
 
 @Composable
 private fun NewsListView(
-    newsArticles: List<NewsArticleModel>,
+    newsArticles: List<NewsArticle>,
     events: NewsListUiEvents,
 ) {
     LazyColumn {
@@ -75,7 +75,7 @@ private fun NewsListView(
 
 @Composable
 private fun NewsListRowView(
-    newsArticle: NewsArticleModel,
+    newsArticle: NewsArticle,
     onArticleClicked: (id: String) -> Unit
 ) {
     Card(
@@ -110,7 +110,7 @@ private fun NewsListRowView(
 @Composable
 @Preview
 private fun NewsListPreview() {
-    ElgoogTheme {
+    MaterialTheme {
         NewsListView(
             newsArticles = MutableList(20) { composeNewsArticleModelPreview },
             events = object : NewsListUiEvents {

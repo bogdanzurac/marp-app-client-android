@@ -1,15 +1,17 @@
-package dev.bogdanzurac.marp.app.elgoog.news
+package dev.bogdanzurac.marp.feature.news.ui
 
 import androidx.lifecycle.viewModelScope
+import dev.bogdanzurac.marp.feature.news.ui.NewsListViewModel.NewsListUiState
+import dev.bogdanzurac.marp.feature.news.ui.NewsListViewModel.NewsListUiState.*
+import dev.bogdanzurac.marp.core.logger
+import dev.bogdanzurac.marp.core.onFailure
 import dev.bogdanzurac.marp.core.prompts.DialogManager
 import dev.bogdanzurac.marp.core.ui.BaseViewModel
 import dev.bogdanzurac.marp.core.ui.Tracker
 import dev.bogdanzurac.marp.core.ui.UiState
 import dev.bogdanzurac.marp.core.ui.getGenericErrorDialogFor
-import dev.bogdanzurac.marp.app.elgoog.news.NewsListViewModel.NewsListUiState
-import dev.bogdanzurac.marp.app.elgoog.news.NewsListViewModel.NewsListUiState.*
-import dev.bogdanzurac.marp.core.logger
-import dev.bogdanzurac.marp.core.onFailure
+import dev.bogdanzurac.marp.feature.news.domain.NewsArticle
+import dev.bogdanzurac.marp.feature.news.domain.NewsRepository
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import org.koin.core.annotation.Factory
@@ -40,7 +42,7 @@ internal class NewsListViewModel(
     internal sealed class NewsListUiState : UiState {
         class Error(val exception: Throwable) : NewsListUiState()
         class Success(
-            val newsArticles: List<NewsArticleModel>,
+            val newsArticles: List<NewsArticle>,
             val isLoading: Boolean = false
         ) : NewsListUiState()
 

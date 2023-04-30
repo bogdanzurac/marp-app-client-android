@@ -1,16 +1,18 @@
-package dev.bogdanzurac.marp.app.elgoog.news
+package dev.bogdanzurac.marp.feature.news.ui
 
 import dev.bogdanzurac.marp.core.prompts.DialogManager
 import dev.bogdanzurac.marp.core.ui.BaseViewModel
 import dev.bogdanzurac.marp.core.ui.Tracker
 import dev.bogdanzurac.marp.core.ui.UiState
 import dev.bogdanzurac.marp.core.ui.getGenericErrorDialogFor
-import dev.bogdanzurac.marp.app.elgoog.news.NewsDetailsViewModel.NewsDetailsUiState
-import dev.bogdanzurac.marp.app.elgoog.news.NewsDetailsViewModel.NewsDetailsUiState.*
+import dev.bogdanzurac.marp.feature.news.ui.NewsDetailsViewModel.NewsDetailsUiState
+import dev.bogdanzurac.marp.feature.news.ui.NewsDetailsViewModel.NewsDetailsUiState.*
 import dev.bogdanzurac.marp.core.flowOf
 import dev.bogdanzurac.marp.core.foldResult
 import dev.bogdanzurac.marp.core.logger
 import dev.bogdanzurac.marp.core.onFailure
+import dev.bogdanzurac.marp.feature.news.domain.NewsArticle
+import dev.bogdanzurac.marp.feature.news.domain.NewsRepository
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.onStart
 import org.koin.core.annotation.Factory
@@ -35,7 +37,7 @@ internal class NewsDetailsViewModel(
 
     internal sealed class NewsDetailsUiState : UiState {
         class Error(val exception: Throwable) : NewsDetailsUiState()
-        class Success(val newsArticleModel: NewsArticleModel) : NewsDetailsUiState()
+        class Success(val newsArticle: NewsArticle) : NewsDetailsUiState()
         object Loading : NewsDetailsUiState()
     }
 }

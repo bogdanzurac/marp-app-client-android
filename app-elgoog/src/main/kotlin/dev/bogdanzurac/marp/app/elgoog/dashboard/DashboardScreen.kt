@@ -28,7 +28,7 @@ import dev.bogdanzurac.marp.app.elgoog.dashboard.DashboardViewModel.DashboardUiS
 import dev.bogdanzurac.marp.app.elgoog.dashboard.ElgoogBottomNavigationItem.*
 import dev.bogdanzurac.marp.feature.auth.ui.authNavGraph
 import dev.bogdanzurac.marp.feature.movies.ui.moviesNavGraph
-import dev.bogdanzurac.marp.app.elgoog.news.newsNavGraph
+import dev.bogdanzurac.marp.feature.news.ui.newsNavGraph
 import dev.bogdanzurac.marp.feature.notes.ui.notesNavGraph
 import dev.bogdanzurac.marp.feature.weather.ui.weatherNavGraph
 import org.koin.androidx.compose.koinViewModel

@@ -1,9 +1,10 @@
-package dev.bogdanzurac.marp.app.elgoog.news
+package dev.bogdanzurac.marp.feature.news.ui
 
+import dev.bogdanzurac.marp.feature.news.domain.NewsArticle
 import kotlinx.datetime.Instant
 
 val composeNewsArticleModelPreview =
-    NewsArticleModel(
+    NewsArticle(
         "123",
         "https://cdn.pixabay.com/photo/2012/08/27/14/19/mountains-55067__340.png",
         listOf("John Doe", "Jane Doe"),

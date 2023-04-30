@@ -1,10 +1,10 @@
-package dev.bogdanzurac.marp.app.elgoog.news
+package dev.bogdanzurac.marp.feature.news.ui
 
 import androidx.navigation.NavGraphBuilder
 import dev.bogdanzurac.marp.core.navigation.composable
 import dev.bogdanzurac.marp.core.navigation.getStringArg
 import dev.bogdanzurac.marp.core.navigation.navigation
-import dev.bogdanzurac.marp.app.elgoog.news.NewsDetails.NEWS_ID
+import dev.bogdanzurac.marp.feature.news.ui.NewsDetails.NEWS_ID
 
 fun NavGraphBuilder.newsNavGraph() {
     navigation(

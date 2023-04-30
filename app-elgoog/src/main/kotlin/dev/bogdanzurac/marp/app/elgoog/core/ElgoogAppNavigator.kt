@@ -7,8 +7,8 @@ import dev.bogdanzurac.marp.feature.auth.ui.Auth
 import dev.bogdanzurac.marp.feature.auth.ui.AuthNavigator
 import dev.bogdanzurac.marp.feature.movies.ui.Movies
 import dev.bogdanzurac.marp.feature.movies.ui.MoviesNavigator
-import dev.bogdanzurac.marp.app.elgoog.news.News
-import dev.bogdanzurac.marp.app.elgoog.news.NewsNavigator
+import dev.bogdanzurac.marp.feature.news.ui.News
+import dev.bogdanzurac.marp.feature.news.ui.NewsNavigator
 import dev.bogdanzurac.marp.feature.notes.ui.Notes
 import dev.bogdanzurac.marp.feature.notes.ui.NotesNavigator
 import dev.bogdanzurac.marp.feature.weather.ui.Weather

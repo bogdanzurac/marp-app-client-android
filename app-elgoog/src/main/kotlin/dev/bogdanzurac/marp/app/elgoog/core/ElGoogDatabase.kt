@@ -1,8 +1,8 @@
 package dev.bogdanzurac.marp.app.elgoog.core
 
-import dev.bogdanzurac.marp.feature.crypto.data.dao.CryptoAssetEntity
-import dev.bogdanzurac.marp.app.elgoog.news.NewsArticleEntity
 import dev.bogdanzurac.marp.core.db.BaseDatabase
+import dev.bogdanzurac.marp.feature.crypto.data.dao.CryptoAssetEntity
+import dev.bogdanzurac.marp.feature.news.data.dao.NewsArticleEntity
 import io.realm.kotlin.types.BaseRealmObject
 import org.koin.core.annotation.Single
 import kotlin.reflect.KClass

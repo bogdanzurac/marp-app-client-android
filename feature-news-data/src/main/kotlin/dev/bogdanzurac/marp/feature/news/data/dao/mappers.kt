@@ -1,8 +1,9 @@
-package dev.bogdanzurac.marp.app.elgoog.news
+package dev.bogdanzurac.marp.feature.news.data.dao
 
+import dev.bogdanzurac.marp.feature.news.domain.NewsArticle
 import kotlinx.datetime.Instant
 
-fun NewsArticleModel.toEntity(): NewsArticleEntity =
+internal fun NewsArticle.toEntity(): NewsArticleEntity =
     NewsArticleEntity().also {
         it.id = id
         it.imageUrl = imageUrl
@@ -14,8 +15,8 @@ fun NewsArticleModel.toEntity(): NewsArticleEntity =
         it.publishDate = publishDate.toEpochMilliseconds()
     }
 
-fun NewsArticleEntity.toModel(): NewsArticleModel =
-    NewsArticleModel(
+internal fun NewsArticleEntity.toNewsArticle(): NewsArticle =
+    NewsArticle(
         id, imageUrl, creator, title, link, description, content,
         Instant.fromEpochMilliseconds(publishDate)
     )

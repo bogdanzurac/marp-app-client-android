@@ -1,8 +1,16 @@
-package dev.bogdanzurac.marp.app.elgoog.news
+package dev.bogdanzurac.marp.feature.news.data
 
 import dev.bogdanzurac.marp.core.data.DataHolder
 import dev.bogdanzurac.marp.core.data.SyncTimestampsPreferences
 import dev.bogdanzurac.marp.core.mapResult
+import dev.bogdanzurac.marp.feature.news.data.dao.NewsArticleEntity
+import dev.bogdanzurac.marp.feature.news.data.dao.NewsDao
+import dev.bogdanzurac.marp.feature.news.data.dao.toEntity
+import dev.bogdanzurac.marp.feature.news.data.dao.toNewsArticle
+import dev.bogdanzurac.marp.feature.news.data.web.NewsDataWebService
+import dev.bogdanzurac.marp.feature.news.data.web.toNewsArticle
+import dev.bogdanzurac.marp.feature.news.domain.NewsArticle
+import dev.bogdanzurac.marp.feature.news.domain.NewsRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flowOn
@@ -12,18 +20,18 @@ import org.koin.core.annotation.Single
 import kotlin.time.Duration.Companion.minutes
 
 @Single
-class NewsRepository(
+internal class NewsRepositoryImpl(
     private val dao: NewsDao,
     private val webService: NewsDataWebService,
     syncTimestampsPreferences: SyncTimestampsPreferences,
-) {
+) : NewsRepository {
 
-    private val newsHolder = DataHolder.Builder<List<NewsArticleModel>>("news")
-        .fetcher { webService.getNews() }
+    private val newsHolder = DataHolder.Builder<List<NewsArticle>>("news")
+        .fetcher { webService.getNews().map { articles -> articles.map { it.toNewsArticle() } } }
         .cache(
             reader = {
                 dao.observeAll<NewsArticleEntity>()
-                    .map { entities -> entities.map { it.toModel() } }
+                    .map { entities -> entities.map { it.toNewsArticle() } }
             },
             writer = { models -> dao.saveAll(models.map { it.toEntity() }) },
             cleaner = { dao.deleteAll<NewsArticleEntity>() },
@@ -31,22 +39,22 @@ class NewsRepository(
         .timeToLive(10.minutes, syncTimestampsPreferences)
         .build()
 
-    suspend fun getNewsArticles(refresh: Boolean = false): Result<List<NewsArticleModel>> =
+    override suspend fun getNewsArticles(refresh: Boolean): Result<List<NewsArticle>> =
         withContext(Dispatchers.IO) {
             newsHolder.get(refresh)
         }
 
-    fun observeNewsArticles(refresh: Boolean = false): Flow<Result<List<NewsArticleModel>>> =
+    override fun observeNewsArticles(refresh: Boolean): Flow<Result<List<NewsArticle>>> =
         newsHolder.observe(shouldRefresh = refresh)
             .flowOn(Dispatchers.IO)
 
-    suspend fun getNewsArticle(id: String): Result<NewsArticleModel> =
+    override suspend fun getNewsArticle(id: String): Result<NewsArticle> =
         withContext(Dispatchers.IO) {
             getNewsArticles()
                 .map { newsArticles -> newsArticles.first { it.id == id } }
         }
 
-    fun observeNewsArticle(id: String, refresh: Boolean = false): Flow<Result<NewsArticleModel>> =
+    override fun observeNewsArticle(id: String, refresh: Boolean): Flow<Result<NewsArticle>> =
         observeNewsArticles(refresh = refresh)
             .mapResult { newsArticles -> newsArticles.first { it.id == id } }
 }
