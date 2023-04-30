@@ -16,25 +16,13 @@ android {
 }
 
 dependencies {
-    implementation(libs.androidx.activity)
-    implementation(libs.androidx.core)
-    implementation(libs.firebase.crashlytics)
-    implementation(libs.coil)
-    implementation(libs.kotlin.datetime)
-    implementation(libs.kotlin.serialization)
-    implementation(libs.ktor.core)
-
-    implementation(project(projects.coreAuth))
-    implementation(project(projects.coreData))
     implementation(project(projects.coreDb))
     implementation(project(projects.coreNavigation))
-    implementation(project(projects.coreServices))
-    implementation(project(projects.coreUi))
-    implementation(project(projects.coreWs))
     implementation(project(projects.featureAuthUi))
     implementation(project(projects.featureCryptoData))
     implementation(project(projects.featureCryptoDomain))
     implementation(project(projects.featureCryptoUi))
+    implementation(project(projects.featureDashboardUi))
     implementation(project(projects.featureMoviesData))
     implementation(project(projects.featureMoviesDomain))
     implementation(project(projects.featureMoviesUi))

@@ -1,4 +1,4 @@
-package dev.bogdanzurac.marp.app.elgoog.dashboard
+package dev.bogdanzurac.marp.feature.dashboard.ui
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
@@ -12,34 +12,28 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
-import dev.bogdanzurac.marp.app.elgoog.R
 import dev.bogdanzurac.marp.core.navigation.AppNavigator
 import dev.bogdanzurac.marp.core.navigation.AppRoute
+import dev.bogdanzurac.marp.core.navigation.BackRoute
 import dev.bogdanzurac.marp.core.navigation.FeatureNavigator
-import dev.bogdanzurac.marp.app.elgoog.core.theme.ElgoogTheme
 import dev.bogdanzurac.marp.core.ui.composable.AppDialog
 import dev.bogdanzurac.marp.core.ui.composable.BaseScreen
 import dev.bogdanzurac.marp.core.ui.composable.LoadingView
-import dev.bogdanzurac.marp.feature.crypto.ui.Crypto
-import dev.bogdanzurac.marp.feature.crypto.ui.cryptoNavGraph
-import dev.bogdanzurac.marp.app.elgoog.dashboard.DashboardViewModel.DashboardUiState.*
-import dev.bogdanzurac.marp.app.elgoog.dashboard.ElgoogBottomNavigationItem.*
-import dev.bogdanzurac.marp.feature.auth.ui.authNavGraph
-import dev.bogdanzurac.marp.feature.movies.ui.moviesNavGraph
-import dev.bogdanzurac.marp.feature.news.ui.newsNavGraph
-import dev.bogdanzurac.marp.feature.notes.ui.notesNavGraph
-import dev.bogdanzurac.marp.feature.weather.ui.weatherNavGraph
+import dev.bogdanzurac.marp.feature.dashboard.ui.DashboardViewModel.DashboardUiState.*
 import org.koin.androidx.compose.koinViewModel
 
 @Composable
 internal fun DashboardScreen(
+    startRoute: AppRoute,
+    builder: NavGraphBuilder.() -> Unit,
     appNavigator: AppNavigator,
     viewModel: DashboardViewModel = koinViewModel(),
 ) = BaseScreen(viewModel) { state ->
     when (val uiState = state.value) {
-        is Success -> DashboardView(uiState, viewModel, appNavigator)
+        is Success -> DashboardView(uiState, viewModel, appNavigator, startRoute, builder)
         is LoadingFeatures -> LoadingView()
     }
     AppDialog()
@@ -51,6 +45,8 @@ private fun DashboardView(
     state: Success,
     events: DashboardUiEvents,
     appNavigator: AppNavigator,
+    startRoute: AppRoute,
+    builder: NavGraphBuilder.() -> Unit,
 ) {
     val navController = rememberNavController()
     DisposableEffect(navController) {
@@ -67,20 +63,15 @@ private fun DashboardView(
         }) { innerPadding ->
         NavHost(
             navController = navController,
-            startDestination = Crypto.path,
+            startDestination = startRoute.path,
             modifier = Modifier.padding(
                 PaddingValues(
                     top = innerPadding.calculateTopPadding(),
                     bottom = innerPadding.calculateBottomPadding()
                 )
-            )
+            ),
         ) {
-            authNavGraph()
-            cryptoNavGraph()
-            moviesNavGraph()
-            newsNavGraph()
-            notesNavGraph()
-            weatherNavGraph()
+            builder()
         }
     }
 }
@@ -155,9 +146,14 @@ private fun BottomNavigationBarView(
 @Composable
 @Preview
 private fun DashboardPreview() {
-    ElgoogTheme {
+    MaterialTheme {
+        val bottomNavItem = object : BottomNavigationItem {
+            override val route: AppRoute = BackRoute
+            override val imageRes: Int = R.mipmap.ic_logo
+            override val titleRes: Int = R.string.app_name
+        }
         DashboardView(
-            state = Success(bottomNavigationItems, 0),
+            state = Success(listOf(bottomNavItem, bottomNavItem), 0),
             events = object : DashboardUiEvents {
                 override fun onRouteClicked(route: AppRoute) {}
                 override fun onLogoutClicked() {}
@@ -165,7 +161,8 @@ private fun DashboardPreview() {
             appNavigator = object : AppNavigator() {
                 override fun getFeatureNavigatorForRoute(route: String): FeatureNavigator =
                     FeatureNavigator()
-            }
-        )
+            },
+            BackRoute
+        ) {}
     }
 }

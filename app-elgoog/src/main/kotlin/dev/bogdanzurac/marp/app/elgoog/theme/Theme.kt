@@ -1,4 +1,4 @@
-package dev.bogdanzurac.marp.app.elgoog.core.theme
+package dev.bogdanzurac.marp.app.elgoog.theme
 
 import android.app.Activity
 import androidx.compose.foundation.isSystemInDarkTheme
@@ -53,7 +53,7 @@ fun ElgoogTheme(
 
     MaterialTheme(
         colorScheme = colorScheme,
-        typography = MarpTypography,
+        typography = ElGoogTypography,
         content = content
     )
 }

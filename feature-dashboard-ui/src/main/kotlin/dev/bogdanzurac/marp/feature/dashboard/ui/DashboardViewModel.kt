@@ -1,23 +1,23 @@
-package dev.bogdanzurac.marp.app.elgoog.dashboard
+package dev.bogdanzurac.marp.feature.dashboard.ui
 
 import dev.bogdanzurac.marp.core.auth.AuthManager
 import dev.bogdanzurac.marp.core.auth.User
 import dev.bogdanzurac.marp.core.feature.FeatureManager
+import dev.bogdanzurac.marp.core.navigation.*
 import dev.bogdanzurac.marp.core.ui.BaseViewModel
 import dev.bogdanzurac.marp.core.ui.UiState
-import dev.bogdanzurac.marp.app.elgoog.dashboard.DashboardViewModel.DashboardUiState
-import dev.bogdanzurac.marp.app.elgoog.dashboard.DashboardViewModel.DashboardUiState.LoadingFeatures
-import dev.bogdanzurac.marp.app.elgoog.dashboard.DashboardViewModel.DashboardUiState.Success
-import dev.bogdanzurac.marp.core.navigation.*
+import dev.bogdanzurac.marp.feature.dashboard.ui.DashboardViewModel.DashboardUiState
+import dev.bogdanzurac.marp.feature.dashboard.ui.DashboardViewModel.DashboardUiState.LoadingFeatures
+import dev.bogdanzurac.marp.feature.dashboard.ui.DashboardViewModel.DashboardUiState.Success
 import kotlinx.coroutines.flow.*
-import org.koin.core.annotation.Factory
 
-@Factory
-internal class DashboardViewModel(
+abstract class DashboardViewModel(
     private val appNavigator: AppNavigator,
     private val authManager: AuthManager,
     featureManager: FeatureManager
 ) : BaseViewModel<DashboardUiState>(), DashboardUiEvents {
+
+    abstract val bottomNavigationItems: List<BottomNavigationItem>
 
     private val selectedItemPosition: Flow<Int> =
         appNavigator.routes
@@ -42,9 +42,9 @@ internal class DashboardViewModel(
             }
             .asState(LoadingFeatures)
 
-    internal sealed class DashboardUiState : UiState {
+    sealed class DashboardUiState : UiState {
         class Success(
-            val items: List<ElgoogBottomNavigationItem>,
+            val items: List<BottomNavigationItem>,
             val selectedItemPosition: Int,
             val isBottomNavigationBarVisible: Boolean = true,
             val user: User? = null

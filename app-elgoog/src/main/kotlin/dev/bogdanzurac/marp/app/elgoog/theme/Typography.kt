@@ -1,9 +1,9 @@
-package dev.bogdanzurac.marp.app.elgoog.core.theme
+package dev.bogdanzurac.marp.app.elgoog.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.font.FontFamily
 
-val MarpTypography =
+val ElGoogTypography =
     Typography().run {
         copy(
             displayLarge = this.displayLarge.copy(fontFamily = FontFamily.Default),

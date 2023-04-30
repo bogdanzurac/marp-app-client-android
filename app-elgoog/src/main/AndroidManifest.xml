@@ -14,9 +14,8 @@
         android:theme="@android:style/Theme.Material.Light.NoActionBar"
         tools:targetApi="31">
         <activity
-            android:name=".dashboard.DashboardActivity"
+            android:name=".dashboard.ElGoogDashboardActivity"
             android:exported="true"
-            android:label="@string/app_name"
             android:theme="@android:style/Theme.Material.Light.NoActionBar"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
