@@ -2,6 +2,7 @@ package dev.bogdanzurac.marp.app.elgoog.notes
 
 import com.google.firebase.Timestamp
 import dev.bogdanzurac.marp.app.elgoog.crypto.CryptoAssetModel
+import dev.bogdanzurac.marp.lib.db.firebase.IdentifiableModel
 import kotlinx.datetime.Clock.System.now
 import kotlinx.datetime.Instant
 import java.util.*
@@ -28,9 +29,6 @@ data class NoteModel(
     val updatedAt: Timestamp = Timestamp.now(),
 ) : IdentifiableModel
 
-interface IdentifiableModel {
-    var id: String
-}
 
 fun Note.toNoteModel(): NoteModel =
     NoteModel(

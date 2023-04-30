@@ -1,4 +1,4 @@
-package dev.bogdanzurac.marp.app.elgoog.core.firestore
+package dev.bogdanzurac.marp.lib.db.firebase
 
 import com.google.firebase.firestore.FirebaseFirestoreException
 import com.google.firebase.firestore.Query
@@ -6,7 +6,6 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import dev.bogdanzurac.marp.core.exception.DataLoadingException
 import dev.bogdanzurac.marp.core.logger
-import dev.bogdanzurac.marp.app.elgoog.notes.IdentifiableModel
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
@@ -21,7 +20,8 @@ import kotlin.Result.Companion.success
 @Single
 class FirebaseDatabase {
 
-    val firestore = Firebase.firestore
+    @PublishedApi
+    internal val firestore = Firebase.firestore
 
     inline fun <reified T : IdentifiableModel> observeData(
         collectionName: String,
