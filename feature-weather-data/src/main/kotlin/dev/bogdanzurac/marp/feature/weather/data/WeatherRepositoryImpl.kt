@@ -1,6 +1,5 @@
 package dev.bogdanzurac.marp.feature.weather.data
 
-import dev.bogdanzurac.marp.app.elgoog.weather.toForecast
 import dev.bogdanzurac.marp.core.data.DataHolder
 import dev.bogdanzurac.marp.core.services.Location
 import dev.bogdanzurac.marp.feature.weather.domain.Forecast
@@ -11,7 +10,7 @@ import org.koin.core.annotation.Single
 import kotlin.time.Duration.Companion.minutes
 
 @Single
-class WeatherRepositoryImpl(private val webService: WeatherWebService) : WeatherRepository {
+internal class WeatherRepositoryImpl(private val webService: WeatherWebService) : WeatherRepository {
 
     private lateinit var currentLocation: Location
 

@@ -1,16 +1,16 @@
 package dev.bogdanzurac.marp.app.elgoog.core
 
 import dev.bogdanzurac.marp.core.logger
-import dev.bogdanzurac.marp.app.elgoog.crypto.Crypto
-import dev.bogdanzurac.marp.app.elgoog.crypto.CryptoNavigator
+import dev.bogdanzurac.marp.feature.crypto.ui.Crypto
+import dev.bogdanzurac.marp.feature.crypto.ui.CryptoNavigator
 import dev.bogdanzurac.marp.app.elgoog.login.Auth
 import dev.bogdanzurac.marp.app.elgoog.login.LoginNavigator
 import dev.bogdanzurac.marp.app.elgoog.movies.Movies
 import dev.bogdanzurac.marp.app.elgoog.movies.MoviesNavigator
 import dev.bogdanzurac.marp.app.elgoog.news.News
 import dev.bogdanzurac.marp.app.elgoog.news.NewsNavigator
-import dev.bogdanzurac.marp.app.elgoog.notes.Notes
-import dev.bogdanzurac.marp.app.elgoog.notes.NotesNavigator
+import dev.bogdanzurac.marp.feature.notes.ui.Notes
+import dev.bogdanzurac.marp.feature.notes.ui.NotesNavigator
 import dev.bogdanzurac.marp.feature.weather.ui.Weather
 import dev.bogdanzurac.marp.feature.weather.ui.WeatherNavigator
 import dev.bogdanzurac.marp.core.navigation.AppNavigator

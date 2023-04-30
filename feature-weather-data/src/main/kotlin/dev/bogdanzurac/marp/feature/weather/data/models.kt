@@ -4,7 +4,7 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class ForecastModel(
+internal data class ForecastModel(
     @SerialName("main")
     val current: CurrentForecastModel,
     @SerialName("weather")
@@ -16,7 +16,7 @@ data class ForecastModel(
 }
 
 @Serializable
-data class CurrentForecastModel(
+internal data class CurrentForecastModel(
     @SerialName("temp")
     val temp: Double,
     @SerialName("temp_min")
@@ -32,7 +32,7 @@ data class CurrentForecastModel(
 )
 
 @Serializable
-data class WeatherForecastModel(
+internal data class WeatherForecastModel(
     @SerialName("id")
     val id: Long,
     @SerialName("main")
@@ -44,7 +44,7 @@ data class WeatherForecastModel(
 )
 
 @Serializable
-data class WindModel(
+internal data class WindModel(
     @SerialName("speed")
     val speed: Double,
 )
