@@ -1,7 +1,7 @@
-package dev.bogdanzurac.marp.app.elgoog.weather
+package dev.bogdanzurac.marp.feature.weather.ui
 
-import dev.bogdanzurac.marp.app.elgoog.weather.WeatherViewModel.WeatherUiState
-import dev.bogdanzurac.marp.app.elgoog.weather.WeatherViewModel.WeatherUiState.*
+import dev.bogdanzurac.marp.feature.weather.ui.WeatherViewModel.WeatherUiState
+import dev.bogdanzurac.marp.feature.weather.ui.WeatherViewModel.WeatherUiState.*
 import dev.bogdanzurac.marp.core.flowOf
 import dev.bogdanzurac.marp.core.foldResult
 import dev.bogdanzurac.marp.core.logger
@@ -11,6 +11,8 @@ import dev.bogdanzurac.marp.core.services.getLocationErrorDialogFor
 import dev.bogdanzurac.marp.core.ui.BaseViewModel
 import dev.bogdanzurac.marp.core.ui.Tracker
 import dev.bogdanzurac.marp.core.ui.UiState
+import dev.bogdanzurac.marp.feature.weather.domain.Forecast
+import dev.bogdanzurac.marp.feature.weather.domain.GetWeatherForecastUseCase
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.onStart
 import org.koin.core.annotation.Factory
@@ -34,7 +36,7 @@ internal class WeatherViewModel(
 
     internal sealed class WeatherUiState : UiState {
         class Error(val exception: Throwable) : WeatherUiState()
-        class Success(val forecast: ForecastModel) : WeatherUiState()
+        class Success(val forecast: Forecast) : WeatherUiState()
         object Loading : WeatherUiState()
     }
 }

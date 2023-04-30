@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">ElGoog</string>
-    <string name="atmospheric_pressure">Pressure</string>
     <string name="button_add">Add</string>
     <string name="button_delete">Delete</string>
     <string name="button_login">Login</string>
@@ -13,18 +12,14 @@
     <string name="error_auth_credentials">Invalid credentials, please use your correct email &amp; password</string>
     <string name="header_crypto_notes">Crypto notes</string>
     <string name="header_personal_notes">Personal notes</string>
-    <string name="humidity">Humidity</string>
     <string name="label_email">Email</string>
     <string name="label_note_text">Start typing your ideas here…</string>
     <string name="label_note_title">Note title</string>
     <string name="label_password">Password</string>
     <string name="movie_runtime">Runtime %d min</string>
-    <string name="temperature_current">Temp</string>
-    <string name="temperature_feels_like">Feels like %s</string>
     <string name="title_crypto">Crypto</string>
     <string name="title_movies">Movies</string>
     <string name="title_news">News</string>
     <string name="title_notes">Notes</string>
     <string name="title_weather">Weather</string>
-    <string name="wind_speed">Wind speed</string>
 </resources>

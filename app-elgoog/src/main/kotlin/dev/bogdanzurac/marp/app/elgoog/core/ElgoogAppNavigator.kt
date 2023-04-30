@@ -11,8 +11,8 @@ import dev.bogdanzurac.marp.app.elgoog.news.News
 import dev.bogdanzurac.marp.app.elgoog.news.NewsNavigator
 import dev.bogdanzurac.marp.app.elgoog.notes.Notes
 import dev.bogdanzurac.marp.app.elgoog.notes.NotesNavigator
-import dev.bogdanzurac.marp.app.elgoog.weather.Weather
-import dev.bogdanzurac.marp.app.elgoog.weather.WeatherNavigator
+import dev.bogdanzurac.marp.feature.weather.ui.Weather
+import dev.bogdanzurac.marp.feature.weather.ui.WeatherNavigator
 import dev.bogdanzurac.marp.core.navigation.AppNavigator
 import dev.bogdanzurac.marp.core.navigation.FeatureNavigator
 import org.koin.core.annotation.Single

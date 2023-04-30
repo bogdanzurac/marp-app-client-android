@@ -1,0 +1,7 @@
+<resources>
+    <string name="atmospheric_pressure">Pressure</string>
+    <string name="humidity">Humidity</string>
+    <string name="temperature_current">Temp</string>
+    <string name="temperature_feels_like">Feels like %s</string>
+    <string name="wind_speed">Wind speed</string>
+</resources>

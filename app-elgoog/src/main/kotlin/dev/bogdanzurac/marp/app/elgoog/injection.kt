@@ -3,6 +3,9 @@ package dev.bogdanzurac.marp.app.elgoog
 import dev.bogdanzurac.marp.core.auth.CoreAuthModule
 import dev.bogdanzurac.marp.core.data.CoreDataModule
 import dev.bogdanzurac.marp.core.ui.CoreUiModule
+import dev.bogdanzurac.marp.feature.weather.data.FeatureWeatherDataModule
+import dev.bogdanzurac.marp.feature.weather.domain.FeatureWeatherDomainModule
+import dev.bogdanzurac.marp.feature.weather.ui.FeatureWeatherUiModule
 import dev.bogdanzurac.marp.lib.db.firebase.LibDbFirebaseModule
 import dev.bogdanzurac.marp.lib.flagging.firebase.LibFlaggingFirebaseModule
 import dev.bogdanzurac.marp.lib.services.google.GoogleLocationProvider
@@ -21,6 +24,9 @@ internal val koinModules = listOf(
     CoreAuthModule().module,
     CoreDataModule().module,
     CoreUiModule().module,
+    FeatureWeatherDataModule().module,
+    FeatureWeatherDomainModule().module,
+    FeatureWeatherUiModule().module,
     LibDbFirebaseModule().module,
     LibFlaggingFirebaseModule().module,
     libServicesGoogleModule,

@@ -1,4 +1,4 @@
-package dev.bogdanzurac.marp.app.elgoog.weather
+package dev.bogdanzurac.marp.feature.weather.data
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
@@ -48,5 +48,3 @@ data class WindModel(
     @SerialName("speed")
     val speed: Double,
 )
-
-internal fun Double.formatTemperature(): String = this.toInt().toString() + "° C"
