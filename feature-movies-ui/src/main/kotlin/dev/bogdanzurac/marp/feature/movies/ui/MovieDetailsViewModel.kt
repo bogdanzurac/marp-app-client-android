@@ -1,16 +1,18 @@
-package dev.bogdanzurac.marp.app.elgoog.movies
+package dev.bogdanzurac.marp.feature.movies.ui
 
+import dev.bogdanzurac.marp.feature.movies.ui.MovieDetailsViewModel.MovieDetailsUiState
+import dev.bogdanzurac.marp.feature.movies.ui.MovieDetailsViewModel.MovieDetailsUiState.*
+import dev.bogdanzurac.marp.core.flowOf
+import dev.bogdanzurac.marp.core.foldResult
+import dev.bogdanzurac.marp.core.logger
+import dev.bogdanzurac.marp.core.onFailure
 import dev.bogdanzurac.marp.core.prompts.DialogManager
 import dev.bogdanzurac.marp.core.ui.BaseViewModel
 import dev.bogdanzurac.marp.core.ui.Tracker
 import dev.bogdanzurac.marp.core.ui.UiState
 import dev.bogdanzurac.marp.core.ui.getGenericErrorDialogFor
-import dev.bogdanzurac.marp.app.elgoog.movies.MovieDetailsViewModel.MovieDetailsUiState
-import dev.bogdanzurac.marp.app.elgoog.movies.MovieDetailsViewModel.MovieDetailsUiState.*
-import dev.bogdanzurac.marp.core.flowOf
-import dev.bogdanzurac.marp.core.foldResult
-import dev.bogdanzurac.marp.core.logger
-import dev.bogdanzurac.marp.core.onFailure
+import dev.bogdanzurac.marp.feature.movies.domain.Movie
+import dev.bogdanzurac.marp.feature.movies.domain.MoviesRepository
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.onStart
 import org.koin.core.annotation.Factory
@@ -35,7 +37,7 @@ internal class MovieDetailsViewModel(
 
     internal sealed class MovieDetailsUiState : UiState {
         class Error(val exception: Throwable) : MovieDetailsUiState()
-        class Success(val movie: MovieModel) : MovieDetailsUiState()
+        class Success(val movie: Movie) : MovieDetailsUiState()
         object Loading : MovieDetailsUiState()
     }
 }

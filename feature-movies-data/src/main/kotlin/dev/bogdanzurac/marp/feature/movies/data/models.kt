@@ -1,4 +1,4 @@
-package dev.bogdanzurac.marp.app.elgoog.movies
+package dev.bogdanzurac.marp.feature.movies.data
 
 import kotlinx.datetime.LocalDate
 import kotlinx.serialization.SerialName

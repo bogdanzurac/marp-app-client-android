@@ -5,8 +5,8 @@ import dev.bogdanzurac.marp.feature.crypto.ui.Crypto
 import dev.bogdanzurac.marp.feature.crypto.ui.CryptoNavigator
 import dev.bogdanzurac.marp.feature.auth.ui.Auth
 import dev.bogdanzurac.marp.feature.auth.ui.AuthNavigator
-import dev.bogdanzurac.marp.app.elgoog.movies.Movies
-import dev.bogdanzurac.marp.app.elgoog.movies.MoviesNavigator
+import dev.bogdanzurac.marp.feature.movies.ui.Movies
+import dev.bogdanzurac.marp.feature.movies.ui.MoviesNavigator
 import dev.bogdanzurac.marp.app.elgoog.news.News
 import dev.bogdanzurac.marp.app.elgoog.news.NewsNavigator
 import dev.bogdanzurac.marp.feature.notes.ui.Notes
