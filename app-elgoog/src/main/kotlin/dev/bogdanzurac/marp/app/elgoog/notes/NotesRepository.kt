@@ -1,7 +1,7 @@
 package dev.bogdanzurac.marp.app.elgoog.notes
 
 import dev.bogdanzurac.marp.core.auth.AuthManager
-import dev.bogdanzurac.marp.app.elgoog.core.firestore.FirebaseDatabase
+import dev.bogdanzurac.marp.lib.db.firebase.FirebaseDatabase
 import dev.bogdanzurac.marp.core.combineResult
 import dev.bogdanzurac.marp.core.mapResult
 import kotlinx.coroutines.Dispatchers
