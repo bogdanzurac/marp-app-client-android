@@ -1,10 +1,10 @@
-package dev.bogdanzurac.marp.app.elgoog.login
+package dev.bogdanzurac.marp.feature.auth.ui
 
 import androidx.navigation.NavGraphBuilder
 import dev.bogdanzurac.marp.core.navigation.composable
 import dev.bogdanzurac.marp.core.navigation.navigation
 
-fun NavGraphBuilder.loginNavGraph() {
+fun NavGraphBuilder.authNavGraph() {
     navigation(
         startDestination = Login,
         route = Auth

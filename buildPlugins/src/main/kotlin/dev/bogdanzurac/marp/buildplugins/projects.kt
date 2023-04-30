@@ -11,6 +11,7 @@ object projects {
     const val coreServices = "core-services"
     const val coreUi = "core-ui"
     const val coreWs = "core-ws"
+    const val featureAuthUi = "feature-auth-ui"
     const val featureCryptoData = "feature-crypto-data"
     const val featureCryptoDomain = "feature-crypto-domain"
     const val featureCryptoUi = "feature-crypto-ui"

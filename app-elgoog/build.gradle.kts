@@ -31,6 +31,7 @@ dependencies {
     implementation(project(projects.coreServices))
     implementation(project(projects.coreUi))
     implementation(project(projects.coreWs))
+    implementation(project(projects.featureAuthUi))
     implementation(project(projects.featureCryptoData))
     implementation(project(projects.featureCryptoDomain))
     implementation(project(projects.featureCryptoUi))

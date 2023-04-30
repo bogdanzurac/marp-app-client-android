@@ -1,6 +1,5 @@
-package dev.bogdanzurac.marp.app.elgoog.login
+package dev.bogdanzurac.marp.feature.auth.ui
 
-import dev.bogdanzurac.marp.app.elgoog.R
 import dev.bogdanzurac.marp.core.TextResource
 import dev.bogdanzurac.marp.core.auth.AuthException.AccountCreationException
 import dev.bogdanzurac.marp.core.auth.AuthException.InvalidCredentialsException
