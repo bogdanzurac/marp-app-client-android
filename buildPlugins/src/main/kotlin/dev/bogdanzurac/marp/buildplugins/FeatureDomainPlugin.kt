@@ -45,8 +45,8 @@ class FeatureDomainPlugin : Plugin<Project> {
 
         dependencies {
             implementation(versionCatalog.lib("kermit"))
-            implementation(versionCatalog.bundle("kotlin-coroutines"))
-            implementation(versionCatalog.bundle("kotlin-datetime"))
+            implementation(versionCatalog.lib("kotlin-coroutines"))
+            implementation(versionCatalog.lib("kotlin-datetime"))
 
             implementation(project("core"))
         }

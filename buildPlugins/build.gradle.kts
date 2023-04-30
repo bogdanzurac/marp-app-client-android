@@ -35,18 +35,18 @@ gradlePlugin {
         }
 
         register("featureDataPlugin") {
-            id = "dev.bogdanzurac.marp.plugins.core.data"
+            id = "dev.bogdanzurac.marp.plugins.feature.data"
             implementationClass = "dev.bogdanzurac.marp.buildplugins.FeatureDataPlugin"
         }
 
         register("featureDomainPlugin") {
-            id = "dev.bogdanzurac.marp.plugins.core.domain"
+            id = "dev.bogdanzurac.marp.plugins.feature.domain"
             implementationClass = "dev.bogdanzurac.marp.buildplugins.FeatureDomainPlugin"
         }
 
-        register("featurePresentationPlugin") {
-            id = "dev.bogdanzurac.marp.plugins.core.presentation"
-            implementationClass = "dev.bogdanzurac.marp.buildplugins.FeaturePresentationPlugin"
+        register("featureUiPlugin") {
+            id = "dev.bogdanzurac.marp.plugins.feature.ui"
+            implementationClass = "dev.bogdanzurac.marp.buildplugins.FeatureUiPlugin"
         }
     }
 }
