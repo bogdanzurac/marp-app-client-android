@@ -18,7 +18,6 @@ android {
 dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.core)
-    implementation(libs.firebase.config)
     implementation(libs.firebase.crashlytics)
     implementation(libs.firebase.firestore)
     implementation(libs.coil)
@@ -33,6 +32,7 @@ dependencies {
     implementation(project(projects.coreServices))
     implementation(project(projects.coreUi))
     implementation(project(projects.coreWs))
+    implementation(project(projects.libFlaggingFirebase))
     implementation(project(projects.libServicesGoogle))
     implementation(project(projects.libServicesHuawei))
     implementation(project(projects.libTrackingFirebase))

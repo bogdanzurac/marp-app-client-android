@@ -11,6 +11,7 @@ object projects {
     const val coreServices = "core-services"
     const val coreUi = "core-ui"
     const val coreWs = "core-ws"
+    const val libFlaggingFirebase = "lib-flagging-firebase"
     const val libServicesGoogle = "lib-services-google"
     const val libServicesHuawei = "lib-services-huawei"
     const val libTrackingFirebase = "lib-tracking-firebase"

@@ -3,6 +3,7 @@ package dev.bogdanzurac.marp.app.elgoog
 import dev.bogdanzurac.marp.core.auth.CoreAuthModule
 import dev.bogdanzurac.marp.core.data.CoreDataModule
 import dev.bogdanzurac.marp.core.ui.CoreUiModule
+import dev.bogdanzurac.marp.lib.flagging.firebase.LibFlaggingFirebaseModule
 import dev.bogdanzurac.marp.lib.services.google.GoogleLocationProvider
 import dev.bogdanzurac.marp.lib.services.google.libServicesGoogleModule
 import dev.bogdanzurac.marp.lib.services.huawei.HuaweiLocationProvider
@@ -19,6 +20,7 @@ internal val koinModules = listOf(
     CoreAuthModule().module,
     CoreDataModule().module,
     CoreUiModule().module,
+    LibFlaggingFirebaseModule().module,
     libServicesGoogleModule,
     libServicesHuaweiModule,
     LibTrackingFirebaseModule().module,

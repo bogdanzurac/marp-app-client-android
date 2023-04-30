@@ -1,4 +1,4 @@
-package dev.bogdanzurac.marp.app.elgoog.core.feature
+package dev.bogdanzurac.marp.lib.flagging.firebase
 
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig
