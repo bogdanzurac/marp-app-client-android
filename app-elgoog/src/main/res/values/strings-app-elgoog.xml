@@ -1,6 +1,4 @@
 <resources>
-    <string name="app_name">ElGoog</string>
-    <string name="button_logout">Logout</string>
     <string name="title_crypto">Crypto</string>
     <string name="title_movies">Movies</string>
     <string name="title_news">News</string>

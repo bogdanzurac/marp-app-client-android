@@ -1,4 +1,4 @@
-package dev.bogdanzurac.marp.app.elgoog.core.callbacks
+package dev.bogdanzurac.marp.app.elgoog.callbacks
 
 import dev.bogdanzurac.marp.feature.auth.ui.Auth
 import dev.bogdanzurac.marp.feature.notes.ui.NotesCallbacks

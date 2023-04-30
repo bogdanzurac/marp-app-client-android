@@ -1,4 +1,4 @@
-package dev.bogdanzurac.marp.app.elgoog.core
+package dev.bogdanzurac.marp.app.elgoog
 
 import dev.bogdanzurac.marp.core.logger
 import dev.bogdanzurac.marp.feature.crypto.ui.Crypto

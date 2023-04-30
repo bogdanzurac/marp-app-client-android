@@ -1,4 +1,4 @@
-package dev.bogdanzurac.marp.app.elgoog.core.callbacks
+package dev.bogdanzurac.marp.app.elgoog.callbacks
 
 import dev.bogdanzurac.marp.feature.crypto.ui.CryptoCallbacks
 import dev.bogdanzurac.marp.feature.notes.ui.AddNote

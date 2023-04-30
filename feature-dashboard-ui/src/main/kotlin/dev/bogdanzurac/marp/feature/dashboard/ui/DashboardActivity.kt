@@ -1,15 +1,24 @@
-package dev.bogdanzurac.marp.app.elgoog.dashboard
+package dev.bogdanzurac.marp.feature.dashboard.ui
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.runtime.Composable
+import androidx.navigation.NavGraphBuilder
 import dev.bogdanzurac.marp.core.navigation.AppNavigator
-import dev.bogdanzurac.marp.app.elgoog.core.theme.ElgoogTheme
+import dev.bogdanzurac.marp.core.navigation.AppRoute
 import dev.bogdanzurac.marp.core.ui.prompts.PermissionManagerImpl
 import org.koin.android.ext.android.get
 import java.util.*
 
-class DashboardActivity : ComponentActivity() {
+abstract class DashboardActivity : ComponentActivity() {
+
+    @Composable
+    abstract fun AppTheme(content: @Composable () -> Unit)
+
+    abstract val navGraphBuilder: NavGraphBuilder.() -> Unit
+
+    abstract val startRoute: AppRoute
 
     private val appNavigator: AppNavigator = get()
     private val permissionManager: PermissionManagerImpl = get()
@@ -18,7 +27,7 @@ class DashboardActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         permissionManager.currentActivity = this
         Locale.setDefault(Locale.ENGLISH)
-        setContent { ElgoogTheme { DashboardScreen(appNavigator) } }
+        setContent { AppTheme { DashboardScreen(startRoute, navGraphBuilder, appNavigator) } }
     }
 
     override fun onDestroy() {

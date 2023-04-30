@@ -3,17 +3,17 @@ package dev.bogdanzurac.marp.app.elgoog.dashboard
 import dev.bogdanzurac.marp.app.elgoog.R
 import dev.bogdanzurac.marp.core.navigation.AppRoute
 import dev.bogdanzurac.marp.feature.crypto.ui.Crypto
-import dev.bogdanzurac.marp.app.elgoog.dashboard.ElgoogBottomNavigationItem.*
+import dev.bogdanzurac.marp.feature.dashboard.ui.BottomNavigationItem
 import dev.bogdanzurac.marp.feature.movies.ui.Movies
 import dev.bogdanzurac.marp.feature.news.ui.News
 import dev.bogdanzurac.marp.feature.notes.ui.Notes
 import dev.bogdanzurac.marp.feature.weather.ui.Weather
 
 internal sealed class ElgoogBottomNavigationItem(
-    val route: AppRoute,
-    val imageRes: Int,
-    val titleRes: Int,
-) {
+    override val route: AppRoute,
+    override val imageRes: Int,
+    override val titleRes: Int,
+) : BottomNavigationItem {
 
     object CryptoNavigationItem : ElgoogBottomNavigationItem(
         Crypto,
@@ -45,11 +45,3 @@ internal sealed class ElgoogBottomNavigationItem(
         R.string.title_weather
     )
 }
-
-internal val bottomNavigationItems = listOf(
-    CryptoNavigationItem,
-    MoviesNavigationItem,
-    NotesNavigationItem,
-    NewsNavigationItem,
-    WeatherNavigationItem
-)

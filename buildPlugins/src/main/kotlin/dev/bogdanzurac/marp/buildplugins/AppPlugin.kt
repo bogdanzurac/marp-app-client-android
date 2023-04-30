@@ -64,12 +64,15 @@ class AppPlugin : Plugin<Project> {
             debugImplementation(versionCatalog.lib("androidx-compose-ui-tooling"))
             implementation(versionCatalog.lib("androidx-navigation"))
             implementation(versionCatalog.bundle("compose"))
+            implementation(versionCatalog.lib("firebase-crashlytics"))
             implementation(versionCatalog.bundle("lifecycle"))
             implementation(versionCatalog.lib("kermit"))
             implementation(versionCatalog.lib("koin-compose"))
             implementation(versionCatalog.lib("kotlin-coroutines"))
 
             implementation(project("core"))
+            implementation(project("core-data"))
+            implementation(project("core-ui"))
         }
     }
 
