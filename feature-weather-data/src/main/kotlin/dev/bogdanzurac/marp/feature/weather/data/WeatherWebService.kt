@@ -14,7 +14,7 @@ import org.koin.core.annotation.Single
  * https://openweathermap.org/current
  */
 @Single
-class WeatherWebService(
+internal class WeatherWebService(
     @Property(WEATHER_KEY) val apiKey: String,
     featureManager: FeatureManager
 ) : WebService(
@@ -34,8 +34,6 @@ class WeatherWebService(
             parameter("lon", location.long)
             parameter("units", "metric")
         }
-
-    companion object {
-        const val WEATHER_KEY = "weather_api_key"
-    }
 }
+
+const val WEATHER_KEY = "weather_api_key"
