@@ -1,0 +1,6 @@
+<resources>
+    <string name="button_notes_login">Login to view notes</string>
+    <string name="header_personal_notes">Personal notes</string>
+    <string name="label_note_text">Start typing your ideas here…</string>
+    <string name="label_note_title">Note title</string>
+</resources>
