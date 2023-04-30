@@ -1,21 +1,18 @@
-package dev.bogdanzurac.marp.app.elgoog.news
+package dev.bogdanzurac.marp.feature.news.data.web
 
 import dev.bogdanzurac.marp.core.ws.CustomInstantSerializer
 import dev.bogdanzurac.marp.core.*
-import io.realm.kotlin.types.RealmObject
-import io.realm.kotlin.types.annotations.Ignore
-import io.realm.kotlin.types.annotations.PrimaryKey
 import kotlinx.datetime.Instant
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class NewsModel(
+internal data class NewsModel(
     @SerialName("results") val list: List<NewsArticleModel>
 )
 
 @Serializable
-data class NewsArticleModel(
+internal data class NewsArticleModel(
     @SerialName("id")
     val id: String = randomUUID(),
     @SerialName("image_url")
@@ -34,17 +31,3 @@ data class NewsArticleModel(
     @Serializable(with = CustomInstantSerializer::class)
     val publishDate: Instant,
 )
-
-class NewsArticleEntity : RealmObject {
-    @PrimaryKey
-    var id: String = ""
-    var imageUrl: String? = null
-
-    @Ignore
-    var creator: List<String>? = null
-    var title: String = ""
-    var link: String = ""
-    var description: String? = null
-    var content: String = ""
-    var publishDate: Long = 0
-}

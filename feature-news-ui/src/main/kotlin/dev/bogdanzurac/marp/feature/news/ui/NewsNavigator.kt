@@ -1,4 +1,4 @@
-package dev.bogdanzurac.marp.app.elgoog.news
+package dev.bogdanzurac.marp.feature.news.ui
 
 import dev.bogdanzurac.marp.core.navigation.FeatureNavigator
 import org.koin.core.annotation.Single

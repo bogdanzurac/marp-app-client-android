@@ -1,4 +1,4 @@
-package dev.bogdanzurac.marp.app.elgoog.news
+package dev.bogdanzurac.marp.feature.news.ui
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -15,8 +15,6 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
-import dev.bogdanzurac.marp.app.elgoog.core.theme.ElgoogTheme
-import dev.bogdanzurac.marp.app.elgoog.news.NewsDetailsViewModel.NewsDetailsUiState.*
 import dev.bogdanzurac.marp.core.ui.DateTimeAttribute.DATE_TIME_SHORT
 import dev.bogdanzurac.marp.core.ui.composable.BaseScreen
 import dev.bogdanzurac.marp.core.ui.composable.EmptyView
@@ -24,6 +22,8 @@ import dev.bogdanzurac.marp.core.ui.composable.LoadingView
 import dev.bogdanzurac.marp.core.ui.composable.SelectableText
 import dev.bogdanzurac.marp.core.ui.format
 import dev.bogdanzurac.marp.core.ui.toLocalDateTime
+import dev.bogdanzurac.marp.feature.news.domain.NewsArticle
+import dev.bogdanzurac.marp.feature.news.ui.NewsDetailsViewModel.NewsDetailsUiState.*
 import org.koin.androidx.compose.koinViewModel
 import org.koin.core.parameter.parametersOf
 
@@ -35,12 +35,12 @@ internal fun NewsDetailsScreen(
     when (val uiState = state.value) {
         is Loading -> LoadingView()
         is Error -> EmptyView()
-        is Success -> NewsDetailsView(uiState.newsArticleModel)
+        is Success -> NewsDetailsView(uiState.newsArticle)
     }
 }
 
 @Composable
-private fun NewsDetailsView(newsArticle: NewsArticleModel) {
+private fun NewsDetailsView(newsArticle: NewsArticle) {
     Column(Modifier.verticalScroll(rememberScrollState())) {
         AsyncImage(
             model = newsArticle.imageUrl,
@@ -86,7 +86,7 @@ private fun NewsDetailsView(newsArticle: NewsArticleModel) {
 @Composable
 @Preview
 private fun NewsDetailsPreview() {
-    ElgoogTheme {
+    MaterialTheme {
         NewsDetailsView(composeNewsArticleModelPreview)
     }
 }
