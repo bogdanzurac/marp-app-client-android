@@ -3,6 +3,7 @@ import dev.bogdanzurac.marp.buildplugins.projects
 
 plugins {
     id("dev.bogdanzurac.marp.plugins.core")
+    id("dev.bogdanzurac.marp.plugins.compose")
 }
 
 android {
