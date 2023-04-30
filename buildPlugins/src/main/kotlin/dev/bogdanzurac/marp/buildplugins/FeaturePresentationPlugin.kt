@@ -54,6 +54,8 @@ class FeaturePresentationPlugin : Plugin<Project> {
             implementation(versionCatalog.bundle("kotlin-datetime"))
 
             implementation(project("core"))
+            implementation(project("core-navigation"))
+            implementation(project("core-ui"))
         }
     }
 }

@@ -3,12 +3,12 @@ package dev.bogdanzurac.marp.app.elgoog.dashboard
 import dev.bogdanzurac.marp.core.auth.AuthManager
 import dev.bogdanzurac.marp.core.auth.User
 import dev.bogdanzurac.marp.core.feature.FeatureManager
-import dev.bogdanzurac.marp.app.elgoog.core.navigation.*
 import dev.bogdanzurac.marp.core.ui.BaseViewModel
 import dev.bogdanzurac.marp.core.ui.UiState
 import dev.bogdanzurac.marp.app.elgoog.dashboard.DashboardViewModel.DashboardUiState
 import dev.bogdanzurac.marp.app.elgoog.dashboard.DashboardViewModel.DashboardUiState.LoadingFeatures
 import dev.bogdanzurac.marp.app.elgoog.dashboard.DashboardViewModel.DashboardUiState.Success
+import dev.bogdanzurac.marp.core.navigation.*
 import kotlinx.coroutines.flow.*
 import org.koin.core.annotation.Factory
 

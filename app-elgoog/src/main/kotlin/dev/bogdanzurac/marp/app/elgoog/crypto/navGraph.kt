@@ -1,9 +1,9 @@
 package dev.bogdanzurac.marp.app.elgoog.crypto
 
 import androidx.navigation.NavGraphBuilder
-import dev.bogdanzurac.marp.app.elgoog.core.navigation.composable
-import dev.bogdanzurac.marp.app.elgoog.core.navigation.getStringArg
-import dev.bogdanzurac.marp.app.elgoog.core.navigation.navigation
+import dev.bogdanzurac.marp.core.navigation.composable
+import dev.bogdanzurac.marp.core.navigation.getStringArg
+import dev.bogdanzurac.marp.core.navigation.navigation
 import dev.bogdanzurac.marp.app.elgoog.crypto.CryptoDetails.CRYPTO_ID
 
 fun NavGraphBuilder.cryptoNavGraph() {

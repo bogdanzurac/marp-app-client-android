@@ -1,4 +1,4 @@
-package dev.bogdanzurac.marp.app.elgoog.core.navigation
+package dev.bogdanzurac.marp.core.navigation
 
 import androidx.navigation.NavController
 import androidx.navigation.NavGraph.Companion.findStartDestination

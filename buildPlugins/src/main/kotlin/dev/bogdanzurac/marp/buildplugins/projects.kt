@@ -7,6 +7,7 @@ object projects {
     const val coreData = "core-data"
     const val coreDb = "core-db"
     const val corePrompts = "core-prompts"
+    const val coreNavigation = "core-navigation"
     const val coreServices = "core-services"
     const val coreUi = "core-ui"
     const val coreWs = "core-ws"

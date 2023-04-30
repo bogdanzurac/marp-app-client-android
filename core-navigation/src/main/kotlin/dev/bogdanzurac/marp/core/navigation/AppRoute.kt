@@ -1,4 +1,4 @@
-package dev.bogdanzurac.marp.app.elgoog.core.navigation
+package dev.bogdanzurac.marp.core.navigation
 
 typealias RoutePath = String
 

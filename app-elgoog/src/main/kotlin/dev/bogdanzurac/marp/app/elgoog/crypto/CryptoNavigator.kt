@@ -1,6 +1,6 @@
 package dev.bogdanzurac.marp.app.elgoog.crypto
 
-import dev.bogdanzurac.marp.app.elgoog.core.navigation.FeatureNavigator
+import dev.bogdanzurac.marp.core.navigation.FeatureNavigator
 import dev.bogdanzurac.marp.app.elgoog.notes.AddNote
 import dev.bogdanzurac.marp.app.elgoog.notes.NoteDetails
 import org.koin.core.annotation.Single
