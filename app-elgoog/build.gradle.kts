@@ -27,6 +27,7 @@ dependencies {
     implementation(project(projects.featureMoviesDomain))
     implementation(project(projects.featureMoviesUi))
     implementation(project(projects.featureNewsData))
+    implementation(project(projects.featureNewsDataWebNewsData))
     implementation(project(projects.featureNewsDomain))
     implementation(project(projects.featureNewsUi))
     implementation(project(projects.featureNotesData))

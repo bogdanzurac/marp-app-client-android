@@ -7,8 +7,6 @@ import dev.bogdanzurac.marp.feature.news.data.dao.NewsArticleEntity
 import dev.bogdanzurac.marp.feature.news.data.dao.NewsDao
 import dev.bogdanzurac.marp.feature.news.data.dao.toEntity
 import dev.bogdanzurac.marp.feature.news.data.dao.toNewsArticle
-import dev.bogdanzurac.marp.feature.news.data.web.NewsDataWebService
-import dev.bogdanzurac.marp.feature.news.data.web.toNewsArticle
 import dev.bogdanzurac.marp.feature.news.domain.NewsArticle
 import dev.bogdanzurac.marp.feature.news.domain.NewsRepository
 import kotlinx.coroutines.Dispatchers
@@ -22,12 +20,12 @@ import kotlin.time.Duration.Companion.minutes
 @Single
 internal class NewsRepositoryImpl(
     private val dao: NewsDao,
-    private val webService: NewsDataWebService,
+    private val webService: NewsWebService,
     syncTimestampsPreferences: SyncTimestampsPreferences,
 ) : NewsRepository {
 
     private val newsHolder = DataHolder.Builder<List<NewsArticle>>("news")
-        .fetcher { webService.getNews().map { articles -> articles.map { it.toNewsArticle() } } }
+        .fetcher { webService.getNews() }
         .cache(
             reader = {
                 dao.observeAll<NewsArticleEntity>()

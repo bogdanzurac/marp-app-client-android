@@ -73,12 +73,14 @@ private fun NewsDetailsView(newsArticle: NewsArticle) {
                     style = MaterialTheme.typography.bodyLarge
                 )
             }
-            SelectableText(
-                text = newsArticle.content,
-                textAlign = TextAlign.Justify,
-                modifier = Modifier.padding(top = 16.dp),
-                style = MaterialTheme.typography.bodyMedium
-            )
+            newsArticle.content?.let {
+                SelectableText(
+                    text = it,
+                    textAlign = TextAlign.Justify,
+                    modifier = Modifier.padding(top = 16.dp),
+                    style = MaterialTheme.typography.bodyMedium
+                )
+            }
         }
     }
 }
