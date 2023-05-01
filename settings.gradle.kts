@@ -1,6 +1,7 @@
 import java.net.URI
 
 include(":app-elgoog")
+include(":app-macrosoft")
 include(":core")
 include(":core-auth")
 include(":core-data")

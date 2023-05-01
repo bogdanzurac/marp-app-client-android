@@ -1,0 +1,5 @@
+<resources>
+    <string name="title_crypto">Crypto</string>
+    <string name="title_news">Știri</string>
+    <string name="title_weather">Vreme</string>
+</resources>

@@ -1,0 +1,4 @@
+<resources>
+    <string name="error_location_failure">Problemă întâlnită în timpul verificării locației</string>
+    <string name="error_location_unavailable">Nicio locație disponibilă</string>
+</resources>
