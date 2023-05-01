@@ -20,13 +20,15 @@ abstract class DashboardActivity : ComponentActivity() {
 
     abstract val startRoute: AppRoute
 
+    abstract val locale: Locale
+
     private val appNavigator: AppNavigator = get()
     private val permissionManager: PermissionManagerImpl = get()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         permissionManager.currentActivity = this
-        Locale.setDefault(Locale.ENGLISH)
+        Locale.setDefault(locale)
         setContent { AppTheme { DashboardScreen(startRoute, navGraphBuilder, appNavigator) } }
     }
 

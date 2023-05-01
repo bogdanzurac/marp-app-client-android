@@ -12,6 +12,7 @@ import dev.bogdanzurac.marp.feature.movies.ui.moviesNavGraph
 import dev.bogdanzurac.marp.feature.news.ui.newsNavGraph
 import dev.bogdanzurac.marp.feature.notes.ui.notesNavGraph
 import dev.bogdanzurac.marp.feature.weather.ui.weatherNavGraph
+import java.util.*
 
 class ElGoogDashboardActivity : DashboardActivity() {
 
@@ -30,4 +31,6 @@ class ElGoogDashboardActivity : DashboardActivity() {
     }
 
     override val startRoute: AppRoute = Crypto
+
+    override val locale: Locale = Locale.ENGLISH
 }
