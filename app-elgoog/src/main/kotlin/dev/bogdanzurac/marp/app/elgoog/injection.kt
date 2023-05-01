@@ -9,6 +9,7 @@ import dev.bogdanzurac.marp.feature.crypto.ui.FeatureCryptoUiModule
 import dev.bogdanzurac.marp.feature.movies.data.FeatureMoviesDataModule
 import dev.bogdanzurac.marp.feature.movies.ui.FeatureMoviesUiModule
 import dev.bogdanzurac.marp.feature.news.data.FeatureNewsDataModule
+import dev.bogdanzurac.marp.feature.news.data.newsdata.FeatureNewsDataWebNewsDataModule
 import dev.bogdanzurac.marp.feature.news.ui.FeatureNewsUiModule
 import dev.bogdanzurac.marp.feature.notes.data.FeatureNotesDataModule
 import dev.bogdanzurac.marp.feature.notes.domain.FeatureNotesDomainModule
@@ -40,6 +41,7 @@ internal val koinModules = listOf(
     FeatureMoviesDataModule().module,
     FeatureMoviesUiModule().module,
     FeatureNewsDataModule().module,
+    FeatureNewsDataWebNewsDataModule().module,
     FeatureNewsUiModule().module,
     FeatureNotesDataModule().module,
     FeatureNotesDomainModule().module,

@@ -1,0 +1,12 @@
+<resources>
+    <string name="button_add">Adaugă</string>
+    <string name="button_delete">Șterge</string>
+    <string name="empty">Momentan nu avem informații să vă arătăm</string>
+    <string name="error_general">Nu s-a putut procesa solicitarea dvs., vă rugăm să încercați din nou mai târziu</string>
+    <string name="error_loading">Nu s-au putut încărca datele, vă rugăm să încercați din nou mai târziu</string>
+    <string name="error_network">Problemă de rețea, vă rugăm să vă verificați conexiunea la internet</string>
+    <string name="error_not_available">Serviciul nostru web este momentan indisponibil, vă rugăm să încercați din nou mai târziu</string>
+    <string name="error_title">Am întâmpinat o problemă</string>
+    <string name="error_unknown">Serviciul nostru web a întâmpinat o problemă %s, vă rugăm să încercați din nou mai târziu</string>
+    <string name="loading">Se încarcă</string>
+</resources>

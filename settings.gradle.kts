@@ -1,6 +1,7 @@
 import java.net.URI
 
 include(":app-elgoog")
+include(":app-macrosoft")
 include(":core")
 include(":core-auth")
 include(":core-data")
@@ -20,6 +21,8 @@ include(":feature-movies-data")
 include(":feature-movies-domain")
 include(":feature-movies-ui")
 include(":feature-news-data")
+include(":feature-news-data-newsapi")
+include(":feature-news-data-newsdata")
 include(":feature-news-domain")
 include(":feature-news-ui")
 include(":feature-notes-data")

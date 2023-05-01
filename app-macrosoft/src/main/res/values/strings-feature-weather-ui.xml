@@ -1,0 +1,7 @@
+<resources>
+    <string name="atmospheric_pressure">Presiune</string>
+    <string name="humidity">Umiditate</string>
+    <string name="temperature_current">Temp</string>
+    <string name="temperature_feels_like">Se simte ca %s</string>
+    <string name="wind_speed">Viteză vânt</string>
+</resources>

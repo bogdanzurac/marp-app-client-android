@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "96161453289",
+    "project_id": "marp-macrosoft",
+    "storage_bucket": "marp-macrosoft.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:96161453289:android:b3db64cc45dcc2c8554c78",
+        "android_client_info": {
+          "package_name": "dev.bogdanzurac.marp.app.macrosoft"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "96161453289-tf60jm6oo6bv2se4762b7mtiuk62m5t8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxYFZFTcYYkUcbQdm7le2-aKyftzpx66c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "96161453289-tf60jm6oo6bv2se4762b7mtiuk62m5t8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

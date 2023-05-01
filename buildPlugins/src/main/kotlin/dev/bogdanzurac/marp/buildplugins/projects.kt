@@ -21,6 +21,8 @@ object projects {
     const val featureMoviesDomain = "feature-movies-domain"
     const val featureMoviesUi = "feature-movies-ui"
     const val featureNewsData = "feature-news-data"
+    const val featureNewsDataWebNewsApi = "feature-news-data-newsapi"
+    const val featureNewsDataWebNewsData = "feature-news-data-newsdata"
     const val featureNewsDomain = "feature-news-domain"
     const val featureNewsUi = "feature-news-ui"
     const val featureNotesData = "feature-notes-data"

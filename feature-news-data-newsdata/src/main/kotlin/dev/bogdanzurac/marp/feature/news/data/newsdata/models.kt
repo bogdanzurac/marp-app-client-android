@@ -1,4 +1,4 @@
-package dev.bogdanzurac.marp.feature.news.data.web
+package dev.bogdanzurac.marp.feature.news.data.newsdata
 
 import dev.bogdanzurac.marp.core.ws.CustomInstantSerializer
 import dev.bogdanzurac.marp.core.*

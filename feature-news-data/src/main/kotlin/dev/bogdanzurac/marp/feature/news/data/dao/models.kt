@@ -14,6 +14,6 @@ class NewsArticleEntity : RealmObject {
     var title: String = ""
     var link: String = ""
     var description: String? = null
-    var content: String = ""
+    var content: String? = null
     var publishDate: Long = 0
 }

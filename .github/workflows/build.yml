@@ -16,13 +16,19 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
         
-      - name: Copy secrets
+      - name: Copy ElGoog secrets
         run: |
           echo "const val CRYPTO_API_KEY = \"${{ secrets.CRYPTO_API_KEY }}\"
           const val MOVIES_API_KEY = \"${{ secrets.MOVIES_API_KEY }}\"
           const val NEWS_API_KEY = \"${{ secrets.NEWS_API_KEY }}\"
           const val WEATHER_API_KEY = \"${{ secrets.WEATHER_API_KEY }}\"" >> app-elgoog/src/main/kotlin/dev/bogdanzurac/marp/app/elgoog/secret.kt
-      
+
+      - name: Copy Macrosoft secrets
+        run: |
+          echo "const val CRYPTO_API_KEY = \"${{ secrets.CRYPTO_API_KEY }}\"
+          const val NEWS_API_KEY = \"${{ secrets.NEWSAPI_API_KEY }}\"
+          const val WEATHER_API_KEY = \"${{ secrets.WEATHER_API_KEY }}\"" >> app-macrosoft/src/main/kotlin/dev/bogdanzurac/marp/app/macrosoft/secret.kt
+
       - name: Set up JDK
         uses: actions/setup-java@v2
         with:

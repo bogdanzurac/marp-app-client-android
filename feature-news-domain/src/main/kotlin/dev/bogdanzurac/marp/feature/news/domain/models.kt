@@ -9,6 +9,6 @@ data class NewsArticle(
     val title: String,
     val link: String,
     val description: String?,
-    val content: String,
+    val content: String?,
     val publishDate: Instant,
 )

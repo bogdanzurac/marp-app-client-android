@@ -1,0 +1,5 @@
+<resources>
+    <string name="crypto_circulating_supply">Cantitate în circulație</string>
+    <string name="crypto_market_cap">Capitalizare</string>
+    <string name="crypto_max_supply">Cantitate maximă</string>
+</resources>
