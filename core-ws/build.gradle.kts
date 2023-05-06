@@ -1,3 +1,5 @@
+import dev.bogdanzurac.marp.build.projects
+
 plugins {
     id("dev.bogdanzurac.marp.build.plugins.core")
 }
@@ -10,5 +12,5 @@ dependencies {
     implementation(libs.bundles.ktor)
     api(libs.ktor.core)
 
-    implementation(project(parts.core))
+    implementation(project(projects.core))
 }

@@ -1,3 +1,5 @@
+import dev.bogdanzurac.marp.build.projects
+
 plugins {
     id("dev.bogdanzurac.marp.build.plugins.core")
     id("dev.bogdanzurac.marp.build.plugins.koin")
@@ -10,6 +12,6 @@ android {
 dependencies {
     implementation(libs.firebase.auth)
 
-    implementation(project(parts.core))
-    implementation(project(parts.coreWs))
+    implementation(project(projects.core))
+    implementation(project(projects.coreWs))
 }

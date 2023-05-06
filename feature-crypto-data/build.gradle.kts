@@ -1,3 +1,5 @@
+import dev.bogdanzurac.marp.build.projects
+
 plugins {
     id("dev.bogdanzurac.marp.build.plugins.feature.data")
 }
@@ -7,5 +9,5 @@ android {
 }
 
 dependencies {
-    implementation(project(parts.featureCryptoDomain))
+    implementation(project(projects.featureCryptoDomain))
 }

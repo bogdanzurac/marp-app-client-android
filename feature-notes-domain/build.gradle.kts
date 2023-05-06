@@ -1,3 +1,5 @@
+import dev.bogdanzurac.marp.build.projects
+
 plugins {
     id("dev.bogdanzurac.marp.build.plugins.feature.domain")
 }
@@ -7,6 +9,6 @@ android {
 }
 
 dependencies {
-    implementation(project(parts.coreAuth))
-    api(project(parts.featureCryptoDomain))
+    implementation(project(projects.coreAuth))
+    api(project(projects.featureCryptoDomain))
 }

@@ -1,3 +1,5 @@
+import dev.bogdanzurac.marp.build.projects
+
 plugins {
     id("dev.bogdanzurac.marp.build.plugins.core")
 }
@@ -7,6 +9,6 @@ android {
 }
 
 dependencies {
-    implementation(project(parts.core))
-    implementation(project(parts.coreUi))
+    implementation(project(projects.core))
+    implementation(project(projects.coreUi))
 }

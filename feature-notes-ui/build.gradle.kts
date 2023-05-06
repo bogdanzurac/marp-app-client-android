@@ -1,3 +1,5 @@
+import dev.bogdanzurac.marp.build.projects
+
 plugins {
     id("dev.bogdanzurac.marp.build.plugins.feature.ui")
 }
@@ -7,8 +9,8 @@ android {
 }
 
 dependencies {
-    implementation(project(parts.coreAuth))
-    implementation(project(parts.featureCryptoUiCommon))
-    implementation(project(parts.featureNotesDomain))
-    implementation(project(parts.featureNotesUiCommon))
+    implementation(project(projects.coreAuth))
+    implementation(project(projects.featureCryptoUiCommon))
+    implementation(project(projects.featureNotesDomain))
+    implementation(project(projects.featureNotesUiCommon))
 }

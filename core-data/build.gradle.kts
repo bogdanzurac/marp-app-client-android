@@ -1,3 +1,5 @@
+import dev.bogdanzurac.marp.build.projects
+
 plugins {
     id("dev.bogdanzurac.marp.build.plugins.core")
     id("dev.bogdanzurac.marp.build.plugins.koin")
@@ -11,5 +13,5 @@ dependencies {
     api(libs.multiplatform.settings)
     implementation(libs.store)
 
-    implementation(project(parts.core))
+    implementation(project(projects.core))
 }
