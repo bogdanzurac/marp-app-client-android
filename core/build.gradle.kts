@@ -1,5 +1,7 @@
+import dev.bogdanzurac.marp.build.projects
+
 plugins {
-    id("dev.bogdanzurac.marp.plugins.core")
+    id("dev.bogdanzurac.marp.build.plugins.core")
 }
 
 android {
