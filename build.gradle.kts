@@ -1,5 +1,3 @@
-import dev.bogdanzurac.marp.build.projects
-
 plugins {
     alias(libs.plugins.android) apply false
     alias(libs.plugins.crashlytics) apply false
