@@ -12,5 +12,5 @@ android {
 dependencies {
     implementation(libs.firebase.config)
 
-    implementation(project(projects.core))
+    implementation(libs.marp.core)
 }

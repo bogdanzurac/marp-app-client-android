@@ -13,5 +13,5 @@ dependencies {
     api(libs.multiplatform.settings)
     implementation(libs.store)
 
-    implementation(project(projects.core))
+    implementation(libs.marp.core)
 }

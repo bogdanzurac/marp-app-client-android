@@ -12,5 +12,5 @@ dependencies {
     implementation(libs.bundles.ktor)
     api(libs.ktor.core)
 
-    implementation(project(projects.core))
+    implementation(libs.marp.core)
 }

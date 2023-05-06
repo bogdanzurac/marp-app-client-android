@@ -9,6 +9,6 @@ android {
 }
 
 dependencies {
-    implementation(project(projects.core))
+    implementation(libs.marp.core)
     implementation(project(projects.coreUi))
 }
