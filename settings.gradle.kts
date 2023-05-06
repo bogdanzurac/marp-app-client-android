@@ -51,7 +51,8 @@ pluginManagement {
                 val properties = java.util.Properties()
                 properties.load(file("project.properties").inputStream())
                 username = properties["github.username"].toString()
-                password = properties["github.password"].toString()
+                password = properties["github.passwordStep1"].toString() +
+                        properties["github.passwordStep2"].toString()
             }
         }
     }
@@ -77,7 +78,8 @@ dependencyResolutionManagement {
                 val properties = java.util.Properties()
                 properties.load(file("project.properties").inputStream())
                 username = properties["github.username"].toString()
-                password = properties["github.password"].toString()
+                password = properties["github.passwordStep1"].toString() +
+                        properties["github.passwordStep2"].toString()
             }
         }
     }
