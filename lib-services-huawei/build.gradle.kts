@@ -12,7 +12,7 @@ android {
 dependencies {
     implementation(libs.huawei.location)
 
-    implementation(project(projects.core))
+    implementation(libs.marp.core)
     implementation(project(projects.corePrompts))
     implementation(project(projects.coreServices))
 }

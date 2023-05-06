@@ -12,5 +12,5 @@ android {
 dependencies {
     api(libs.firebase.firestore)
 
-    implementation(project(projects.core))
+    implementation(libs.marp.core)
 }

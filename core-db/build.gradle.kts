@@ -14,5 +14,5 @@ android {
 dependencies {
     api(libs.realm)
 
-    implementation(project(projects.core))
+    implementation(libs.marp.core)
 }

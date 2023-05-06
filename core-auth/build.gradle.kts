@@ -12,6 +12,6 @@ android {
 dependencies {
     implementation(libs.firebase.auth)
 
-    implementation(project(projects.core))
+    implementation(libs.marp.core)
     implementation(project(projects.coreWs))
 }

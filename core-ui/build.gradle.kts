@@ -15,6 +15,6 @@ dependencies {
     implementation(libs.bundles.lifecycle)
 
 
-    implementation(project(projects.core))
+    implementation(libs.marp.core)
     api(project(projects.corePrompts))
 }

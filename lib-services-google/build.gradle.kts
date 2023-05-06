@@ -13,7 +13,7 @@ dependencies {
     implementation(libs.google.play.location)
     implementation(libs.kotlin.play.services)
 
-    implementation(project(projects.core))
+    implementation(libs.marp.core)
     implementation(project(projects.corePrompts))
     implementation(project(projects.coreServices))
 }
