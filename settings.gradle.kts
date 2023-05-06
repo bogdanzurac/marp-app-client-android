@@ -39,12 +39,21 @@ include(":lib-services-huawei")
 include(":lib-tracking-firebase")
 
 pluginManagement {
-    includeBuild("buildPlugins")
 
     repositories {
         google()
         mavenCentral()
         gradlePluginPortal()
+        maven {
+            url = java.net.URI("https://maven.pkg.github.com/bogdanzurac/marp-android-packages")
+            name = "GitHub"
+            credentials {
+                val properties = java.util.Properties()
+                properties.load(file("project.properties").inputStream())
+                username = properties["github.username"].toString()
+                password = properties["github.password"].toString()
+            }
+        }
     }
 }
 
@@ -53,7 +62,7 @@ dependencyResolutionManagement {
 
     versionCatalogs {
         create("libs") {
-            from(files("libs.versions.toml"))
+            from("dev.bogdanzurac.marp.build:libs:0.0.2")
         }
     }
 
@@ -61,5 +70,15 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
         maven { url = URI("https://developer.huawei.com/repo/") }
+        maven {
+            url = URI("https://maven.pkg.github.com/bogdanzurac/marp-android-packages")
+            name = "GitHub"
+            credentials {
+                val properties = java.util.Properties()
+                properties.load(file("project.properties").inputStream())
+                username = properties["github.username"].toString()
+                password = properties["github.password"].toString()
+            }
+        }
     }
 }

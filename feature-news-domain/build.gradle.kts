@@ -1,5 +1,5 @@
 plugins {
-    id("dev.bogdanzurac.marp.plugins.feature.domain")
+    id("dev.bogdanzurac.marp.build.plugins.feature.domain")
 }
 
 android {

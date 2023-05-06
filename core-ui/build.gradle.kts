@@ -1,10 +1,7 @@
-import dev.bogdanzurac.marp.buildplugins.project
-import dev.bogdanzurac.marp.buildplugins.projects
-
 plugins {
-    id("dev.bogdanzurac.marp.plugins.core")
-    id("dev.bogdanzurac.marp.plugins.compose")
-    id("dev.bogdanzurac.marp.plugins.koin")
+    id("dev.bogdanzurac.marp.build.plugins.core")
+    id("dev.bogdanzurac.marp.build.plugins.compose")
+    id("dev.bogdanzurac.marp.build.plugins.koin")
 }
 
 android {
