@@ -10,5 +10,5 @@ android {
 dependencies {
     api(libs.firebase.firestore)
 
-    implementation(project(projects.core))
+    implementation(project(parts.core))
 }

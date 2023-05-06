@@ -7,5 +7,5 @@ android {
 }
 
 dependencies {
-    implementation(project(projects.featureNewsData))
+    implementation(project(parts.featureNewsData))
 }

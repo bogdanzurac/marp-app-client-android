@@ -13,6 +13,6 @@ dependencies {
     implementation(libs.bundles.lifecycle)
 
 
-    implementation(project(projects.core))
-    api(project(projects.corePrompts))
+    implementation(project(parts.core))
+    api(project(parts.corePrompts))
 }

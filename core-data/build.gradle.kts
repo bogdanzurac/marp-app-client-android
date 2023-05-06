@@ -11,5 +11,5 @@ dependencies {
     api(libs.multiplatform.settings)
     implementation(libs.store)
 
-    implementation(project(projects.core))
+    implementation(project(parts.core))
 }

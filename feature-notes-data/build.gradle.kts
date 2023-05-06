@@ -7,7 +7,7 @@ android {
 }
 
 dependencies {
-    implementation(project(projects.coreAuth))
-    implementation(project(projects.featureNotesDomain))
-    implementation(project(projects.libDbFirebase))
+    implementation(project(parts.coreAuth))
+    implementation(project(parts.featureNotesDomain))
+    implementation(project(parts.libDbFirebase))
 }

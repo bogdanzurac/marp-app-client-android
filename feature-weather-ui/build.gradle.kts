@@ -7,5 +7,5 @@ android {
 }
 
 dependencies {
-    implementation(project(projects.featureWeatherDomain))
+    implementation(project(parts.featureWeatherDomain))
 }

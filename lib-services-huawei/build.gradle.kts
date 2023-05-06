@@ -10,7 +10,7 @@ android {
 dependencies {
     implementation(libs.huawei.location)
 
-    implementation(project(projects.core))
-    implementation(project(projects.corePrompts))
-    implementation(project(projects.coreServices))
+    implementation(project(parts.core))
+    implementation(project(parts.corePrompts))
+    implementation(project(parts.coreServices))
 }

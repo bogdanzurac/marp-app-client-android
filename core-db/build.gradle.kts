@@ -12,5 +12,5 @@ android {
 dependencies {
     api(libs.realm)
 
-    implementation(project(projects.core))
+    implementation(project(parts.core))
 }

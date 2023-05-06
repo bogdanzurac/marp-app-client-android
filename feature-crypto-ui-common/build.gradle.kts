@@ -7,5 +7,5 @@ android {
 }
 
 dependencies {
-    implementation(project(projects.featureCryptoDomain))
+    implementation(project(parts.featureCryptoDomain))
 }

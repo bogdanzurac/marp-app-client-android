@@ -12,5 +12,5 @@ android {
 dependencies {
     implementation(libs.androidx.navigation)
 
-    implementation(project(projects.core))
+    implementation(project(parts.core))
 }

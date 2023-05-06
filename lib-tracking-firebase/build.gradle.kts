@@ -10,6 +10,6 @@ android {
 dependencies {
     implementation(libs.firebase.analytics)
 
-    implementation(project(projects.core))
-    implementation(project(projects.coreUi))
+    implementation(project(parts.core))
+    implementation(project(parts.coreUi))
 }

@@ -7,5 +7,5 @@ android {
 }
 
 dependencies {
-    implementation(project(projects.coreAuth))
+    implementation(project(parts.coreAuth))
 }

@@ -7,6 +7,6 @@ android {
 }
 
 dependencies {
-    implementation(project(projects.coreAuth))
-    api(project(projects.featureCryptoDomain))
+    implementation(project(parts.coreAuth))
+    api(project(parts.featureCryptoDomain))
 }

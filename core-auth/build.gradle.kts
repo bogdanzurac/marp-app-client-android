@@ -10,6 +10,6 @@ android {
 dependencies {
     implementation(libs.firebase.auth)
 
-    implementation(project(projects.core))
-    implementation(project(projects.coreWs))
+    implementation(project(parts.core))
+    implementation(project(parts.coreWs))
 }

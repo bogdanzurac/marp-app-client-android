@@ -7,5 +7,5 @@ android {
 }
 
 dependencies {
-      implementation(project(projects.core))
+      implementation(project(parts.core))
 }

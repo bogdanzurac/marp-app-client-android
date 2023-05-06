@@ -7,5 +7,5 @@ android {
 }
 
 dependencies {
-    implementation(project(projects.featureNotesDomain))
+    implementation(project(parts.featureNotesDomain))
 }

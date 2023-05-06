@@ -7,8 +7,8 @@ android {
 }
 
 dependencies {
-    implementation(project(projects.coreAuth))
-    implementation(project(projects.featureCryptoUiCommon))
-    implementation(project(projects.featureNotesDomain))
-    implementation(project(projects.featureNotesUiCommon))
+    implementation(project(parts.coreAuth))
+    implementation(project(parts.featureCryptoUiCommon))
+    implementation(project(parts.featureNotesDomain))
+    implementation(project(parts.featureNotesUiCommon))
 }

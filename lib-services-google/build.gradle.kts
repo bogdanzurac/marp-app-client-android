@@ -11,7 +11,7 @@ dependencies {
     implementation(libs.google.play.location)
     implementation(libs.kotlin.play.services)
 
-    implementation(project(projects.core))
-    implementation(project(projects.corePrompts))
-    implementation(project(projects.coreServices))
+    implementation(project(parts.core))
+    implementation(project(parts.corePrompts))
+    implementation(project(parts.coreServices))
 }
