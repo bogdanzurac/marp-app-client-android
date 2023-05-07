@@ -2,10 +2,6 @@ package dev.bogdanzurac.marp.build
 
 object projects {
     const val coreServices = ":core-services"
-    const val featureCryptoData = ":feature-crypto-data"
-    const val featureCryptoDomain = ":feature-crypto-domain"
-    const val featureCryptoUi = ":feature-crypto-ui"
-    const val featureCryptoUiCommon = ":feature-crypto-ui-common"
     const val featureMoviesData = ":feature-movies-data"
     const val featureMoviesDomain = ":feature-movies-domain"
     const val featureMoviesUi = ":feature-movies-ui"
