@@ -1,5 +1,3 @@
-import dev.bogdanzurac.marp.build.projects
-
 plugins {
     alias(libs.plugins.marp.feature.ui)
 }
@@ -9,5 +7,5 @@ android {
 }
 
 dependencies {
-    implementation(project(projects.coreAuth))
+    implementation(libs.marp.core.auth)
 }
