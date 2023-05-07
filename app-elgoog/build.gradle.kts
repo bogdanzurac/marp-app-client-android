@@ -16,7 +16,7 @@ android {
 
 dependencies {
     implementation(libs.marp.core.db)
-    implementation(project(projects.featureAuthUi))
+    implementation(libs.marp.feature.auth.ui)
     implementation(project(projects.featureCryptoData))
     implementation(project(projects.featureCryptoDomain))
     implementation(project(projects.featureCryptoUi))
