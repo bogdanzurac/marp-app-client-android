@@ -1,7 +1,7 @@
 import dev.bogdanzurac.marp.build.projects
 
 plugins {
-    id("dev.bogdanzurac.marp.build.plugins.feature.ui")
+    alias(libs.plugins.marp.feature.ui)
 }
 
 android {

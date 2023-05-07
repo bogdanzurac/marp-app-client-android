@@ -1,6 +1,6 @@
 plugins {
-    id("dev.bogdanzurac.marp.build.plugins.core")
-    id("dev.bogdanzurac.marp.build.plugins.koin")
+    alias(libs.plugins.marp.core)
+    alias(libs.plugins.marp.koin)
 }
 
 android {
