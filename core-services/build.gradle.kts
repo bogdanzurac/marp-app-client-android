@@ -10,5 +10,5 @@ android {
 
 dependencies {
     implementation(libs.marp.core)
-    implementation(project(projects.coreUi))
+    implementation(libs.marp.core.ui)
 }

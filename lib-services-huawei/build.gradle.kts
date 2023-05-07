@@ -13,6 +13,6 @@ dependencies {
     implementation(libs.huawei.location)
 
     implementation(libs.marp.core)
-    implementation(project(projects.corePrompts))
+    implementation(libs.marp.core.prompts)
     implementation(project(projects.coreServices))
 }
