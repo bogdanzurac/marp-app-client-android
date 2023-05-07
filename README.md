@@ -42,4 +42,4 @@ A diagram detailing how all repositories and modules of MARP come together in it
 
 ## 📜 License
 
-This project is licensed under the Apache License, Version 2.0 - see the [LICENSE.md](https://github.com/bogdanzurac/marp-app-client-android/blob/master/LICENSE) file for details
+This project is licensed under the Apache License, Version 2.0 - see the [LICENSE.md](https://github.com/bogdanzurac/marp-app-client-android/blob/main/LICENSE) file for details
