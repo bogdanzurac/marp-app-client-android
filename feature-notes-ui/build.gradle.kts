@@ -9,7 +9,7 @@ android {
 }
 
 dependencies {
-    implementation(project(projects.coreAuth))
+    implementation(libs.marp.core.auth)
     implementation(project(projects.featureCryptoUiCommon))
     implementation(project(projects.featureNotesDomain))
     implementation(project(projects.featureNotesUiCommon))

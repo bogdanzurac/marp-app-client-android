@@ -9,6 +9,6 @@ android {
 }
 
 dependencies {
-    implementation(project(projects.coreAuth))
+    implementation(libs.marp.core.auth)
     api(project(projects.featureCryptoDomain))
 }

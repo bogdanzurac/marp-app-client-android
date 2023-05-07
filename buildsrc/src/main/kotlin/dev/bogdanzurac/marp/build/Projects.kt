@@ -1,7 +1,6 @@
 package dev.bogdanzurac.marp.build
 
 object projects {
-    const val coreAuth = ":core-auth"
     const val coreServices = ":core-services"
     const val featureAuthUi = ":feature-auth-ui"
     const val featureCryptoData = ":feature-crypto-data"

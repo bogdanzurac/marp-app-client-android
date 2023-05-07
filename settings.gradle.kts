@@ -2,7 +2,6 @@ import java.net.URI
 
 include(":app-elgoog")
 include(":app-macrosoft")
-include(":core-auth")
 include(":core-services")
 include(":feature-auth-ui")
 include(":feature-crypto-data")
@@ -56,7 +55,7 @@ dependencyResolutionManagement {
 
     versionCatalogs {
         create("libs") {
-            from("dev.bogdanzurac.marp.build:libs:0.0.6")
+            from("dev.bogdanzurac.marp.build:libs:0.0.7")
         }
     }
 
