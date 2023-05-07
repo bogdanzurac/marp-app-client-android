@@ -17,10 +17,10 @@ android {
 dependencies {
     implementation(libs.marp.core.db)
     implementation(libs.marp.feature.auth.ui)
+    implementation(libs.marp.feature.dashboard.ui)
     implementation(project(projects.featureCryptoData))
     implementation(project(projects.featureCryptoDomain))
     implementation(project(projects.featureCryptoUi))
-    implementation(project(projects.featureDashboardUi))
     implementation(project(projects.featureMoviesData))
     implementation(project(projects.featureMoviesDomain))
     implementation(project(projects.featureMoviesUi))
