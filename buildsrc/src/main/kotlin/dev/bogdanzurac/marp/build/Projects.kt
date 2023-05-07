@@ -6,7 +6,6 @@ object projects {
     const val featureCryptoDomain = ":feature-crypto-domain"
     const val featureCryptoUi = ":feature-crypto-ui"
     const val featureCryptoUiCommon = ":feature-crypto-ui-common"
-    const val featureDashboardUi = ":feature-dashboard-ui"
     const val featureMoviesData = ":feature-movies-data"
     const val featureMoviesDomain = ":feature-movies-domain"
     const val featureMoviesUi = ":feature-movies-ui"
