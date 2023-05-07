@@ -14,6 +14,6 @@ dependencies {
     implementation(libs.kotlin.play.services)
 
     implementation(libs.marp.core)
-    implementation(project(projects.corePrompts))
+    implementation(libs.marp.core.prompts)
     implementation(project(projects.coreServices))
 }
