@@ -21,9 +21,6 @@ object projects {
     const val featureWeatherData = ":feature-weather-data"
     const val featureWeatherDomain = ":feature-weather-domain"
     const val featureWeatherUi = ":feature-weather-ui"
-    const val libDbFirebase = ":lib-db-firebase"
-    const val libFlaggingFirebase = ":lib-flagging-firebase"
     const val libServicesGoogle = ":lib-services-google"
     const val libServicesHuawei = ":lib-services-huawei"
-    const val libTrackingFirebase = ":lib-tracking-firebase"
 }

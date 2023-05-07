@@ -17,6 +17,9 @@ android {
 dependencies {
     implementation(libs.marp.core.db)
     implementation(libs.marp.feature.dashboard.ui)
+    implementation(libs.marp.lib.db.firebase)
+    implementation(libs.marp.lib.flagging.firebase)
+    implementation(libs.marp.lib.tracking.firebase)
     implementation(project(projects.featureCryptoData))
     implementation(project(projects.featureCryptoDomain))
     implementation(project(projects.featureCryptoUi))
@@ -28,8 +31,5 @@ dependencies {
     implementation(project(projects.featureWeatherData))
     implementation(project(projects.featureWeatherDomain))
     implementation(project(projects.featureWeatherUi))
-    implementation(project(projects.libDbFirebase))
-    implementation(project(projects.libFlaggingFirebase))
     implementation(project(projects.libServicesGoogle))
-    implementation(project(projects.libTrackingFirebase))
 }

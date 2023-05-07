@@ -10,6 +10,6 @@ android {
 
 dependencies {
     implementation(libs.marp.core.auth)
+    implementation(libs.marp.lib.db.firebase)
     implementation(project(projects.featureNotesDomain))
-    implementation(project(projects.libDbFirebase))
 }
