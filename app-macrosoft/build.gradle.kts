@@ -16,13 +16,13 @@ android {
 
 dependencies {
     implementation(libs.marp.core.db)
+    implementation(libs.marp.feature.crypto.data)
+    implementation(libs.marp.feature.crypto.domain)
+    implementation(libs.marp.feature.crypto.ui)
     implementation(libs.marp.feature.dashboard.ui)
     implementation(libs.marp.lib.db.firebase)
     implementation(libs.marp.lib.flagging.firebase)
     implementation(libs.marp.lib.tracking.firebase)
-    implementation(project(projects.featureCryptoData))
-    implementation(project(projects.featureCryptoDomain))
-    implementation(project(projects.featureCryptoUi))
     implementation(project(projects.featureNewsData))
     implementation(project(projects.featureNewsDataWebNewsApi))
     implementation(project(projects.featureNewsDomain))

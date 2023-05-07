@@ -1,5 +1,3 @@
-import dev.bogdanzurac.marp.build.projects
-
 plugins {
     alias(libs.plugins.marp.feature.domain)
 }
@@ -10,5 +8,5 @@ android {
 
 dependencies {
     implementation(libs.marp.core.auth)
-    api(project(projects.featureCryptoDomain))
+    api(libs.marp.feature.crypto.domain)
 }

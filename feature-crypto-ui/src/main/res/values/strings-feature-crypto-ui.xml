@@ -1,5 +1,0 @@
-<resources>
-    <string name="crypto_circulating_supply">Circulating supply</string>
-    <string name="crypto_market_cap">Market cap</string>
-    <string name="crypto_max_supply">Max supply</string>
-</resources>
