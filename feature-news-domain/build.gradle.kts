@@ -1,7 +1,5 @@
-import dev.bogdanzurac.marp.build.projects
-
 plugins {
-    id("dev.bogdanzurac.marp.build.plugins.feature.domain")
+    alias(libs.plugins.marp.feature.domain)
 }
 
 android {

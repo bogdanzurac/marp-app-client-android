@@ -1,7 +1,7 @@
 import dev.bogdanzurac.marp.build.projects
 
 plugins {
-    id("dev.bogdanzurac.marp.build.plugins.app")
+    alias(libs.plugins.marp.app)
 }
 
 android {
