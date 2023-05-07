@@ -22,11 +22,8 @@ include(":feature-notes-ui-common")
 include(":feature-weather-data")
 include(":feature-weather-domain")
 include(":feature-weather-ui")
-include(":lib-db-firebase")
-include(":lib-flagging-firebase")
 include(":lib-services-google")
 include(":lib-services-huawei")
-include(":lib-tracking-firebase")
 
 pluginManagement {
 
@@ -53,7 +50,7 @@ dependencyResolutionManagement {
 
     versionCatalogs {
         create("libs") {
-            from("dev.bogdanzurac.marp.build:libs:0.0.9")
+            from("dev.bogdanzurac.marp.build:libs:0.0.10")
         }
     }
 
