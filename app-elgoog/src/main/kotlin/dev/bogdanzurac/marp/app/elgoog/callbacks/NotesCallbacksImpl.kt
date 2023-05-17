@@ -8,4 +8,6 @@ import org.koin.core.annotation.Single
 class NotesCallbacksImpl : NotesCallbacks {
 
     override fun getLoginRoute() = Auth
+
+    override fun shouldShowAllNotes(): Boolean = false
 }
