@@ -42,7 +42,7 @@ dependencyResolutionManagement {
 
     versionCatalogs {
         create("libs") {
-            from("dev.bogdanzurac.marp.build:libs:0.0.13")
+            from("dev.bogdanzurac.marp.build:libs:0.0.14")
         }
     }
 
